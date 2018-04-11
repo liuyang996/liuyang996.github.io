@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="ECharts," />
+  <meta name="keywords" content="krpano," />
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="###在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可。 ####1.引入echarts.js这个网上下一个或者用cdn。 ####2.html加一个放图表的容器 &amp;lt;div id=&amp;quot;main&amp;quot; style=&amp;quot;width:400px;height:400px&amp;quot;&amp;g">
-<meta name="keywords" content="ECharts">
+<meta name="description" content="###前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 ####krpano特点 #####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。   #####(2)使用专用的krpano">
+<meta name="keywords" content="krpano">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ECharts常用代码及说明整理">
-<meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2017/11/10/echarts1/index.html">
+<meta property="og:title" content="krpano360全景漫游常用代码及使用说明整理">
+<meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="###在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可。 ####1.引入echarts.js这个网上下一个或者用cdn。 ####2.html加一个放图表的容器 &amp;lt;div id=&amp;quot;main&amp;quot; style=&amp;quot;width:400px;height:400px&amp;quot;&amp;g">
+<meta property="og:description" content="###前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 ####krpano特点 #####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。   #####(2)使用专用的krpano">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-10T09:14:13.008Z">
+<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p1.png">
+<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p2.png">
+<meta property="og:updated_time" content="2018-04-11T03:06:01.788Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ECharts常用代码及说明整理">
-<meta name="twitter:description" content="###在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可。 ####1.引入echarts.js这个网上下一个或者用cdn。 ####2.html加一个放图表的容器 &amp;lt;div id=&amp;quot;main&amp;quot; style=&amp;quot;width:400px;height:400px&amp;quot;&amp;g">
+<meta name="twitter:title" content="krpano360全景漫游常用代码及使用说明整理">
+<meta name="twitter:description" content="###前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 ####krpano特点 #####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。   #####(2)使用专用的krpano">
+<meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p1.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://liuyang996.github.io/liuyang996.github.io/2017/11/10/echarts1/"/>
+  <link rel="canonical" href="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/"/>
 
 
 
 
 
-  <title>ECharts常用代码及说明整理 | 穿过繁华的博客</title>
+  <title>krpano360全景漫游常用代码及使用说明整理 | 穿过繁华的博客</title>
   
 
 
@@ -273,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2017/11/10/echarts1/">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yourk">
@@ -290,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ECharts常用代码及说明整理</h1>
+          <h1 class="post-title" itemprop="name headline">krpano360全景漫游常用代码及使用说明整理</h1>
         
 
         <div class="post-meta">
@@ -302,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T14:30:00+08:00">
-                2017-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-03T09:27:24+08:00">
+                2018-02-03
               </time>
             
 
@@ -325,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/ECharts/" itemprop="url" rel="index">
-                    <span itemprop="name">ECharts</span>
+                  <a href="/liuyang996.github.io/categories/krpano/" itemprop="url" rel="index">
+                    <span itemprop="name">krpano</span>
                   </a>
                 </span>
 
@@ -362,48 +365,115 @@
       
 
       
-        <p>###在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可。</p>
-<p>####1.引入echarts.js这个网上下一个或者用cdn。</p>
-<p>####2.html加一个放图表的容器</p>
-<pre><code>&lt;div id=&quot;main&quot; style=&quot;width:400px;height:400px&quot;&gt;&lt;/div&gt;
-</code></pre><p>###3.找到这个标签</p>
-<pre><code>var myChart = echarts.init(document.getElementById(&apos;main&apos;))
-</code></pre><p>###4.放入需要的option数据(一般直接在echarts官网选好了复制即可)</p>
-<p>###5.为echarts对象加载数据 </p>
-<pre><code>myChart.setOption(option); 
-</code></pre><p>PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找些。</p>
-<p>#####图表X轴内容全部显示<br>有时候我们X轴的文字会很长，多个的话就会挤到一起，这时候我们需要这样设置，在xAxis对象里加：</p>
-<pre><code>axisLabel:{
-     interval:0,  //横轴信息全部显示
-     rotate:-30,  // -30度角倾斜显示
- }
-</code></pre><p>####图表图例字体颜色，大小， 在legend对象里加：</p>
-<pre><code>textStyle:{    //图例文字的样式
-       color:&apos;#fff&apos;,
-       fontSize:12
-   }
-</code></pre><p>####图表数据颜色，在series对象里加</p>
-<pre><code>itemStyle:{
-           normal:{
-               color:&apos;#ceee61&apos;
-           }
-       },
-</code></pre><p>####图表字体颜色设置（在xAxis或yAxis里加）</p>
-<pre><code>axisLabel: {
-       show: true,
-       textStyle: {
-           color: &apos;#fff&apos;
-       }
-   }
-</code></pre><p>####调整图表在div中的大小和位置 </p>
-<pre><code>grid:[
-    {
-     x: &apos;2%&apos;, y: &apos;2%&apos;, width: &apos;80%&apos;, height: &apos;80%&apos;
-     }
- ],
-</code></pre><p>####设置图表背景颜色(和title、tooltip等同级)</p>
-<pre><code>backgroundColor: [&apos;#02204a&apos;], 
-</code></pre>
+        <p>###前言<br>在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。</p>
+<p>####krpano特点</p>
+<p>#####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。  </p>
+<p>#####(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。  </p>
+<p>#####(3)支持多种类型的全景图已及全景视频和环物全景</p>
+<p>###tip:全景图拍摄、拼接的教程<br>&lt;a href=”<a href="http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程" target="_blank" rel="noopener">http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程</a><br>&lt;a href=”<a href="https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航" target="_blank" rel="noopener">https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航</a> </p>
+<p>###krpano常用设置<br>PS:常用设置一般都是在.xml文件下设置的</p>
+<p>####1.小行星开场</p>
+<pre><code>littleplanetintro=&quot;true&quot;
+</code></pre><p>####2.自动循环浏览</p>
+<pre><code>&lt;autorotate enabled=&quot;true&quot;
+    waittime=&quot;2.0&quot;
+    speed=&quot;-10.0&quot;
+    horizon=&quot;0.0&quot;
+    /&gt;
+&lt;events name=&quot;onautorotateevents&quot; keep=&quot;true&quot; onautorotateoneround=&quot;nextscene()&quot;/&gt;
+</code></pre><p>####3.添加场景</p>
+<pre><code>&lt;scene&gt;&lt;/scene&gt;
+</code></pre><p>注：可以使用.bat文件在别处生成一个场景，然后把生成的.xml文件里的scene标签拷过来，还要拷panos文件夹里的文件。</p>
+<p>####4.添加热点</p>
+<pre><code>&lt;hotspot name=&quot;spot4&quot; style=&quot;skin_hotspotstyle&quot; ath=&quot;82.688&quot; atv=&quot;44.260&quot; linkedscene=&quot;scene_otc3&quot; /&gt;
+</code></pre><p>注：ath、atv是热点的坐标，可以通过krpano的图形界面软件点选生成热点。linkedscene是跳转场景，值是跳转场景的title</p>
+<p>####5.热点添加图片</p>
+<pre><code>&lt;hotspot name=&quot;spot4&quot; url=&quot;new_spotd7_gif.png&quot; /&gt;
+</code></pre><p>注：我这里的图片路径和tour.xml文件为同一路径，可根据需要更改</p>
+<p>####6.热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等</p>
+<pre><code>&lt;!-- 定义热点风格 - 白色热点 --&gt; 
+    &lt;style name=&quot;hotspot_ani_white&quot; 
+    crop=&quot;0|0|128|128&quot;
+    framewidth=&quot;128&quot; frameheight=&quot;128&quot; frame=&quot;0&quot; lastframe=&quot;19&quot; 
+    onloaded=&quot;hotspot_animate();add_all_the_time_tooltip();&quot; 
+    /&gt; 
+
+ &lt;!-- 热点动画action，每隔0.03秒改变crop的内容，从而实现动画效果，
+    inc是一个每次递增指定数值的方法，这里是让frame这个变量每次增加1，
+    当到达19时，则从0又开始递增。mul是乘法运算，将高度乘以当前帧序号，
+    得到crop中y的位置。txtadd对crop的内容进行了设定。因为每一次ypos
+    的值都会发生变化，所以crop中所显示的内容也发生变化。
+    最后是0.03秒后再次执行自身。 --&gt; 
+
+    &lt;action name=&quot;hotspot_animate&quot;&gt; 
+    inc(frame,1,get(lastframe),0); 
+    mul(ypos,frame,frameheight); 
+    txtadd(crop,&apos;0|&apos;,get(ypos),&apos;|&apos;,get(framewidth),&apos;|&apos;,get(frameheight)); 
+    delayedcall(0.03, if(loaded, hotspot_animate() ) ); 
+    &lt;/action&gt;
+
+    &lt;!--热点文字提示--&gt;
+    &lt;action name=&quot;add_all_the_time_tooltip&quot;&gt;
+    txtadd(tooltipname, &apos;tooltip_&apos;, get(name));
+    addplugin(get(tooltipname));
+    txtadd(plugin[get(tooltipname)].parent, &apos;hotspot[&apos;, get(name), &apos;]&apos;);
+    set(plugin[get(tooltipname)].url,&apos;%SWFPATH%/plugins/textfield.swf&apos;);
+    set(plugin[get(tooltipname)].align,top);
+    set(plugin[get(tooltipname)].edge,bottom);
+    set(plugin[get(tooltipname)].x,0);
+    set(plugin[get(tooltipname)].y,0);
+    set(plugin[get(tooltipname)].autowidth,true);
+    set(plugin[get(tooltipname)].autowidth,true);
+    set(plugin[get(tooltipname)].background,true);
+    set(plugin[get(tooltipname)].backgroundcolor,0x000000);
+    set(plugin[get(tooltipname)].roundedge,5);
+    set(plugin[get(tooltipname)].backgroundalpha,0.65);
+    set(plugin[get(tooltipname)].padding,5);
+    set(plugin[get(tooltipname)].border,false);
+    set(plugin[get(tooltipname)].glow,0);
+    set(plugin[get(tooltipname)].glowcolor,0xFFFFFF);
+    set(plugin[get(tooltipname)].css,&apos;text-align:center; color:#FFFFFF; font-family:MicrosoftYahei;  font-size:14px;&apos;);
+    if(device.mobile,set(plugin[get(tooltipname)].css,&apos;text-align:center; color:#FFFFFF; font-family:MicrosoftYahei; font-weight:bold; font-size:22px;&apos;);
+        set(plugin[get(tooltipname)].y,0););
+    set(plugin[get(tooltipname)].textshadow,0);
+    set(plugin[get(tooltipname)].textshadowrange,6.0);
+    set(plugin[get(tooltipname)].textshadowangle,90);
+    copy(plugin[get(tooltipname)].html,hotspot[get(name)].tooltip);
+    &lt;!--设置hotspot命名为tooltip标签--&gt;
+    set(plugin[get(tooltipname)].enabled,false);    
+&lt;/action&gt;
+
+
+&lt;!--热点动态模式--&gt;
+&lt;action name=&quot;do_crop_animation_onclick&quot;&gt;    
+    if(hotspot[get(name)].animated === null OR hotspot[get(name)].animated == false,
+        set(hotspot[get(name)].animated,true);
+        setinterval(calc(&apos;crop_anim_&apos; + name), calc(1.0 / %3),            
+                inc(frame);
+                if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); );
+                mod(xpos, frame, xframes);
+                div(ypos, frame, xframes);
+                Math.floor(ypos);
+                mul(xpos, %1);
+                mul(ypos, %2);
+                calc(crop, xpos + &apos;|&apos; + ypos + &apos;|%1|%2&apos;);                              
+          );
+          ,
+        set(hotspot[get(name)].animated,false);  
+        clearinterval(calc(&apos;crop_anim_&apos; + name));
+        set(crop, &apos;0|0|%1|%2&apos;);    
+      );
+</code></pre><p></p>
+<p>PS:我这里把热点标签hotspot的命名方式改成了tooltip属性，在给hotspot命名时只需要设置它的tooltip属性就可以了。 原始为：</p>
+<pre><code>&lt;!--设置hotspot命名为scene标签的title属性--&gt;
+&lt;!--copy(plugin[get(tooltipname)].html,scene[get(linkedscene)].title);--&gt;
+</code></pre><p>上面是对热点设置的一系列属性，直接都拷贝过去用就可以了。</p>
+<p>####7.热点命名<br>上面已经说了，可以看看6</p>
+<p>####8.热点添加点击js事件<br>    <hotspot onclick="js(Aqu())"></hotspot></p>
+<p>注：这里要注意下函数名外面要套一个js(),负责不会生效的。</p>
+<p>####页面效果截图展示</p>
+<p><img src="/liuyang996.github.io/2018/02/03/krpano1/p1.png" alt="avatar"><br><img src="/liuyang996.github.io/2018/02/03/krpano1/p2.png" alt="avatar"></p>
+
       
     </div>
     
@@ -420,7 +490,7 @@
       
         <div class="post-tags">
           
-            <a href="/liuyang996.github.io/tags/ECharts/" rel="tag"># ECharts</a>
+            <a href="/liuyang996.github.io/tags/krpano/" rel="tag"># krpano</a>
           
         </div>
       
@@ -433,14 +503,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/liuyang996.github.io/2017/11/10/echarts1/" rel="next" title="ECharts常用代码及说明整理">
+                <i class="fa fa-chevron-left"></i> ECharts常用代码及说明整理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/liuyang996.github.io/2018/02/03/krpano1/" rel="prev" title="krpano360全景漫游常用代码及使用说明整理">
-                krpano360全景漫游常用代码及使用说明整理 <i class="fa fa-chevron-right"></i>
+              <a href="/liuyang996.github.io/2018/03/02/xiaochengxu1/" rel="prev" title="微信小程序开发中遇到的问题及经常使用的代码">
+                微信小程序开发中遇到的问题及经常使用的代码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
