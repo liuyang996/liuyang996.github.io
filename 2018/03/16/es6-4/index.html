@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ES6," />
 
 
 
@@ -79,14 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="message">
-<meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/message/index.html">
+<meta name="description" content="###数字判断和转换 数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。 let a= 11/4; console.log(Number.isFinite(a));//true console.log(Number.isFinite(&amp;apos;xxx&amp;apos;));//false ###NaN验证 Number.is">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6-数字操作">
+<meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/16/es6-4/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
+<meta property="og:description" content="###数字判断和转换 数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。 let a= 11/4; console.log(Number.isFinite(a));//true console.log(Number.isFinite(&amp;apos;xxx&amp;apos;));//false ###NaN验证 Number.is">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-10T02:31:09.419Z">
+<meta property="og:updated_time" content="2018-04-11T06:54:46.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="message">
+<meta name="twitter:title" content="ES6-数字操作">
+<meta name="twitter:description" content="###数字判断和转换 数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。 let a= 11/4; console.log(Number.isFinite(a));//true console.log(Number.isFinite(&amp;apos;xxx&amp;apos;));//false ###NaN验证 Number.is">
 
 
 
@@ -116,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://liuyang996.github.io/liuyang996.github.io/message/"/>
+  <link rel="canonical" href="http://liuyang996.github.io/liuyang996.github.io/2018/03/16/es6-4/"/>
 
 
 
 
 
-  <title>message | 穿过繁华的博客</title>
+  <title>ES6-数字操作 | 穿过繁华的博客</title>
   
 
 
@@ -257,33 +261,179 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/03/16/es6-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">message</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">ES6-数字操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T19:30:30+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/ES6/" itemprop="url" rel="index">
+                    <span itemprop="name">ES6</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>###数字判断和转换</p>
+<p>数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。</p>
+<pre><code>let a= 11/4;
+console.log(Number.isFinite(a));//true
+console.log(Number.isFinite(&apos;xxx&apos;));//false
+</code></pre><p>###NaN验证 Number.isNaN()</p>
+<pre><code>console.log(Number.isNaN(NaN)); //true
+</code></pre><p>###判断是否为整数Number.isInteger(xx)</p>
+<pre><code>let a=123.1;
+console.log(Number.isInteger(a)); //false
+</code></pre>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/liuyang996.github.io/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/liuyang996.github.io/2018/03/16/es6-3/" rel="next" title="ES6-字符串模板">
+                <i class="fa fa-chevron-left"></i> ES6-字符串模板
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/liuyang996.github.io/2018/03/16/es6-5/" rel="prev" title="ES6-新增的数组知识">
+                ES6-新增的数组知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
