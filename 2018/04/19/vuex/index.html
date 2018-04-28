@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/liuyang996.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/liuyang996.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/liuyang996.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/liuyang996.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/liuyang996.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/liuyang996.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,vuex," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="####vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。   ####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   ###1.引入vuex（1）利用npm包">
+<meta name="keywords" content="vue,vuex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex的简单介绍及使用方法">
+<meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/04/19/vuex/index.html">
+<meta property="og:site_name" content="穿过繁华的博客">
+<meta property="og:description" content="####vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。   ####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   ###1.引入vuex（1）利用npm包">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-19T08:49:42.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuex的简单介绍及使用方法">
+<meta name="twitter:description" content="####vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。   ####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   ###1.引入vuex（1）利用npm包">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/liuyang996.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liuyang996.github.io/liuyang996.github.io/2018/04/19/vuex/"/>
+
+
+
+
+
+  <title>vuex的简单介绍及使用方法 | 穿过繁华的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/liuyang996.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">穿过繁华的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/liuyang996.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/liuyang996.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/liuyang996.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/liuyang996.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/liuyang996.github.io/message" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/liuyang996.github.io/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/19/vuex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vuex的简单介绍及使用方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T14:42:01+08:00">
+                2018-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/vuex/" itemprop="url" rel="index">
+                    <span itemprop="name">vuex</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>####vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。  </p>
+<p>####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。  </p>
+<p>###1.引入vuex<br>（1）利用npm包管理工具，进行安装vuex.在控制命令行中输入  </p>
+<pre><code>npm install vuex --save  
+</code></pre><p>需要注意的是这里一定要加上 –save，因为这个包我们在生产环境中是要使用的。</p>
+<p>（2）新建一个vuex文件夹（这个不是必须的），并在文件夹下新建store.js文件，文件中引入我们的vue和vuex。  </p>
+<pre><code>import Vue from &apos;vue&apos;;
+import Vuex from &apos;vuex&apos;;  
+Vue.use(Vuex);  
+</code></pre><p>通过这三步的操作，vuex就算引用成功了</p>
+<p>用export default封装代码，让外部可以引用</p>
+<pre><code>export default new Vuex.Store({
+    state 
+})
+</code></pre><p>在.vue文件下使用store.js的代码</p>
+<p>（1）引入store.js文件  </p>
+<pre><code>import store  from &apos;@/vuex/store&apos;  
+export default{
+    data(){
+        return{
+            msg:&apos;hello vueX&apos;
+        }
+    },
+    store
+}
+</code></pre><p>PS：data下面加上store  </p>
+<p>（2）使用store.js的代码</p>
+<pre><code>{{$store.state.count}}
+</code></pre><p>####2.state访问状态对象  </p>
+<p>（1）通过computed的计算属性直接赋值<br>computed属性可以在输出前，对data中的值进行改变。</p>
+<pre><code>computed:{
+    count(){
+        return this.$store.state.count;
+    }
+}
+</code></pre><p>这里需要注意的是return this.$store.state.count这一句，一定要写this，要不你会找不到$store的。这种写法很好理解，但是写起来是比较麻烦的，</p>
+<p>（2）通过mapState的对象来赋值<br>首先要用import引入mapState  </p>
+<pre><code>import {mapState} from &apos;vuex&apos;;
+</code></pre><p>然后还在computed计算属性里写如下代码：  </p>
+<pre><code> computed:mapState({
+   count:state=&gt;state.count
+})
+</code></pre><p>这里我们使用ES6的箭头函数来给count赋值。</p>
+<p>（3）通过mapState的数组来赋值</p>
+<pre><code>computed:mapState([&apos;count&apos;])  
+</code></pre><p>这个算是最简单的写法了。在实际项目开发当中也经常这样使用。  </p>
+<p>####3.Mutations修改状态  </p>
+<p>#####$store.commit()<br>Vuex提供了commit方法来修改状态  </p>
+<p>.vue文件：</p>
+<pre><code>&lt;button @click=&quot;$store.commit(&apos;add&apos;)&quot;&gt;+&lt;/button&gt;
+&lt;button @click=&quot;$store.commit(&apos;reduce&apos;)&quot;&gt;-&lt;/button&gt;  
+</code></pre><p>store.js文件：  </p>
+<pre><code>const mutations={
+    add(state){
+        state.count++;
+    },
+    reduce(state){
+        state.count--;
+    }
+}
+</code></pre><p>#####传值：<br>在项目中我们常常要在修改状态时传值，就需要再mutations里再加上一个参数，并在commit的时候传递就可以了。  </p>
+<p>store.js文件:  </p>
+<pre><code>const mutations={
+    add(state,n){
+        state.count+=n;
+    },
+    reduce(state){
+        state.count--;
+    }
+}
+</code></pre><p>.vue文件:  </p>
+<pre><code>&lt;button @click=&quot;$store.commit(&apos;add&apos;,10)&quot;&gt;+&lt;/button&gt;
+&lt;button @click=&quot;$store.commit(&apos;reduce&apos;)&quot;&gt;-&lt;/button&gt;
+</code></pre><p>#####模板获取mutations方法  </p>
+<p>在实际开发中我们也不喜欢看到$store.commit()这样的方法出现，我们希望和调用模板里的方法以一样。  </p>
+<p>例如：@click=”reduce” 就和没饮用vuex插件一样。<br>使用这种写法：<br>（1）.在模板count.vue里用import引入我们的mapMutations.  </p>
+<pre><code>import { mapState,mapMutations } from &apos;vuex&apos;;  
+</code></pre><p>（2）.在模板的&lt;’script’&gt;标签里添加methods属性,并加入mapMutations  </p>
+<pre><code>methods:mapMutations([
+   &apos;add&apos;,&apos;reduce&apos;
+]),
+</code></pre><p>修改后使用方法：  </p>
+<pre><code>&lt;button @click=&quot;add(10)&quot;&gt;+&lt;/button&gt;
+&lt;button @click=&quot;reduce&quot;&gt;-&lt;/button&gt;
+</code></pre><p>####4.getters计算过滤操作<br>getters从表面是获得的意思，可以把他看作在获取数据之前进行的一种再编辑，相当于对数据的一个过滤和加工。可以看作store.js的计算属性。</p>
+<p>首先要在store.js里用const声明getters属性  </p>
+<pre><code>const getters = {
+    count:function(state){
+        return state.count +=100;
+    }
+}  
+</code></pre><p>对模板页的.vue文件进行配置，在vue的构造器里边只能有一个computed属性,如果你写多个，只有最后一个computed属性可用，所以要对computed属性进行一个改造。需要使用ES6中的扩展运算符”…”  (同理，其他的的也一样,methods等)</p>
+<pre><code>   computed:{
+    ...mapState([&quot;count&quot;]),
+    count(){
+        return this.$store.getters.count;
+    }
+},
+</code></pre><p>需要注意的是，写了这个配置后，在每次count值发生变化的时候，都会执行这个函数。  </p>
+<p>#####mapGetters简化模板写法：<br>首先用import引入我们的mapGetters  </p>
+<pre><code>import { mapState,mapMutations,mapGetters } from &apos;vuex&apos;;  
+</code></pre><p> 在computed属性中加入mapGetters  </p>
+<pre><code>...mapGetters([&quot;count&quot;])
+</code></pre><p>####5.actions异步修改状态<br>actions和Mutations功能基本一样，不同的是，actions是异步的改变state状态，而Mutations是同步改变状态。  </p>
+<p>在store.js中声明actions，actions是可以调用Mutations里的方法的，  </p>
+<pre><code>const actions ={
+    addAction(context){
+        context.commit(&apos;add&apos;,10)
+    },
+    reduceAction({commit}){
+        commit(&apos;reduce&apos;)
+    }
+}
+</code></pre><p>context: 上下文对象，这里可以理解称store本身。<br>{commit}：直接把commit对象传递过来，可以让方法体逻辑和代码更清晰明了。</p>
+<p>#####模板中的使用，mapActions 和上面的模板方法一样。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/liuyang996.github.io/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/liuyang996.github.io/tags/vuex/" rel="tag"># vuex</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/liuyang996.github.io/2018/04/14/lixianditu1/" rel="next" title="百度离线地图">
+                <i class="fa fa-chevron-left"></i> 百度离线地图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/liuyang996.github.io/2018/04/20/iconfont/" rel="prev" title="搞定项目图标iconfont">
+                搞定项目图标iconfont <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/liuyang996.github.io/images/toux.jpg"
+                alt="York" />
+            
+              <p class="site-author-name" itemprop="name">York</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/liuyang996.github.io/archives">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/liuyang996.github.io/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/liuyang996.github.io/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuyang996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">York</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/liuyang996.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
