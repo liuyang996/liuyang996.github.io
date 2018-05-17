@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid ####开发问题 1.在小程序中使用map地图的时候在页面中定义view等标签，在模拟器中可以显示，但是真机上是不显示的，因为，在真机上map的z-i">
+<meta name="description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上">
 <meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序开发中遇到的问题及经常使用的代码">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/02/xiaochengxu1/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid ####开发问题 1.在小程序中使用map地图的时候在页面中定义view等标签，在模拟器中可以显示，但是真机上是不显示的，因为，在真机上map的z-i">
+<meta property="og:description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/02/xiaochengxu1/jietu1.png">
-<meta property="og:updated_time" content="2018-04-19T07:21:00.645Z">
+<meta property="og:updated_time" content="2018-05-17T01:56:03.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序开发中遇到的问题及经常使用的代码">
-<meta name="twitter:description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid ####开发问题 1.在小程序中使用map地图的时候在页面中定义view等标签，在模拟器中可以显示，但是真机上是不显示的，因为，在真机上map的z-i">
+<meta name="twitter:description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/02/xiaochengxu1/jietu1.png">
 
 
@@ -365,7 +365,7 @@
 
       
         <p>####开发已上线小程序（在微信小程序可搜索以下名称）<br>1.在线巡更<br>2.在线培训学习</p>
-<p>####开发注意事项<br>1.在使用接口的时候必须使用https协议。<br>2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid</p>
+<p>####开发注意事项<br>1.在使用接口的时候必须使用https协议。<br>2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid<br>3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。<br>4.在上线的时候，正式账号上，记得要配置域名，不然就无法调用接口。</p>
 <p>####开发问题</p>
 <p>1.在小程序中使用map地图的时候在页面中定义view等标签，在模拟器中可以显示，但是真机上是不显示的，因为，在真机上map的z-index层次是最高的，会覆盖其他的标签。  </p>
 <p>解决办法：使用map标签的controls属性，来设置地图上的按钮等元素。  </p>
@@ -457,6 +457,10 @@ function getDistance(lng1, lat1, lng2, lat2) {
 wx.redirectTo({ //关闭当前页面
   url: &apos;&apos;
 })
+
+wx.switchTab({   //跳转tabBar页面
+  url: &apos;../b/b&apos;  
+});  
 </code></pre><p>PS:有些很基本的代码块放在这里是为了开发的时候直接Ctrl+C、V加快速度 (#^.^#)</p>
 
       
@@ -572,7 +576,7 @@ wx.redirectTo({ //关闭当前页面
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -583,7 +587,7 @@ wx.redirectTo({ //关闭当前页面
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -594,7 +598,7 @@ wx.redirectTo({ //关闭当前页面
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

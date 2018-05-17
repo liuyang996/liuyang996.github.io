@@ -269,6 +269,747 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/05/15/xiaochengxu3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/05/15/xiaochengxu3/" itemprop="url">微信小程序图片上传及全屏预览</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T15:18:08+08:00">
+                2018-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/微信小程序/" itemprop="url" rel="index">
+                    <span itemprop="name">微信小程序</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ####在小程序项目中上传资料的时候一般都需要上传图片，这里介绍一个多图上传，及全屏预览。
+####1.wxml 
+&lt;image class=&apos;addimg&apos; src=&apos;../../images/addpic.png&apos; bindtap=&apos;upImg&apos;&gt;&lt;/image&gt;
+&lt;view class=&apos;l-pic-list&apos; wx:if=&quot;{{imgStatus}}&quot;&gt;
+  &lt;image src=&apos;{{item}}&apos; wx:for=&quot;{{zhaopianImg}}&quot;  class=&apos;zhaopianImg&apos; data-index=&quot;{{index}}&quot; bindtap=&quot;previewImage&quot;&gt;&lt;/image&gt;
+&lt;/view&gt;
+这里是装图片的容器及路径。
+####2.js  
+pictures: [], //预览图片arr
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/05/15/xiaochengxu3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/05/10/yuanxin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/05/10/yuanxin/" itemprop="url">理解JavaScript原型对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T16:04:40+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/js原型/" itemprop="url" rel="index">
+                    <span itemprop="name">js原型</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ####为什么要使用原型对象  
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/05/10/yuanxin/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/05/10/webPack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/05/10/webPack/" itemprop="url">webPack学习之路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T10:33:06+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ####什么是webpack?  
+WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。在3.0出现后，Webpack还肩负起了优化项目的责任。  
+1.打包：可以把多个Javascript文件打包成一个文件，减少服务器压力和下载带宽。2.转换： 拓展语言转换成为普通的JavaScript，让浏览器顺利运行。3.优化：前端变的越来越复杂后，性能也会遇到问题，而WebPack也开始肩负起了优化和提升性能的责任。  
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/05/10/webPack/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/05/10/vue-router/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/05/10/vue-router/" itemprop="url">vue-router的简单介绍及使用方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T09:17:03+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/vue-router/" itemprop="url" rel="index">
+                    <span itemprop="name">vue-router</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ####安装和引用
+首先安装依赖 
+npm install vue-router  
+接着在项目中引入vue-router 。一般我们在用vue-cli创建项目的时候，就会提示是否安装路由，选择是就可以了。  
+####router.js的配置  
+Vue.use是用加载全局组件的。  
+mode:默认为hash，用hash模式的话，页面地址为变成被加个#号，如：
+http://localhost:8080/#/xxx  
+base:应用的基路径。例如，如果整个单页应用服务在 /app/ 下，然后 base 就应该设为 “/app/“。一般写成 __dirname，在webpack中有配置。  
+router:vue-router的核心，包含页面的所有配置  
+path:访问这个页面的路径name:给这个页面路径定义一个名字，当在页面进行跳转的时候也可以用名字跳转，要唯一。component组件，就是我们在最上面引入的 import …了，当然这个组件的写法还有一种懒加载  
+懒加载：懒加载的方式，我们就不需要再用import去引入组件了，直接如下即可。懒加载的好处是当你访问到这个页面
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/05/10/vue-router/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/05/09/vue1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/05/09/vue1/" itemprop="url">vue1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T10:01:39+08:00">
+                2018-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/05/09/vue1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/28/axios/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1070,818 +1811,11 @@ $.ajax({
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/11/kuaiyingyong/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/04/11/kuaiyingyong/" itemprop="url">快应用简单介绍及遇见问题总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-11T15:47:08+08:00">
-                2018-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/快应用/" itemprop="url" rel="index">
-                    <span itemprop="name">快应用</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ###随着3月20号北京开发的快应用(quickapp)的发布,各大手机应用厂商加入了快应用这个行列，该应用模块以标准js语法+重组css标签+Flexbox布局+mvvm模式。类似于微信小程序的依附在微信中，而快应用依附在各大应用市场，可搜索直接打开，无需安装的便捷操作方式。
-####环境搭建（window平台）1.安装nodejs2.安装hap-toolkit（打开cmd-&gt;npm install -g hap-toolkit)3.安装完成输入命令(hap -V)
-正确输出版本信息说明安装成功。例如（0.0.26）
-####所推荐使用的IDE
-推荐的ide为vscode+hap extension插件开发
-####初始化项目
-1.执行以下命令初始化项目
-hap init (你的项目名称)
-命令生成后，该目录的结构如下
-├── node_modules
-├── sign                      rpk包签名模块
-│   └── debug                 调试环境
-│       ├── certificate.pem   证书文件
-│    
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/04/11/kuaiyingyong/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/03/20/xiaochengxu2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/03/20/xiaochengxu2/" itemprop="url">微信小程序-短信倒计时效果</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T11:28:59+08:00">
-                2018-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/微信小程序/" itemprop="url" rel="index">
-                    <span itemprop="name">微信小程序</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ####在项目中，经常会有注册功能，那么就会用到短信验证码，为了防止用户重复请求，造成的资源浪费，就可以使用短信倒计时的效果。   
-.wxml
-&lt;view class=&apos;list&apos;&gt;
-  &lt;view class=&quot;list-tit&quot;&gt;手机号&lt;/view&gt;
-  &lt;view class=&quot;list-input&quot;&gt;
-    &lt;input type=&quot;digit&quot; class=&quot;input&quot; bindinput=&quot;tels&quot; name=&quot;tel&quot; value=&quot;{{ptel}}&quot; &gt;&lt;/input&gt;
-  &lt;/view&gt;
-&lt;/view&gt;
- &lt;view class=&apos;list&apos;&gt;
-  &lt;view class=&quot;list-tit list-tit2&quot;&gt;验证码&lt;/view&gt;
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/03/20/xiaochengxu2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/03/16/es6-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/03/16/es6-5/" itemprop="url">ES6-新增的数组知识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T19:55:10+08:00">
-                2018-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ###JSON数组格式转换
-Array.from(json)
-###数组的遍历
-这种形式比ES5的for循环要简单而且高效。
-let arr=[&apos;html&apos;,&apos;css&apos;,&apos;js&apos;]
-
-for(let item of arr){
-    console.log(item);
-}
-####for…of数组索引:
-for (let index of arr.keys()){
-    console.log(index);
-}
-####同时输出数组的内容和索引:用entries()这个实例方法，配合我们的for…of循环就可以同时输出内容和索引了。
-for (let [index,val] of arr.entries()){
-console.log(index+&apos;:&apos;+val);
-}
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/03/16/es6-5/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/03/16/es6-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/03/16/es6-4/" itemprop="url">ES6-数字操作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T19:30:30+08:00">
-                2018-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ###数字判断和转换
-数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。
-let a= 11/4;
-console.log(Number.isFinite(a));//true
-console.log(Number.isFinite(&apos;xxx&apos;));//false
-###NaN验证 Number.isNaN()
-console.log(Number.isNaN(NaN)); //true
-###判断是否为整数Number.isInteger(xx)
-let a=123.1;
-console.log(Number.isInteger(a)); //false
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/03/16/es6-4/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/03/16/es6-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/03/16/es6-3/" itemprop="url">ES6-字符串模板</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T18:30:05+08:00">
-                2018-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/ES6/" itemprop="url" rel="index">
-                    <span itemprop="name">ES6</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ###字符串模板
-使用字符串模板可以比较方便的让我们拼接字符串
-let york = &apos;穿过繁华&apos;;
-let blog = `这是我的博客，博客名字叫${york}`;
-在拼接的时候，使用不是单引号或双引号，而是反引号（在tab键上面）变量用 ${} 符号来引入。
-###对运算的支持
-let a =1;
-let b =2;
-let add = `${a+b}`;
-###字符串查找（支持中文查找）
-####查找是否存在：.includes()  返回布尔值
-let blog = &apos;博客&apos;；
-let jies = &apos;Hello 大家好，这是我的博客，欢迎大家瞧一瞧&apos;;
-console.log(jies.includes(blog));
-####判断开头是否存在 .startsWith() 返回布尔值
-console.log(jies.startsWith(blog));
-####判断结尾是否存在 .endsWith() 返回布尔值
-console.log(jies.endsWith(blog));
-####复制字符串 .repea
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/03/16/es6-3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/liuyang996.github.io/page/2/">2</a><a class="extend next" rel="next" href="/liuyang996.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/liuyang996.github.io/page/2/">2</a><a class="page-number" href="/liuyang996.github.io/page/3/">3</a><a class="extend next" rel="next" href="/liuyang996.github.io/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1931,7 +1865,7 @@ console.log(jies.endsWith(blog));
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1942,7 +1876,7 @@ console.log(jies.endsWith(blog));
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1953,7 +1887,7 @@ console.log(jies.endsWith(blog));
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
