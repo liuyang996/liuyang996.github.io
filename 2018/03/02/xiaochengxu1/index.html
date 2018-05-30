@@ -88,7 +88,7 @@
 <meta property="og:description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/02/xiaochengxu1/jietu1.png">
-<meta property="og:updated_time" content="2018-05-17T01:56:03.091Z">
+<meta property="og:updated_time" content="2018-05-30T03:24:34.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序开发中遇到的问题及经常使用的代码">
 <meta name="twitter:description" content="####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习 ####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上">
@@ -435,20 +435,20 @@ function getDistance(lng1, lat1, lng2, lat2) {
  title: &apos;标题&apos;,
 }) 
 </code></pre><p>8.请求接口</p>
-<pre><code>wx.request({
-  url: &apos;test.php&apos;, //仅为示例，并非真实的接口地址
-  data: {
-     x: &apos;&apos; ,
-     y: &apos;&apos;
-  },
-  method:&apos;POST&apos;,
-  header: {
-      &apos;content-type&apos;: &apos;application/json&apos; // 默认值
-  },
-  success: function(res) {
-    console.log(res.data)
-  }
-})
+<pre><code>function sendRequest(path, data, callback) {
+    wx.request({
+        url: path, 
+        data: data,
+        header: {
+            &apos;content-type&apos;: &apos;application/json&apos;
+        },
+        method: &quot;POST&quot;,
+        success: callback,
+        fail:(res)=&gt;{
+          console.log(res)
+        }
+    })
+}
 </code></pre><p>9.跳转页面常用方式  </p>
 <pre><code> wx.navigateTo({ //保留当前页面
       url: &apos;&apos;   
@@ -492,8 +492,8 @@ wx.switchTab({   //跳转tabBar页面
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/liuyang996.github.io/2018/02/20/css/" rel="next" title="css默认样式">
-                <i class="fa fa-chevron-left"></i> css默认样式
+              <a href="/liuyang996.github.io/2018/02/20/css/" rel="next" title="css样式及常用布局">
+                <i class="fa fa-chevron-left"></i> css样式及常用布局
               </a>
             
           </div>
@@ -576,7 +576,7 @@ wx.switchTab({   //跳转tabBar页面
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -587,7 +587,7 @@ wx.switchTab({   //跳转tabBar页面
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -598,7 +598,7 @@ wx.switchTab({   //跳转tabBar页面
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

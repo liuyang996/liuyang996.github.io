@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/liuyang996.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/liuyang996.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/liuyang996.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/liuyang996.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/liuyang996.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/liuyang996.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue项目,vue饿了么app," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="###记录vue饿了么app项目过程的一些可用点   ####1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   ####2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vu">
+<meta name="keywords" content="vue项目,vue饿了么app">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue仿饿了么app项目">
+<meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/index.html">
+<meta property="og:site_name" content="穿过繁华的博客">
+<meta property="og:description" content="###记录vue饿了么app项目过程的一些可用点   ####1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   ####2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock1.png">
+<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock2.png">
+<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock3.png">
+<meta property="og:updated_time" content="2018-05-22T08:21:22.203Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue仿饿了么app项目">
+<meta name="twitter:description" content="###记录vue饿了么app项目过程的一些可用点   ####1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   ####2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vu">
+<meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/liuyang996.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/"/>
+
+
+
+
+
+  <title>vue仿饿了么app项目 | 穿过繁华的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/liuyang996.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">穿过繁华的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/liuyang996.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/liuyang996.github.io/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/liuyang996.github.io/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/liuyang996.github.io/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/liuyang996.github.io/message" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/liuyang996.github.io/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">vue仿饿了么app项目</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-24T09:30:00+08:00">
+                2018-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/vue项目/" itemprop="url" rel="index">
+                    <span itemprop="name">vue项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###记录vue饿了么app项目过程的一些可用点  </p>
+<p>####1.图标字图制作<br> icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标  </p>
+<p>####2.项目目录<br> 主要设置src文件下的目录，  </p>
+<p>  1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。<br>  2.components文件夹一般不直接放.vue文件，根据组件化新建文件夹，如header组件，可以新建header文件夹，在里面创建header.vue。  </p>
+<p>####3.mock数据(模拟后台数据)<br> 在项目build文件夹下的，webpack.dev.conf.js（以前是dev-server.js）  </p>
+<p>1.在const portfinder = require(‘portfinder’)后添加</p>
+<pre><code>  //添加mock数据 
+const express = require(&apos;express&apos;)
+const app = express()
+var appData = require(&apos;../data.json&apos;);
+var seller = appData.seller;
+var goods = appData.goods;
+var ratings = appData.ratings;
+var apiRoutes = express.Router();
+app.use(&apos;/api&apos;,apiRoutes)
+</code></pre><p>2.//然后找到devServer,在里面添加  </p>
+<pre><code>before(app){
+  app.get(&apos;/api/seller&apos;,(req,res)=&gt;{
+     res.json({
+        errno:0,
+        data:seller
+     })
+  });
+      app.get(&apos;/api/goods&apos;,(req,res)=&gt;{
+        res.json({
+           errno:0,
+           data:goods
+        })
+     });
+     app.get(&apos;/api/ratings&apos;,(req,res)=&gt;{
+      res.json({
+         errno:0,
+         data:ratings
+      })
+   })
+}
+</code></pre><p>3、然后npm run dev，一定要重启 一下就可以http:/localhost:8080/api/seller 访问了  </p>
+<p>4.截图 </p>
+<p><img src="/liuyang996.github.io/2018/03/24/vueSell/mock1.png" alt="name" title="截图"><br><img src="/liuyang996.github.io/2018/03/24/vueSell/mock2.png" alt="name" title="截图"><br><img src="/liuyang996.github.io/2018/03/24/vueSell/mock3.png" alt="name" title="截图"> </p>
+<p>vue-loader依赖postcss搞定css兼容问题，所以不用再写css兼容样式</p>
+<p>####4.开发webapp用手机查看效果小技巧<br>当我们在PC端上开发webapp时，有时候想用手机查看效果时，可以用这个办法实现。  </p>
+<p>1.先查看电脑的ip地址，命令行 ipconfig，查到后在地址栏把localhost换成你的IP地址，如果是vue的话，检查下，build-config-index.js文件，找打module.exports里的host，把localhost改为自己的IP地址。</p>
+<p>2.使用草料二维码，把网址生成成一个二维码，用微信扫一下即可查看效果。</p>
+<p>PS：保证电脑和手机在一个网段。 </p>
+<p>####5.父组件向子组件通信</p>
+<p>#####父组件：  </p>
+<pre><code>&lt;v-header :seller=&apos;seller&apos;&gt;&lt;/v-header&gt;  
+
+ data(){
+    return{
+      seller:{},
+    }
+  },  
+</code></pre><p>组件 “:seller” 为传递名称 ‘=’后的seller为传递值  </p>
+<p>#####子组件<br>子组件通过props来接收数据：  </p>
+<p>方式1：  </p>
+<pre><code>props:[&apos;seller&apos;] 
+</code></pre><p>方式2：  </p>
+<pre><code>props: {
+    seller: Object 
+}  
+</code></pre><p>方式3：  </p>
+<pre><code>props: {
+    seller: {
+        type: Object,        
+    }
+}
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/liuyang996.github.io/tags/vue项目/" rel="tag"># vue项目</a>
+          
+            <a href="/liuyang996.github.io/tags/vue饿了么app/" rel="tag"># vue饿了么app</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/liuyang996.github.io/2018/03/20/xiaochengxu2/" rel="next" title="微信小程序-短信倒计时效果">
+                <i class="fa fa-chevron-left"></i> 微信小程序-短信倒计时效果
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/liuyang996.github.io/2018/04/11/kuaiyingyong/" rel="prev" title="快应用简单介绍及遇见问题总结">
+                快应用简单介绍及遇见问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/liuyang996.github.io/images/toux.jpg"
+                alt="York" />
+            
+              <p class="site-author-name" itemprop="name">York</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/liuyang996.github.io/archives">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/liuyang996.github.io/categories/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/liuyang996.github.io/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/liuyang996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">York</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/liuyang996.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/liuyang996.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

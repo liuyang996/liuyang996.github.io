@@ -82,14 +82,14 @@
 <meta name="description" content="/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {     margin: 0;     padding: 0; } *{box-sizing: border-box;} html, body {     mi">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css默认样式">
+<meta property="og:title" content="css样式及常用布局">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/20/css/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
 <meta property="og:description" content="/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {     margin: 0;     padding: 0; } *{box-sizing: border-box;} html, body {     mi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-20T02:47:39.445Z">
+<meta property="og:updated_time" content="2018-05-29T08:43:45.233Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css默认样式">
+<meta name="twitter:title" content="css样式及常用布局">
 <meta name="twitter:description" content="/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {     margin: 0;     padding: 0; } *{box-sizing: border-box;} html, body {     mi">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>css默认样式 | 穿过繁华的博客</title>
+  <title>css样式及常用布局 | 穿过繁华的博客</title>
   
 
 
@@ -290,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css默认样式</h1>
+          <h1 class="post-title" itemprop="name headline">css样式及常用布局</h1>
         
 
         <div class="post-meta">
@@ -451,6 +451,65 @@ textarea {
     *display: inline;
     *zoom: 1;
 }
+</code></pre><p>####Sticky footer布局  </p>
+<p>作用：在实际开发中，我们经常会遇到这样一个需求：如果页面小于一屏时，页脚块需要固定在页面底部，如果页面超过一屏时，页脚块向下推送。</p>
+<pre><code>&lt;div class=&quot;wrapper clearfix&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;
+      // 这里是页面内容
+    &lt;/div&gt;  
+&lt;/div&gt;
+&lt;div class=&quot;footer&quot;&gt;
+    // 这里是footer的内容
+&lt;/div&gt;
+</code></pre><p>css代码：</p>
+<pre><code>.wrapper {
+    min-height: 100%;
+}
+
+.wrapper .content{
+    padding-bottom: 50px; /* footer区块的高度 */
+}
+
+.footer {
+    position: relative;
+    margin-top: -50px;  /* 使footer区块正好处于content的padding-bottom位置 */
+    height: 50px;
+    clear: both;
+}
+
+.clearfix::after {
+    display: block;
+    content: &quot;.&quot;;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+</code></pre><p>注意:content元素的padding-bottom、footer元素的高度以及footer元素的margin-top值必须要保持一致。</p>
+<p>####flex实现左侧固定宽度，右侧自适应宽度  </p>
+<pre><code>&lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div class=&quot;sideBar&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>css样式</p>
+<pre><code>html,body,wrapper{
+     width:100%;
+     height:100%;
+}
+.wrapper{
+    display:flex;
+}
+
+.sideBar{
+    flex: 0 0 80px //设置固定宽度为80px
+}
+.content{
+    flex:1
+ }
+</code></pre><p>####单行或多行文字实现垂直居中  </p>
+<p>父元素:</p>
+<pre><code>display:table
+</code></pre><p>子元素：</p>
+<pre><code>display:table-cell
 </code></pre>
       
     </div>
@@ -565,7 +624,7 @@ textarea {
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -576,7 +635,7 @@ textarea {
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -587,7 +646,7 @@ textarea {
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

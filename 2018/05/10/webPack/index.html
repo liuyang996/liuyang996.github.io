@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="穿过繁华的博客">
 <meta property="og:description" content="####什么是webpack?   WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。在3.0出现后，Webpack还肩负起了优化项目的责任。   1.打包：可以把多个Javascript文件打包成一个文件，减少服务器压力和下载带宽">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-10T09:52:15.423Z">
+<meta property="og:updated_time" content="2018-05-22T01:20:30.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webPack学习之路">
 <meta name="twitter:description" content="####什么是webpack?   WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。在3.0出现后，Webpack还肩负起了优化项目的责任。   1.打包：可以把多个Javascript文件打包成一个文件，减少服务器压力和下载带宽">
@@ -365,6 +365,36 @@
         <p>####什么是webpack?  </p>
 <p>WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。在3.0出现后，Webpack还肩负起了优化项目的责任。  </p>
 <p>1.打包：可以把多个Javascript文件打包成一个文件，减少服务器压力和下载带宽。<br>2.转换： 拓展语言转换成为普通的JavaScript，让浏览器顺利运行。<br>3.优化：前端变的越来越复杂后，性能也会遇到问题，而WebPack也开始肩负起了优化和提升性能的责任。  </p>
+<p>全局安装  </p>
+<pre><code>npm install -g webpack  
+</code></pre><p>对项目进行安装  </p>
+<p>先切换至要安装的项目路径<br>在命令行输入：  </p>
+<pre><code>npm init  
+</code></pre><p>会生成package.json文件  </p>
+<p>输入下面命令进行项目目录的安装：  </p>
+<pre><code>npm install --save-dev webpack  
+</code></pre><p>这里的参数-save是要保存到package.json中，dev是在开发时使用这个包，而生产环境中不使用。  </p>
+<p>开发环境and生产环境<br>    1.开发环境：在开发时需要的环境，这里指在开发时需要依赖的包。<br>    2.生产环境：程序开发完成，开始运行后的环境，这里指要使项目运行，所需要的依赖包。</p>
+<p>查看webpack版本  </p>
+<pre><code>webpack -v  
+</code></pre><p>src文件夹：用来存放我们编写的javascript代码，可以简单的理解为用JavaScript编写的模块。<br>dist文件夹：用来存放供浏览器读取的文件，这个是webpack打包成的文件。   </p>
+<p>webpack打包  </p>
+<pre><code>webpack {entry file} {destination for bundled file}  
+</code></pre><p>1.{entry file}:入口文件的路径，src/<strong><em><br>2.{destination for bundled file}:填写打包后存放的路径，dist/</em></strong><br>注意：在命令行中不需要写{}。</p>
+<p>####配置文件webpack.config.js<br>webpack.config.js就是Webpack的配置文件，这个文件需要自己在项目根目录下手动建立。  </p>
+<pre><code>module.exports={
+    //入口文件的配置项
+    entry:{},
+    //出口文件的配置项
+    output:{},
+    //模块：例如解读CSS,图片如何转换，压缩
+    module:{},
+    //插件，用于生产模版和各项功能
+    plugins:[],
+    //配置webpack开发服务功能
+    devServer:{}
+}
+</code></pre><p>  1.entry:配置入口文件的地址，可以是单一入口，也可以是多入口。<br>  2.output：配置文件的地址，在webpack2.X版本后，支持多出口配置。<br>  3.resolve:模块相关配置</p>
 
       
     </div>
@@ -479,7 +509,7 @@
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -490,7 +520,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -501,7 +531,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
