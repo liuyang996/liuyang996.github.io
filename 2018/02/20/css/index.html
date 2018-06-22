@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="穿过繁华的博客">
 <meta property="og:description" content="/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {     margin: 0;     padding: 0; } *{box-sizing: border-box;} html, body {     mi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T08:43:45.233Z">
+<meta property="og:updated_time" content="2018-06-15T01:34:45.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css样式及常用布局">
 <meta name="twitter:description" content="/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {     margin: 0;     padding: 0; } *{box-sizing: border-box;} html, body {     mi">
@@ -451,6 +451,73 @@ textarea {
     *display: inline;
     *zoom: 1;
 }
+</code></pre><p>####自定义模态弹窗  </p>
+<pre><code>&lt;div class=&quot;dialog-overlay&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;dialog-box&quot;&gt;
+    &lt;div class=&quot;dialog-content&quot;&gt;
+
+    &lt;/div&gt;
+    &lt;div class=&quot;close&quot;&gt;x&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>css:  </p>
+<pre><code>/* 弹框样式  */
+.dialog-overlay{
+   width:100%; 
+     height:100%;
+     filter:alpha(opacity=50); 
+     -moz-opacity:0.5; 
+     -khtml-opacity: 0.5; 
+     opacity: 0.5; 
+     position:absolute; 
+     background:#000; 
+     top:0; left:0; 
+     z-index:999; 
+     display:block;
+} 
+.dialog-box{
+   /* -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+     -moz-border-radius: 5px;
+    -webkit-border-radius: 5px; */
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+   border-radius: 5px;
+     background:#fbf9fe;
+     position:absolute; 
+     z-index:1000; 
+     display:block;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+dialog-content{
+   text-align:left; 
+     padding:20rpx; 
+     color:#666; 
+     font-family:arial;
+     font-size:24rpx; 
+     position: relative;
+}
+.dialog-box .close{
+  padding: 0;
+  position: absolute;
+      right: -20rpx;
+      top: -20rpx;
+     z-index: 1099;
+     background-color: #e33100;
+     display: block;
+     width:50rpx;
+     height:50rpx;
+     line-height: 44rpx;
+     border-radius: 50%;
+     color: #fff;
+     text-decoration: none;
+     font-weight: bold;
+     text-align:center;  
+     text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+     border-bottom: 1px solid rgba(0,0,0,0.25);
+     cursor: pointer;
+}
 </code></pre><p>####Sticky footer布局  </p>
 <p>作用：在实际开发中，我们经常会遇到这样一个需求：如果页面小于一屏时，页脚块需要固定在页面底部，如果页面超过一屏时，页脚块向下推送。</p>
 <pre><code>&lt;div class=&quot;wrapper clearfix&quot;&gt;
@@ -510,6 +577,30 @@ textarea {
 <pre><code>display:table
 </code></pre><p>子元素：</p>
 <pre><code>display:table-cell
+</code></pre><p>####背景模拟效果  </p>
+<p>html:  </p>
+<pre><code>&lt;div class=&apos;wrap&apos;&gt;
+    &lt;div class=&apos;background&apos;&gt;
+        &lt;img src=&quot;images/ex4.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%;height: 100%;&quot;&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>css:    </p>
+<pre><code>.wrap{
+   position:relative
+ }
+.background{
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   -webkit-filter: blur(10px); /* Chrome, Opera */
+   -moz-filter: blur(10px);
+   -ms-filter: blur(10px);    
+   filter: blur(10px);
+   z-index: -1;
+
+ }
 </code></pre>
       
     </div>
@@ -624,7 +715,7 @@ textarea {
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -635,7 +726,7 @@ textarea {
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -646,7 +737,7 @@ textarea {
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

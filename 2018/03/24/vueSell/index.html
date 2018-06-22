@@ -90,7 +90,7 @@
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock1.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock2.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock3.png">
-<meta property="og:updated_time" content="2018-05-22T08:21:22.203Z">
+<meta property="og:updated_time" content="2018-06-09T07:29:13.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue仿饿了么app项目">
 <meta name="twitter:description" content="###记录vue饿了么app项目过程的一些可用点   ####1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   ####2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vu">
@@ -430,9 +430,16 @@ app.use(&apos;/api&apos;,apiRoutes)
 </code></pre><p>方式3：  </p>
 <pre><code>props: {
     seller: {
-        type: Object,        
+        type: Object, 
+        default:{}       
     }
 }
+</code></pre><p>写的函数在vue作用域中可以相互调用</p>
+<p>访问DOM方法</p>
+<p>html：  </p>
+<pre><code>&lt;div ref=&apos;wrapper&apos;&gt;&lt;/div&gt;
+</code></pre><p>js:  </p>
+<pre><code>this.$refs.wrapper
 </code></pre>
       
     </div>
@@ -549,7 +556,7 @@ app.use(&apos;/api&apos;,apiRoutes)
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -560,7 +567,7 @@ app.use(&apos;/api&apos;,apiRoutes)
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -571,7 +578,7 @@ app.use(&apos;/api&apos;,apiRoutes)
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
