@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="穿过繁华的博客">
 <meta property="og:description" content="title: ionicdate: 2017-10-05 16:34:00categories: ionic tags: [ionic] 在项目中使用ionic3搭建APP。   ####环境搭建   需要安装以下软件和插件    1.安装nodeJS(自带npm),建议安装版本不要太高。 2.配置cnpm(使用淘宝镜像取代npm)    配置npm国内镜像： 因为国内的网络环境原因，在用npm">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-22T09:54:10.550Z">
+<meta property="og:updated_time" content="2018-06-25T01:50:01.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="穿过繁华的博客">
 <meta name="twitter:description" content="title: ionicdate: 2017-10-05 16:34:00categories: ionic tags: [ionic] 在项目中使用ionic3搭建APP。   ####环境搭建   需要安装以下软件和插件    1.安装nodeJS(自带npm),建议安装版本不要太高。 2.配置cnpm(使用淘宝镜像取代npm)    配置npm国内镜像： 因为国内的网络环境原因，在用npm">
@@ -379,12 +379,7 @@ constructor(public navCtrl: NavController) {
          this.title=this.params.get(&apos;参数名&apos;);
 
     }
-</code></pre><p>2.组件使用  </p>
-<p> （1)组建的创建  </p>
-<pre><code>ionic g component  ion-products  
-</code></pre><p>  (2)组件的数据交互  </p>
-<p>  通过@Input()来实现数据交互，ion-products.ts完整代码如下：</p>
-<p>####ionic npm/cordova相关命令</p>
+</code></pre><p>####ionic npm/cordova相关命令</p>
 <ol>
 <li><p>新建页面  </p>
 <p> <code>ionic g page login</code></p>
@@ -404,9 +399,21 @@ ionic cordova plugin --help
 </code></pre><p>5.安装/删除插件  </p>
 <pre><code>ionic cordova plugin remove 插件名 //先根据上面的list列出插件，然后根据插件名卸载
 ionic cordova plugin add 插件地址 //这个插件地址可以是github的项目地址，也可以是一个文件夹路径
-</code></pre><p>开发过程中遇到的问题：  </p>
-<p>1.打包时，注意签名是唯一的，在widget标签里的ID属性 ，还有如果安装说版本问题，就改version属性。<br>2.使用ionic-native/image-picker图片选择器插件的时候，图片太大会导致卡死或者闪退，,width,height至少设一个，(如果使用的图片选择器版本过低,outputType属性可能会失效，就无法返回base格式)</p>
-
+</code></pre><p>####ionic3 常用指令使用 </p>
+<p>1 点击事件  </p>
+<pre><code>（click）=&quot;myClick()&quot;  
+</code></pre><p>2 循环  </p>
+<pre><code>*ngFor=&quot;let of items&quot;  
+</code></pre><p>3 hidden隐藏  </p>
+<pre><code>[hidden]=&quot; &quot;
+</code></pre><p>4 ngif  </p>
+<pre><code>*ngIf=&quot;&quot;  
+</code></pre><p>5 数据绑定 </p>
+<pre><code>[(ngModel)]=&quot;&quot;  
+</code></pre><p>6 ngClass  </p>
+<pre><code>// *ngFor=&quot;let items of communityList, let i =index&quot;
+[ngClass]=&quot;{&apos;txt&apos;:activeIndex==i}&quot;  
+</code></pre>
       
     </div>
     

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="穿过繁华的博客">
 <meta property="og:description" content="/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {     margin: 0;     padding: 0; } *{box-sizing: border-box;} html, body {     mi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-15T01:34:45.670Z">
+<meta property="og:updated_time" content="2018-06-23T06:45:21.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css样式及常用布局">
 <meta name="twitter:description" content="/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {     margin: 0;     padding: 0; } *{box-sizing: border-box;} html, body {     mi">
@@ -601,7 +601,26 @@ dialog-content{
    z-index: -1;
 
  }
-</code></pre>
+</code></pre><p>####flex实现1行指定div个数布局方式</p>
+<p>html：  </p>
+<pre><code>&lt;div class=&quot;community-list&quot;&gt;
+    &lt;div class=&quot;community-item&quot;&gt;
+        content....    
+    &lt;/div&gt;
+    ...
+&lt;/div&gt;
+</code></pre><p>css:   </p>
+<pre><code>.community-list{
+    display: flex;
+    flex-wrap: wrap;
+    ....
+}
+
+ .community-item{
+    flex: 0 0 25%;
+ }
+</code></pre><p>PS:我这里一行指定4个，根据需要改变 flex: 0 0 (百分比) 的值即可。</p>
+
       
     </div>
     
