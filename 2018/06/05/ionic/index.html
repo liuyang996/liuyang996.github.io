@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="穿过繁华的博客">
 <meta property="og:description" content="title: ionic常用命令date: 2017-10-05 16:34:00categories: ionic tags: [ionic] 在项目中使用ionic3搭建APP。   ####环境搭建   需要安装以下软件和插件    1.安装nodeJS(自带npm),建议安装版本不要太高。 2.配置cnpm(使用淘宝镜像取代npm)    配置npm国内镜像： 因为国内的网络环境原因，在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-02T09:31:39.771Z">
+<meta property="og:updated_time" content="2018-07-05T00:58:03.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="穿过繁华的博客">
 <meta name="twitter:description" content="title: ionic常用命令date: 2017-10-05 16:34:00categories: ionic tags: [ionic] 在项目中使用ionic3搭建APP。   ####环境搭建   需要安装以下软件和插件    1.安装nodeJS(自带npm),建议安装版本不要太高。 2.配置cnpm(使用淘宝镜像取代npm)    配置npm国内镜像： 因为国内的网络环境原因，在">
@@ -386,11 +386,11 @@ constructor(public navCtrl: NavController) {
 </li>
 </ol>
 <p>2.打包命令(run是使用数据线连接，直接安装到手机上，build是下载到目录里)</p>
-<pre><code>ionic cordova run android --prod
+<pre><code>ionic cordova build android --prod
 
-ionic cordova run android --prop
+ionic cordova build android --prop
 
-ionic cordova run android --aot   
+ionic cordova build android --aot   
 </code></pre><p>3.查看插件安装情况</p>
 <pre><code>ionic cordova plugin list
 ionic cordova plugin --help
@@ -413,6 +413,22 @@ ionic cordova plugin add 插件地址 //这个插件地址可以是github的项�
 </code></pre><p>6 ngClass  </p>
 <pre><code>// *ngFor=&quot;let items of communityList, let i =index&quot;
 [ngClass]=&quot;{&apos;txt&apos;:activeIndex==i}&quot;  
+</code></pre><ol start="7">
+<li><p>input焦点事件  </p>
+<pre><code>(ionBlur)=&quot;blurInput()&quot;  
+
+(ionFocus)=&quot;focusInput()&quot;
+</code></pre></li>
+</ol>
+<p>ionFocus为输入框获取焦点的属性  </p>
+<p>ionBlur为输入框失去焦点的属性</p>
+<p>####ionic3  js调用ionic3框架自带组件实例方法  </p>
+<p>1.使用ViewChild定义</p>
+<pre><code>@ViewChild(&apos;SelectT&apos;) select1: Select; 
+</code></pre><p>2.在html加入定义的Select1  </p>
+<pre><code>&lt;ion-select [(ngModel)]=&quot;loudongSelect&quot; #SelectT&gt;&lt;/ion-select&gt;
+</code></pre><p>3.调用组件实例 </p>
+<pre><code>this.select1.open();  
 </code></pre>
       
     </div>
@@ -530,7 +546,7 @@ ionic cordova plugin add 插件地址 //这个插件地址可以是github的项�
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
