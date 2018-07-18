@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="###记录vue饿了么app项目过程的一些可用点   ####1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   ####2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vu">
+<meta name="description" content="记录vue饿了么app项目过程的一些可用点1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vue文件，根据组件化新建文件夹">
 <meta name="keywords" content="vue项目,vue饿了么app">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue仿饿了么app项目">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="###记录vue饿了么app项目过程的一些可用点   ####1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   ####2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vu">
+<meta property="og:description" content="记录vue饿了么app项目过程的一些可用点1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vue文件，根据组件化新建文件夹">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock1.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock2.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock3.png">
-<meta property="og:updated_time" content="2018-06-09T07:29:13.082Z">
+<meta property="og:updated_time" content="2018-07-17T07:25:48.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue仿饿了么app项目">
-<meta name="twitter:description" content="###记录vue饿了么app项目过程的一些可用点   ####1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   ####2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vu">
+<meta name="twitter:description" content="记录vue饿了么app项目过程的一些可用点1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标   2.项目目录 主要设置src文件下的目录，     1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。  2.components文件夹一般不直接放.vue文件，根据组件化新建文件夹">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/03/24/vueSell/mock1.png">
 
 
@@ -104,7 +104,7 @@
     root: '/liuyang996.github.io/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -188,7 +188,7 @@
         <li class="menu-item menu-item-home">
           <a href="/liuyang996.github.io/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -198,7 +198,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/liuyang996.github.io/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -208,7 +208,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/liuyang996.github.io/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -218,19 +218,9 @@
         <li class="menu-item menu-item-tags">
           <a href="/liuyang996.github.io/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-message">
-          <a href="/liuyang996.github.io/message" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            留言
           </a>
         </li>
       
@@ -238,7 +228,7 @@
         <li class="menu-item menu-item-about">
           <a href="/liuyang996.github.io/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -246,9 +236,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -350,6 +374,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  567
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -366,11 +421,10 @@
       
 
       
-        <p>###记录vue饿了么app项目过程的一些可用点  </p>
-<p>####1.图标字图制作<br> icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标  </p>
-<p>####2.项目目录<br> 主要设置src文件下的目录，  </p>
+        <h3 id="记录vue饿了么app项目过程的一些可用点"><a href="#记录vue饿了么app项目过程的一些可用点" class="headerlink" title="记录vue饿了么app项目过程的一些可用点"></a>记录vue饿了么app项目过程的一些可用点</h3><h4 id="1-图标字图制作"><a href="#1-图标字图制作" class="headerlink" title="1.图标字图制作"></a>1.图标字图制作</h4><p> icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标  </p>
+<h4 id="2-项目目录"><a href="#2-项目目录" class="headerlink" title="2.项目目录"></a>2.项目目录</h4><p> 主要设置src文件下的目录，  </p>
 <p>  1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。<br>  2.components文件夹一般不直接放.vue文件，根据组件化新建文件夹，如header组件，可以新建header文件夹，在里面创建header.vue。  </p>
-<p>####3.mock数据(模拟后台数据)<br> 在项目build文件夹下的，webpack.dev.conf.js（以前是dev-server.js）  </p>
+<h4 id="3-mock数据-模拟后台数据"><a href="#3-mock数据-模拟后台数据" class="headerlink" title="3.mock数据(模拟后台数据)"></a>3.mock数据(模拟后台数据)</h4><p> 在项目build文件夹下的，webpack.dev.conf.js（以前是dev-server.js）  </p>
 <p>1.在const portfinder = require(‘portfinder’)后添加</p>
 <pre><code>  //添加mock数据 
 const express = require(&apos;express&apos;)
@@ -406,13 +460,11 @@ app.use(&apos;/api&apos;,apiRoutes)
 <p>4.截图 </p>
 <p><img src="/liuyang996.github.io/2018/03/24/vueSell/mock1.png" alt="name" title="截图"><br><img src="/liuyang996.github.io/2018/03/24/vueSell/mock2.png" alt="name" title="截图"><br><img src="/liuyang996.github.io/2018/03/24/vueSell/mock3.png" alt="name" title="截图"> </p>
 <p>vue-loader依赖postcss搞定css兼容问题，所以不用再写css兼容样式</p>
-<p>####4.开发webapp用手机查看效果小技巧<br>当我们在PC端上开发webapp时，有时候想用手机查看效果时，可以用这个办法实现。  </p>
+<h4 id="4-开发webapp用手机查看效果小技巧"><a href="#4-开发webapp用手机查看效果小技巧" class="headerlink" title="4.开发webapp用手机查看效果小技巧"></a>4.开发webapp用手机查看效果小技巧</h4><p>当我们在PC端上开发webapp时，有时候想用手机查看效果时，可以用这个办法实现。  </p>
 <p>1.先查看电脑的ip地址，命令行 ipconfig，查到后在地址栏把localhost换成你的IP地址，如果是vue的话，检查下，build-config-index.js文件，找打module.exports里的host，把localhost改为自己的IP地址。</p>
 <p>2.使用草料二维码，把网址生成成一个二维码，用微信扫一下即可查看效果。</p>
 <p>PS：保证电脑和手机在一个网段。 </p>
-<p>####5.父组件向子组件通信</p>
-<p>#####父组件：  </p>
-<pre><code>&lt;v-header :seller=&apos;seller&apos;&gt;&lt;/v-header&gt;  
+<h4 id="5-父组件向子组件通信"><a href="#5-父组件向子组件通信" class="headerlink" title="5.父组件向子组件通信"></a>5.父组件向子组件通信</h4><h5 id="父组件："><a href="#父组件：" class="headerlink" title="父组件："></a>父组件：</h5><pre><code>&lt;v-header :seller=&apos;seller&apos;&gt;&lt;/v-header&gt;  
 
  data(){
     return{
@@ -420,7 +472,7 @@ app.use(&apos;/api&apos;,apiRoutes)
     }
   },  
 </code></pre><p>组件 “:seller” 为传递名称 ‘=’后的seller为传递值  </p>
-<p>#####子组件<br>子组件通过props来接收数据：  </p>
+<h5 id="子组件"><a href="#子组件" class="headerlink" title="子组件"></a>子组件</h5><p>子组件通过props来接收数据：  </p>
 <p>方式1：  </p>
 <pre><code>props:[&apos;seller&apos;] 
 </code></pre><p>方式2：  </p>
@@ -457,9 +509,9 @@ app.use(&apos;/api&apos;,apiRoutes)
       
         <div class="post-tags">
           
-            <a href="/liuyang996.github.io/tags/vue项目/" rel="tag"># vue项目</a>
+            <a href="/liuyang996.github.io/tags/vue项目/" rel="tag"><i class="fa fa-tag"></i> vue项目</a>
           
-            <a href="/liuyang996.github.io/tags/vue饿了么app/" rel="tag"># vue饿了么app</a>
+            <a href="/liuyang996.github.io/tags/vue饿了么app/" rel="tag"><i class="fa fa-tag"></i> vue饿了么app</a>
           
         </div>
       
@@ -492,6 +544,15 @@ app.use(&apos;/api&apos;,apiRoutes)
 
       
       
+	  <div>
+		
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -536,8 +597,17 @@ app.use(&apos;/api&apos;,apiRoutes)
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -606,11 +676,29 @@ app.use(&apos;/api&apos;,apiRoutes)
           
           
 
-          
+          <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=483671194&auto=1&height=66"></iframe>
+</div>
 
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#记录vue饿了么app项目过程的一些可用点"><span class="nav-number">1.</span> <span class="nav-text">记录vue饿了么app项目过程的一些可用点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-图标字图制作"><span class="nav-number">1.1.</span> <span class="nav-text">1.图标字图制作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-项目目录"><span class="nav-number">1.2.</span> <span class="nav-text">2.项目目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-mock数据-模拟后台数据"><span class="nav-number">1.3.</span> <span class="nav-text">3.mock数据(模拟后台数据)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-开发webapp用手机查看效果小技巧"><span class="nav-number">1.4.</span> <span class="nav-text">4.开发webapp用手机查看效果小技巧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-父组件向子组件通信"><span class="nav-number">1.5.</span> <span class="nav-text">5.父组件向子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#父组件："><span class="nav-number">1.5.1.</span> <span class="nav-text">父组件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#子组件"><span class="nav-number">1.5.2.</span> <span class="nav-text">子组件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -625,12 +713,22 @@ app.use(&apos;/api&apos;,apiRoutes)
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">York</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	<div class="theme-info">
+	  <div class="powered-by"></div>
+	  <span class="post-count">博客全站共12.3k字</span>
+	</div>
   
 </div>
 
@@ -638,12 +736,17 @@ app.use(&apos;/api&apos;,apiRoutes)
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
-
+··	
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
   <span class="post-meta-divider">|</span>
 
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
 
 
 
@@ -663,6 +766,8 @@ app.use(&apos;/api&apos;,apiRoutes)
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -689,6 +794,8 @@ app.use(&apos;/api&apos;,apiRoutes)
 
   
 
+
+  
 
 
 
@@ -728,6 +835,11 @@ app.use(&apos;/api&apos;,apiRoutes)
   
   
     <script type="text/javascript" src="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -798,6 +910,323 @@ app.use(&apos;/api&apos;,apiRoutes)
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/liuyang996.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -817,5 +1246,13 @@ app.use(&apos;/api&apos;,apiRoutes)
 
   
 
-</body>
+  <script type="text/javascript" src="js/src/clicklove.js"></script>
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<script src="/liuyang996.github.io/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+
 </html>
+
+

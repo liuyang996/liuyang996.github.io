@@ -95,7 +95,7 @@
     root: '/liuyang996.github.io/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -180,7 +180,7 @@
         <li class="menu-item menu-item-home">
           <a href="/liuyang996.github.io/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -190,7 +190,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/liuyang996.github.io/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -200,7 +200,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/liuyang996.github.io/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -210,19 +210,9 @@
         <li class="menu-item menu-item-tags">
           <a href="/liuyang996.github.io/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-message">
-          <a href="/liuyang996.github.io/message" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            留言
           </a>
         </li>
       
@@ -230,7 +220,7 @@
         <li class="menu-item menu-item-about">
           <a href="/liuyang996.github.io/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -238,9 +228,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -344,6 +368,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  435
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -362,8 +417,7 @@
       
         
           
-          ####在项目中，经常会有注册功能，那么就会用到短信验证码，为了防止用户重复请求，造成的资源浪费，就可以使用短信倒计时的效果。   
-.wxml
+          在项目中，经常会有注册功能，那么就会用到短信验证码，为了防止用户重复请求，造成的资源浪费，就可以使用短信倒计时的效果。.wxml
 &lt;view class=&apos;list&apos;&gt;
   &lt;view class=&quot;list-tit&quot;&gt;手机号&lt;/view&gt;
   &lt;view class=&quot;list-input&quot;&gt;
@@ -372,6 +426,7 @@
 &lt;/view&gt;
  &lt;view class=&apos;list&apos;&gt;
   &lt;view class=&quot;list-tit list-tit2&quot;&gt;验证码&lt;/view&gt;
+  &lt;v
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -404,6 +459,9 @@
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -501,6 +559,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  112
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -519,20 +608,17 @@
       
         
           
-          ###JSON数组格式转换
-Array.from(json)
-###数组的遍历
-这种形式比ES5的for循环要简单而且高效。
+          JSON数组格式转换Array.from(json)
+数组的遍历这种形式比ES5的for循环要简单而且高效。
 let arr=[&apos;html&apos;,&apos;css&apos;,&apos;js&apos;]
 
 for(let item of arr){
     console.log(item);
 }
-####for…of数组索引:
-for (let index of arr.keys()){
+for…of数组索引:for (let index of arr.keys()){
     console.log(index);
 }
-####同时输出数组的内容和索引:用entries()这个实例方法，配合我们的for…of循环就可以同时输出内容和索引了。
+同时输出数组的内容和索引:用entries()这个实例方法，配合我们的for…of循环就可以同时输出内容和索引了。
 for (let [index,val] of arr.entries()){
 console.log(index+&apos;:&apos;+val);
 }
@@ -569,6 +655,9 @@ console.log(index+&apos;:&apos;+val);
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -666,6 +755,37 @@ console.log(index+&apos;:&apos;+val);
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  89
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -684,15 +804,12 @@ console.log(index+&apos;:&apos;+val);
       
         
           
-          ###数字判断和转换
-数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。
+          数字判断和转换数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。
 let a= 11/4;
 console.log(Number.isFinite(a));//true
 console.log(Number.isFinite(&apos;xxx&apos;));//false
-###NaN验证 Number.isNaN()
-console.log(Number.isNaN(NaN)); //true
-###判断是否为整数Number.isInteger(xx)
-let a=123.1;
+NaN验证 Number.isNaN()console.log(Number.isNaN(NaN)); //true
+判断是否为整数Number.isInteger(xx)let a=123.1;
 console.log(Number.isInteger(a)); //false
 
           
@@ -727,6 +844,9 @@ console.log(Number.isInteger(a)); //false
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -824,6 +944,37 @@ console.log(Number.isInteger(a)); //false
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  198
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -842,25 +993,19 @@ console.log(Number.isInteger(a)); //false
       
         
           
-          ###字符串模板
-使用字符串模板可以比较方便的让我们拼接字符串
+          字符串模板使用字符串模板可以比较方便的让我们拼接字符串
 let york = &apos;穿过繁华&apos;;
 let blog = `这是我的博客，博客名字叫${york}`;
 在拼接的时候，使用不是单引号或双引号，而是反引号（在tab键上面）变量用 ${} 符号来引入。
-###对运算的支持
-let a =1;
+对运算的支持let a =1;
 let b =2;
 let add = `${a+b}`;
-###字符串查找（支持中文查找）
-####查找是否存在：.includes()  返回布尔值
-let blog = &apos;博客&apos;；
+字符串查找（支持中文查找）查找是否存在：.includes()  返回布尔值let blog = &apos;博客&apos;；
 let jies = &apos;Hello 大家好，这是我的博客，欢迎大家瞧一瞧&apos;;
 console.log(jies.includes(blog));
-####判断开头是否存在 .startsWith() 返回布尔值
-console.log(jies.startsWith(blog));
-####判断结尾是否存在 .endsWith() 返回布尔值
-console.log(jies.endsWith(blog));
-####复制字符串 .repea
+判断开头是否存在 .startsWith() 返回布尔值console.log(jies.startsWith(blog));
+判断结尾是否存在 .endsWith() 返回布尔值console.log(jies.endsWith(blog));
+复制字符串 .repeat()document.write(&apos;blog&ap
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -893,6 +1038,9 @@ console.log(jies.endsWith(blog));
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -990,6 +1138,37 @@ console.log(jies.endsWith(blog));
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  228
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1008,8 +1187,7 @@ console.log(jies.endsWith(blog));
       
         
           
-          ###对象扩展运算符（…）
-当编写一个方法时，我们允许它传入的参数是不确定的。这时候我们可以使用对象扩展运算符来做参数。
+          对象扩展运算符（…）当编写一个方法时，我们允许它传入的参数是不确定的。这时候我们可以使用对象扩展运算符来做参数。
 fuction ly(...arg){
     console.log(arg[0]);
     console.log(arg[1]);
@@ -1018,13 +1196,12 @@ fuction ly(...arg){
 }
 ly(1,2,3)
 这时我们看到控制台输出了1,2,3,undefined,说明时可以传入多个值，并且就算方法引入多了也不会报错。
-###扩展运算符的用处
-我们声明两个数组arr1和arr2,然后我们把arr1赋值给arr2,然后在改变arr2的值，这时arr1的值也改变了，因为我们这是对内存堆栈的引用，而不是真正的赋值。
+扩展运算符的用处我们声明两个数组arr1和arr2,然后我们把arr1赋值给arr2,然后在改变arr2的值，这时arr1的值也改变了，因为我们这是对内存堆栈的引用，而不是真正的赋值。
 利用对象扩展运算符解决这个问题。
 let arr1 = [&apos;css3&apos;,&apos;html&apos;,&apos;js&apos;];
 //let arr2 = arr1;
 let arr2 = [...arr1];
-console.log(arr2); //[&apos;css3&
+console.log(arr2); //[&apos;css3&apos;,&a
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1057,6 +1234,9 @@ console.log(arr2); //[&apos;css3&
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1154,6 +1334,37 @@ console.log(arr2); //[&apos;css3&
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  265
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1172,19 +1383,16 @@ console.log(arr2); //[&apos;css3&
       
         
           
-          ###解构赋值
-ES6允许按照一定模式，从数组和对象那个中提取值，对变量进行赋值，这被称为解构。解构赋值在实际开发中可以大量减少我们的代码了，并且让我们的程序解构更清晰。
+          解构赋值ES6允许按照一定模式，从数组和对象那个中提取值，对变量进行赋值，这被称为解构。解构赋值在实际开发中可以大量减少我们的代码了，并且让我们的程序解构更清晰。
 let [a,b,c]=[1,2,3];
 上面的代码表示，可以从数组中提取值，按照位置的对象关系对变量赋值。
-###解构的默认值
-解构赋值是允许使用默认值的
+解构的默认值解构赋值是允许使用默认值的
 let [a,b=&apos;liuyang&apos;] = [&apos;web&apos;]
 console.log(a+b); // &apos;webliuyang&apos;
 需要注意下undefined和null的区别，undefined相当于什么都没有，null有值，但为空。
-###对象的解构赋值
-let {foot,bar} = { foo:&apos;liuyang&apos;,bar:&apos;gggg&apos;};
+对象的解构赋值let {foot,bar} = { foo:&apos;liuyang&apos;,bar:&apos;gggg&apos;};
 console.log(a+b); // &apos;liuyanggggg&apos;        
-注意：对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变
+注意：对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1217,6 +1425,9 @@ console.log(a+b); // &apos;liuyanggggg&apos;
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1314,6 +1525,37 @@ console.log(a+b); // &apos;liuyanggggg&apos;
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  936
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1332,14 +1574,13 @@ console.log(a+b); // &apos;liuyanggggg&apos;
       
         
           
-          ####开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习
-####开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上线的时候，正式账号上，记得要配置域名，不然就无法调用接口。
-####开发问题
-1.在小程序中使用map地图的时候在页面中定义view等标签，在模拟器中可以显示，但是真机上是不显示的，因为，在真机上map的z-index层次是最高的，会覆盖其他的标签。  
+          开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习3.智慧旅店
+开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上线的时候，正式账号上，记得要配置域名，不然就无法调用接口。
+开发问题1.在小程序中使用map地图的时候在页面中定义view等标签，在模拟器中可以显示，但是真机上是不显示的，因为，在真机上map的z-index层次是最高的，会覆盖其他的标签。  
 解决办法：使用map标签的controls属性，来设置地图上的按钮等元素。  
 设置controls后截图  
 
-1&lt;map longitude=&quot;&#123;&#123;longitude&#125;&#125;&quot; latitude=&quot;&#123;&#123;latitude&#125;&#125;&qu
+1&lt;map longitude=&quot;&#123;&#123;longitude&#125;&#125;&quot; latitude=&quot;&#123;&#123;latitude&#125;&#125;&quot; mar
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1372,6 +1613,9 @@ console.log(a+b); // &apos;liuyanggggg&apos;
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1469,6 +1713,37 @@ console.log(a+b); // &apos;liuyanggggg&apos;
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  444
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1550,6 +1825,9 @@ tabl
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1647,6 +1925,37 @@ tabl
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,109
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1665,12 +1974,9 @@ tabl
       
         
           
-          ###前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。
-####krpano特点
-#####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。  
-#####(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。  
-#####(3)支持多种类型的全景图已及全景视频和环物全景
-###tip:全景图拍摄、拼接的教程&lt;a href=”http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程&lt;a href=”https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资
+          前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。
+krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。(3)支持多种类型的全景图已及全景视频和环物全景tip:全景图拍摄、拼接的教程&lt;a href=”http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程&lt;a href=”https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航 
+krpano常用设置PS:常用设置一般都是在.xml
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1703,6 +2009,9 @@ tabl
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1800,6 +2109,37 @@ tabl
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  403
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1818,19 +2158,13 @@ tabl
       
         
           
-          ###在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可。
-####1.引入echarts.js这个网上下一个或者用cdn。
-####2.html加一个放图表的容器
-&lt;div id=&quot;main&quot; style=&quot;width:400px;height:400px&quot;&gt;&lt;/div&gt;
-###3.找到这个标签
-var myChart = echarts.init(document.getElementById(&apos;main&apos;))
-###4.放入需要的option数据(一般直接在echarts官网选好了复制即可)
-###5.为echarts对象加载数据 
-myChart.setOption(option); 
+          在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可。1.引入echarts.js这个网上下一个或者用cdn。2.html加一个放图表的容器&lt;div id=&quot;main&quot; style=&quot;width:400px;height:400px&quot;&gt;&lt;/div&gt;
+3.找到这个标签var myChart = echarts.init(document.getElementById(&apos;main&apos;))
+4.放入需要的option数据(一般直接在echarts官网选好了复制即可)5.为echarts对象加载数据myChart.setOption(option); 
 PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找些。
  myChart();
  function myChart(){
-     var myChart = echarts.init(document.getEl
+     var myChart = echarts.init(document.getElementById(&apos;main&apos;)
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1863,6 +2197,9 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1976,7 +2313,9 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
           
           
 
-          
+          <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=483671194&auto=1&height=66"></iframe>
+</div>
 
         </div>
       </section>
@@ -1995,12 +2334,22 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">York</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	<div class="theme-info">
+	  <div class="powered-by"></div>
+	  <span class="post-count">博客全站共12.3k字</span>
+	</div>
   
 </div>
 
@@ -2008,12 +2357,17 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
-
+··	
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
   <span class="post-meta-divider">|</span>
 
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
 
 
 
@@ -2033,6 +2387,8 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -2059,6 +2415,8 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
 
   
 
+
+  
 
 
 
@@ -2098,6 +2456,11 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
   
   
     <script type="text/javascript" src="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -2164,6 +2527,323 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/liuyang996.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -2183,5 +2863,13 @@ PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找�
 
   
 
-</body>
+  <script type="text/javascript" src="js/src/clicklove.js"></script>
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<script src="/liuyang996.github.io/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+
 </html>
+
+

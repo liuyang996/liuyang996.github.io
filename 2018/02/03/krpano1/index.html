@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="###前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 ####krpano特点 #####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。   #####(2)使用专用的krpano">
+<meta name="description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化">
 <meta name="keywords" content="krpano">
 <meta property="og:type" content="article">
 <meta property="og:title" content="krpano360全景漫游常用代码及使用说明整理">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="###前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 ####krpano特点 #####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。   #####(2)使用专用的krpano">
+<meta property="og:description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p1.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p2.png">
-<meta property="og:updated_time" content="2018-04-11T03:06:01.789Z">
+<meta property="og:updated_time" content="2018-07-17T07:23:51.610Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="krpano360全景漫游常用代码及使用说明整理">
-<meta name="twitter:description" content="###前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 ####krpano特点 #####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。   #####(2)使用专用的krpano">
+<meta name="twitter:description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p1.png">
 
 
@@ -103,7 +103,7 @@
     root: '/liuyang996.github.io/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -187,7 +187,7 @@
         <li class="menu-item menu-item-home">
           <a href="/liuyang996.github.io/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/liuyang996.github.io/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/liuyang996.github.io/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -217,19 +217,9 @@
         <li class="menu-item menu-item-tags">
           <a href="/liuyang996.github.io/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-message">
-          <a href="/liuyang996.github.io/message" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            留言
           </a>
         </li>
       
@@ -237,7 +227,7 @@
         <li class="menu-item menu-item-about">
           <a href="/liuyang996.github.io/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -245,9 +235,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -349,6 +373,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,109
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
 
           
 
@@ -365,33 +420,23 @@
       
 
       
-        <p>###前言<br>在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。</p>
-<p>####krpano特点</p>
-<p>#####(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。  </p>
-<p>#####(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。  </p>
-<p>#####(3)支持多种类型的全景图已及全景视频和环物全景</p>
-<p>###tip:全景图拍摄、拼接的教程<br>&lt;a href=”<a href="http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程" target="_blank" rel="noopener">http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程</a><br>&lt;a href=”<a href="https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航" target="_blank" rel="noopener">https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航</a> </p>
-<p>###krpano常用设置<br>PS:常用设置一般都是在.xml文件下设置的</p>
-<p>####1.小行星开场</p>
-<pre><code>littleplanetintro=&quot;true&quot;
-</code></pre><p>####2.自动循环浏览</p>
-<pre><code>&lt;autorotate enabled=&quot;true&quot;
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。</p>
+<h4 id="krpano特点"><a href="#krpano特点" class="headerlink" title="krpano特点"></a>krpano特点</h4><h5 id="1-兼容HTML5和Flash-支持Webgl下的WebVR展示。"><a href="#1-兼容HTML5和Flash-支持Webgl下的WebVR展示。" class="headerlink" title="(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。"></a>(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。</h5><h5 id="2-使用专用的krpano-xml代码编写全景漫游，可开发出高定制化的项目。"><a href="#2-使用专用的krpano-xml代码编写全景漫游，可开发出高定制化的项目。" class="headerlink" title="(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。"></a>(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。</h5><h5 id="3-支持多种类型的全景图已及全景视频和环物全景"><a href="#3-支持多种类型的全景图已及全景视频和环物全景" class="headerlink" title="(3)支持多种类型的全景图已及全景视频和环物全景"></a>(3)支持多种类型的全景图已及全景视频和环物全景</h5><h3 id="tip-全景图拍摄、拼接的教程"><a href="#tip-全景图拍摄、拼接的教程" class="headerlink" title="tip:全景图拍摄、拼接的教程"></a>tip:全景图拍摄、拼接的教程</h3><p>&lt;a href=”<a href="http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程" target="_blank" rel="noopener">http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程</a><br>&lt;a href=”<a href="https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航" target="_blank" rel="noopener">https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航</a> </p>
+<h3 id="krpano常用设置"><a href="#krpano常用设置" class="headerlink" title="krpano常用设置"></a>krpano常用设置</h3><p>PS:常用设置一般都是在.xml文件下设置的</p>
+<h4 id="1-小行星开场"><a href="#1-小行星开场" class="headerlink" title="1.小行星开场"></a>1.小行星开场</h4><pre><code>littleplanetintro=&quot;true&quot;
+</code></pre><h4 id="2-自动循环浏览"><a href="#2-自动循环浏览" class="headerlink" title="2.自动循环浏览"></a>2.自动循环浏览</h4><pre><code>&lt;autorotate enabled=&quot;true&quot;
     waittime=&quot;2.0&quot;
     speed=&quot;-10.0&quot;
     horizon=&quot;0.0&quot;
     /&gt;
 &lt;events name=&quot;onautorotateevents&quot; keep=&quot;true&quot; onautorotateoneround=&quot;nextscene()&quot;/&gt;
-</code></pre><p>####3.添加场景</p>
-<pre><code>&lt;scene&gt;&lt;/scene&gt;
+</code></pre><h4 id="3-添加场景"><a href="#3-添加场景" class="headerlink" title="3.添加场景"></a>3.添加场景</h4><pre><code>&lt;scene&gt;&lt;/scene&gt;
 </code></pre><p>注：可以使用.bat文件在别处生成一个场景，然后把生成的.xml文件里的scene标签拷过来，还要拷panos文件夹里的文件。</p>
-<p>####4.添加热点</p>
-<pre><code>&lt;hotspot name=&quot;spot4&quot; style=&quot;skin_hotspotstyle&quot; ath=&quot;82.688&quot; atv=&quot;44.260&quot; linkedscene=&quot;scene_otc3&quot; /&gt;
+<h4 id="4-添加热点"><a href="#4-添加热点" class="headerlink" title="4.添加热点"></a>4.添加热点</h4><pre><code>&lt;hotspot name=&quot;spot4&quot; style=&quot;skin_hotspotstyle&quot; ath=&quot;82.688&quot; atv=&quot;44.260&quot; linkedscene=&quot;scene_otc3&quot; /&gt;
 </code></pre><p>注：ath、atv是热点的坐标，可以通过krpano的图形界面软件点选生成热点。linkedscene是跳转场景，值是跳转场景的title</p>
-<p>####5.热点添加图片</p>
-<pre><code>&lt;hotspot name=&quot;spot4&quot; url=&quot;new_spotd7_gif.png&quot; /&gt;
+<h4 id="5-热点添加图片"><a href="#5-热点添加图片" class="headerlink" title="5.热点添加图片"></a>5.热点添加图片</h4><pre><code>&lt;hotspot name=&quot;spot4&quot; url=&quot;new_spotd7_gif.png&quot; /&gt;
 </code></pre><p>注：我这里的图片路径和tour.xml文件为同一路径，可根据需要更改</p>
-<p>####6.热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等</p>
-<pre><code>&lt;!-- 定义热点风格 - 白色热点 --&gt; 
+<h4 id="6-热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等"><a href="#6-热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等" class="headerlink" title="6.热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等"></a>6.热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等</h4><pre><code>&lt;!-- 定义热点风格 - 白色热点 --&gt; 
     &lt;style name=&quot;hotspot_ani_white&quot; 
     crop=&quot;0|0|128|128&quot;
     framewidth=&quot;128&quot; frameheight=&quot;128&quot; frame=&quot;0&quot; lastframe=&quot;19&quot; 
@@ -468,11 +513,10 @@
 <pre><code>&lt;!--设置hotspot命名为scene标签的title属性--&gt;
 &lt;!--copy(plugin[get(tooltipname)].html,scene[get(linkedscene)].title);--&gt;
 </code></pre><p>上面是对热点设置的一系列属性，直接都拷贝过去用就可以了。</p>
-<p>####7.热点命名<br>上面已经说了，可以看看6</p>
-<p>####8.热点添加点击js事件<br>    <hotspot onclick="js(Aqu())"></hotspot></p>
-<p>注：这里要注意下函数名外面要套一个js(),负责不会生效的。</p>
-<p>####页面效果截图展示</p>
-<p><img src="/liuyang996.github.io/2018/02/03/krpano1/p1.png" alt="avatar"><br><img src="/liuyang996.github.io/2018/02/03/krpano1/p2.png" alt="avatar"></p>
+<h4 id="7-热点命名"><a href="#7-热点命名" class="headerlink" title="7.热点命名"></a>7.热点命名</h4><p>上面已经说了，可以看看6</p>
+<h4 id="8-热点添加点击js事件"><a href="#8-热点添加点击js事件" class="headerlink" title="8.热点添加点击js事件"></a>8.热点添加点击js事件</h4><pre><code>&lt;hotspot  onclick=&quot;js(Aqu())&quot; /&gt;
+</code></pre><p>注：这里要注意下函数名外面要套一个js(),负责不会生效的。</p>
+<h4 id="页面效果截图展示"><a href="#页面效果截图展示" class="headerlink" title="页面效果截图展示"></a>页面效果截图展示</h4><p><img src="/liuyang996.github.io/2018/02/03/krpano1/p1.png" alt="avatar"><br><img src="/liuyang996.github.io/2018/02/03/krpano1/p2.png" alt="avatar"></p>
 
       
     </div>
@@ -490,7 +534,7 @@
       
         <div class="post-tags">
           
-            <a href="/liuyang996.github.io/tags/krpano/" rel="tag"># krpano</a>
+            <a href="/liuyang996.github.io/tags/krpano/" rel="tag"><i class="fa fa-tag"></i> krpano</a>
           
         </div>
       
@@ -523,6 +567,15 @@
 
       
       
+	  <div>
+		
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -567,8 +620,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -637,11 +699,29 @@
           
           
 
-          
+          <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=483671194&auto=1&height=66"></iframe>
+</div>
 
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#krpano特点"><span class="nav-number">1.1.</span> <span class="nav-text">krpano特点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-兼容HTML5和Flash-支持Webgl下的WebVR展示。"><span class="nav-number">1.1.1.</span> <span class="nav-text">(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-使用专用的krpano-xml代码编写全景漫游，可开发出高定制化的项目。"><span class="nav-number">1.1.2.</span> <span class="nav-text">(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-支持多种类型的全景图已及全景视频和环物全景"><span class="nav-number">1.1.3.</span> <span class="nav-text">(3)支持多种类型的全景图已及全景视频和环物全景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tip-全景图拍摄、拼接的教程"><span class="nav-number">2.</span> <span class="nav-text">tip:全景图拍摄、拼接的教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#krpano常用设置"><span class="nav-number">3.</span> <span class="nav-text">krpano常用设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-小行星开场"><span class="nav-number">3.1.</span> <span class="nav-text">1.小行星开场</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-自动循环浏览"><span class="nav-number">3.2.</span> <span class="nav-text">2.自动循环浏览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-添加场景"><span class="nav-number">3.3.</span> <span class="nav-text">3.添加场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-添加热点"><span class="nav-number">3.4.</span> <span class="nav-text">4.添加热点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-热点添加图片"><span class="nav-number">3.5.</span> <span class="nav-text">5.热点添加图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等"><span class="nav-number">3.6.</span> <span class="nav-text">6.热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-热点命名"><span class="nav-number">3.7.</span> <span class="nav-text">7.热点命名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-热点添加点击js事件"><span class="nav-number">3.8.</span> <span class="nav-text">8.热点添加点击js事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面效果截图展示"><span class="nav-number">3.9.</span> <span class="nav-text">页面效果截图展示</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -656,12 +736,22 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">York</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	<div class="theme-info">
+	  <div class="powered-by"></div>
+	  <span class="post-count">博客全站共12.3k字</span>
+	</div>
   
 </div>
 
@@ -669,12 +759,17 @@
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
-
+··	
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
   <span class="post-meta-divider">|</span>
 
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
 
 
 
@@ -694,6 +789,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -720,6 +817,8 @@
 
   
 
+
+  
 
 
 
@@ -759,6 +858,11 @@
   
   
     <script type="text/javascript" src="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -829,6 +933,323 @@
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/liuyang996.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -848,5 +1269,13 @@
 
   
 
-</body>
+  <script type="text/javascript" src="js/src/clicklove.js"></script>
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<script src="/liuyang996.github.io/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+
 </html>
+
+

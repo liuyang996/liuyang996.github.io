@@ -95,7 +95,7 @@
     root: '/liuyang996.github.io/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -180,7 +180,7 @@
         <li class="menu-item menu-item-home">
           <a href="/liuyang996.github.io/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -190,7 +190,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/liuyang996.github.io/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -200,7 +200,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/liuyang996.github.io/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -210,19 +210,9 @@
         <li class="menu-item menu-item-tags">
           <a href="/liuyang996.github.io/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-message">
-          <a href="/liuyang996.github.io/message" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            留言
           </a>
         </li>
       
@@ -230,7 +220,7 @@
         <li class="menu-item menu-item-about">
           <a href="/liuyang996.github.io/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -238,9 +228,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -344,6 +368,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  562
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
           
 
@@ -362,7 +417,7 @@
       
         
           
-          ###flex弹性布局兼容性
+          flex弹性布局兼容性
 
 常见布局
   .wrapper{
@@ -372,8 +427,7 @@
 .item{
      flex:1;
 }
-####flex实现1行指定div个数布局方式  
-html：  
+flex实现1行指定div个数布局方式html：  
 &lt;div class=&quot;community-list&quot;&gt;
     &lt;div class=&quot;community-item&quot;&gt;
         content....    
@@ -391,8 +445,7 @@ css:
     flex: 0 0 25%;
  }
 PS:我这里一行指定4个，根据需要改变 flex: 0 0 (百分比) 的值即可。
-####flex实现左侧固定宽度，右侧自适应宽度  
-&lt;div clas
+flex实现左侧固定宽度，右侧自适应宽度&lt;div class=&quot;wrapper&q
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -425,6 +478,9 @@ PS:我这里一行指定4个，根据需要改变 flex: 0 0 (百分比) 的值�
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -522,6 +578,37 @@ PS:我这里一行指定4个，根据需要改变 flex: 0 0 (百分比) 的值�
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  340
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -540,10 +627,8 @@ PS:我这里一行指定4个，根据需要改变 flex: 0 0 (百分比) 的值�
       
         
           
-          ###问题描述  
-在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作   
-###解决办法  
-1.跳转前页面    
+          问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作   
+解决办法1.跳转前页面    
 引入modal组件  
 import {ModalController} from &apos;ionic-angular&apos;;
 
@@ -555,7 +640,7 @@ gotoLeaveAddPage() {
        });
 
        modal.onDidDismiss(data =&gt; {
-       
+       //核心功能，在这里刷新
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -588,6 +673,9 @@ gotoLeaveAddPage() {
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -685,6 +773,37 @@ gotoLeaveAddPage() {
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  464
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -703,9 +822,7 @@ gotoLeaveAddPage() {
       
         
           
-          ###在开发中，对于创建的组件，一般都会涉及到传值，或者调用子组件的方法，这里介绍下我的用法。  
-####父组件向子组件传值  @Input()  
-子组件：
+          在开发中，对于创建的组件，一般都会涉及到传值，或者调用子组件的方法，这里介绍下我的用法。父组件向子组件传值  @Input()子组件：
  1.子组件中import 
 {Input} from ‘@angular/core’  
  2.子组件使用Input定义接收的值。 
@@ -717,10 +834,10 @@ gotoLeaveAddPage() {
 &lt;child [info]=&apos;childdata&apos; &gt;&lt;/child&gt;
   其中，[info]为子元素接收的值，与子元素Input定义的值一样。childdata为父元素传给子元素的数据。
 PS:这里要注意生命周期执行顺序，例如如果传输的和接收的值都放在constructor作用域里，可以无法拿到数据。
-####子组件向父组件传值  
-子组件：
+子组件向父组件传值子组件：
 1.子组件引入Output,EventEmitter  
-import {Output,EventEmitter}from ‘@angu
+import {Output,EventEmitter}from ‘@angular/core’
+2.子组件使用@Ou
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -753,6 +870,9 @@ import {Output,EventEmitter}from ‘@angu
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -850,6 +970,37 @@ import {Output,EventEmitter}from ‘@angu
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  123
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -868,24 +1019,19 @@ import {Output,EventEmitter}from ‘@angu
       
         
           
-          ####1组件的创建  
-ionic g component  ion-products    
+          1组件的创建ionic g component  ion-products    
 成功之后可以看到目录会发生变化：  
    
-####2组件的数据交互
-通过@Input()来实现数据交互，ion-products.ts完整代码如下：  
+2组件的数据交互通过@Input()来实现数据交互，ion-products.ts完整代码如下：  
  
 3组件的html,scss编码...  
-####3组件的使用  
-组建创建成功时候，可以看到默认有一个components.module.ts，说明此component建默认是支持懒加载的。  
+3组件的使用组建创建成功时候，可以看到默认有一个components.module.ts，说明此component建默认是支持懒加载的。  
 components.modules.ts：  
 
-####3.1导入component  
-在home.module.ts中导入components.module.ts  
+3.1导入component在home.module.ts中导入components.module.ts  
 home.module.ts    
 
-####3.2使用component    
-
+3.2使用component
 
           
           <!--noindex-->
@@ -919,6 +1065,9 @@ home.module.ts
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1016,6 +1165,37 @@ home.module.ts
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  541
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1034,9 +1214,7 @@ home.module.ts
       
         
           
-          ###相机拍照和相册是 App 从手机获取图片的两种主要方式。在 App 业务需求中，经常会使用到图片获取的功能，最为常见的有用户头像设置等。
-####插件介绍
-cordova-plugin-camera 相机插件：
+          相机拍照和相册是 App 从手机获取图片的两种主要方式。在 App 业务需求中，经常会使用到图片获取的功能，最为常见的有用户头像设置等。插件介绍cordova-plugin-camera 相机插件：
 安装方法：  
 ionic cordova plugin add cordova-plugin-camera
 npm install --save @ionic-native/camera
@@ -1048,7 +1226,7 @@ cordova-plugin-image-picker 图片获取插件：
 // 这是在向用户请求权限时显示的文字
 
 ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIBRARY_USAGE_DESCRIPTION=&quot;your usage message&quot;
-npm install
+npm install --save @
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1081,6 +1259,9 @@ npm install
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1156,6 +1337,37 @@ npm install
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  640
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1176,8 +1388,7 @@ npm install
           
           
 title: ionic 常用命令date: 2018-06-05 16:34:00categories: ionic
-tags: [ionic]####环境搭建  
-需要安装以下软件和插件  
+tags: [ionic]环境搭建需要安装以下软件和插件  
  1.安装nodeJS(自带npm),建议安装版本不要太高。 2.配置cnpm(使用淘宝镜像取代npm)
    配置npm国内镜像：
 因为国内的网络环境原因，在用npm下载安装各种包的时候经常会遇到无法正常下载的情况。所以我们需要将npm指向淘宝镜像 。cmd中分步输入以下内容：
@@ -1187,7 +1398,7 @@ tags: [ionic]####环境搭建
 最后查看一下npm配置列表是否已经指向淘宝镜像：npm config list  
   安装JAVA JDK  
   安装Android SDK(在项目打包安卓app的时候会用到，前期在浏览器环境测试开发暂时用不到)  
-
+ionic常用
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1220,6 +1431,9 @@ tags: [ionic]####环境搭建
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1317,6 +1531,37 @@ tags: [ionic]####环境搭建
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  485
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1335,14 +1580,11 @@ tags: [ionic]####环境搭建
       
         
           
-          ####在项目中node的版本可能和现在电脑上的node版本不一致，导致项目无法运行，我在ionic的项目就碰到这种情况，我的项目是node 6.x版本的，但是电脑是node 8.x版本的。网上的解决方法是安装node的n模块，来切换版本，但是我电脑是windows系统，无法安装使用。
-####后来找到了NVS版本切换工具，成功切换版本，运行项目。  
-下载地址：https://github.com/jasongin/nvs/releases
+          在项目中node的版本可能和现在电脑上的node版本不一致，导致项目无法运行，我在ionic的项目就碰到这种情况，我的项目是node 6.x版本的，但是电脑是node 8.x版本的。网上的解决方法是安装node的n模块，来切换版本，但是我电脑是windows系统，无法安装使用。后来找到了NVS版本切换工具，成功切换版本，运行项目。下载地址：https://github.com/jasongin/nvs/releases
 github：https://github.com/jasongin/nvs
 里面有使用文档
 
-#####常用命令：
-添加最新版本的节点或指定版本
+常用命令：添加最新版本的节点或指定版本
 nvs add latest 或   nvs add [version]
 查看本地节点版本 
 nvs ls
@@ -1356,7 +1598,8 @@ a
         }
     }
     .red{
-        
+        width:100%;
+      
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1389,6 +1632,9 @@ a
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1486,6 +1732,37 @@ a
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  323
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1504,15 +1781,14 @@ a
       
         
           
-          ####在小程序项目中上传资料的时候一般都需要上传图片，这里介绍一个多图上传，及全屏预览。
-####1.wxml 
+          在小程序项目中上传资料的时候一般都需要上传图片，这里介绍一个多图上传，及全屏预览。####1.wxml 
 &lt;image class=&apos;addimg&apos; src=&apos;../../images/addpic.png&apos; bindtap=&apos;upImg&apos;&gt;&lt;/image&gt;
 &lt;view class=&apos;l-pic-list&apos; wx:if=&quot;{{imgStatus}}&quot;&gt;
   &lt;image src=&apos;{{item}}&apos; wx:for=&quot;{{zhaopianImg}}&quot;  class=&apos;zhaopianImg&apos; data-index=&quot;{{index}}&quot; bindtap=&quot;previewImage&quot;&gt;&lt;/image&gt;
 &lt;/view&gt;
 这里是装图片的容器及路径。
-####2.js  
-pictures: [], //预览图片arr
+2.jspictures: [], //预览图片array
+zhaopianI
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1545,6 +1821,9 @@ pictures: [], //预览图片arr
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1642,6 +1921,37 @@ pictures: [], //预览图片arr
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  10
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1660,8 +1970,7 @@ pictures: [], //预览图片arr
       
         
           
-          ####为什么要使用原型对象  
-
+          为什么要使用原型对象
           
           <!--noindex-->
           <div class="post-button text-center">
@@ -1694,6 +2003,9 @@ pictures: [], //预览图片arr
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1791,6 +2103,37 @@ pictures: [], //预览图片arr
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  620
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1809,8 +2152,7 @@ pictures: [], //预览图片arr
       
         
           
-          ####什么是webpack?  
-WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。在3.0出现后，Webpack还肩负起了优化项目的责任。  
+          什么是webpack?WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。在3.0出现后，Webpack还肩负起了优化项目的责任。  
 1.打包：可以把多个Javascript文件打包成一个文件，减少服务器压力和下载带宽。2.转换： 拓展语言转换成为普通的JavaScript，让浏览器顺利运行。3.优化：前端变的越来越复杂后，性能也会遇到问题，而WebPack也开始肩负起了优化和提升性能的责任。  
 全局安装  
 npm install -g webpack  
@@ -1821,7 +2163,7 @@ npm init
 输入下面命令进行项目目录的安装：  
 npm install --save-dev webpack  
 这里的参数-save是要保存到package.json中，dev是在开发时使用这个包，而生产环境中不使用。  
-开发环境a
+开发环境and生产环境 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1854,6 +2196,9 @@ npm install --save-dev webpack
       
         <div class="post-eof"></div>
       
+	  <div>
+		
+	 </div>
     </footer>
   </div>
   
@@ -1967,7 +2312,9 @@ npm install --save-dev webpack
           
           
 
-          
+          <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=483671194&auto=1&height=66"></iframe>
+</div>
 
         </div>
       </section>
@@ -1986,12 +2333,22 @@ npm install --save-dev webpack
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">York</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+	<div class="theme-info">
+	  <div class="powered-by"></div>
+	  <span class="post-count">博客全站共12.3k字</span>
+	</div>
   
 </div>
 
@@ -1999,12 +2356,17 @@ npm install --save-dev webpack
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
-
+··	
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
   <span class="post-meta-divider">|</span>
 
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
 
 
 
@@ -2024,6 +2386,8 @@ npm install --save-dev webpack
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
@@ -2050,6 +2414,8 @@ npm install --save-dev webpack
 
   
 
+
+  
 
 
 
@@ -2089,6 +2455,11 @@ npm install --save-dev webpack
   
   
     <script type="text/javascript" src="/liuyang996.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/liuyang996.github.io/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -2155,6 +2526,323 @@ npm install --save-dev webpack
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/liuyang996.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -2174,5 +2862,13 @@ npm install --save-dev webpack
 
   
 
-</body>
+  <script type="text/javascript" src="js/src/clicklove.js"></script>
+  
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+<script src="/liuyang996.github.io/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+
 </html>
+
+

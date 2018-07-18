@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[css常用布局]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F07%2F16%2Fcssbuju%2F</url>
+    <content type="text"><![CDATA[flex弹性布局兼容性 常见布局 .wrapper{ display: -webkit-flex; /* Safari */ display: flex; } .item{ flex:1; } flex实现1行指定div个数布局方式html： &lt;div class=&quot;community-list&quot;&gt; &lt;div class=&quot;community-item&quot;&gt; content.... &lt;/div&gt; ... &lt;/div&gt; css: .community-list{ display: flex; flex-wrap: wrap; .... } .community-item{ flex: 0 0 25%; } PS:我这里一行指定4个，根据需要改变 flex: 0 0 (百分比) 的值即可。 flex实现左侧固定宽度，右侧自适应宽度&lt;div class=&quot;wrapper&quot;&gt; &lt;div class=&quot;sideBar&quot;&gt;&lt;/div&gt; &lt;div class=&quot;content&quot;&gt;&lt;/div&gt; &lt;/div&gt; css样式 html,body,wrapper{ width:100%; height:100%; } .wrapper{ display:flex; } .sideBar{ flex: 0 0 80px //设置固定宽度为80px } .content{ flex:1 } grid网格布局兼容性 CSS Grid布局由两个核心组件wrapper（父元素）和items（子元素）。wrapper是实际的grid（网格），items是grid（网格）内的内容。 HTML代码： &lt;div class=&quot;wrapper&quot;&gt; &lt;div class=&quot;items1&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;items2&quot;&gt;2&lt;/div&gt; &lt;div class=&quot;items3&quot;&gt;3&lt;/div&gt; &lt;div class=&quot;items4&quot;&gt;4&lt;/div&gt; &lt;div class=&quot;items5&quot;&gt;5&lt;/div&gt; &lt;div class=&quot;items6&quot;&gt;6&lt;/div&gt; &lt;/div&gt; css: .wrapper { display: grid; grid-template-columns: 200px 50px 100px; grid-template-rows: 100px 30px; } .items1{ grid-column-start: 1; grid-column-end: 4; grid-row-start: 2; grid-row-end: 4; } 样式说明： 父元素 display: grid； 把wrapper 元素变成一个 grid(网格)。 grid-template-columns； 设置网格内的子元素有几列，每1列的宽度是多少。如上是有3列，第1列200px,第二列50px,第三列100px。 grid-template-rows； 设置网格内的子元素有几行，每1行的高度是多少。如上是有2行，第1行100px,第二列30px。 子元素 grid-column-start； 列的网格线开始。 grid-column-end； 列的网格线开始。 grid-row-start； 行的网格线开始。 grid-row-end； 行的网格线开始。 Sticky footer布局作用：在实际开发中，我们经常会遇到这样一个需求：如果页面小于一屏时，页脚块需要固定在页面底部，如果页面超过一屏时，页脚块向下推送。 &lt;div class=&quot;wrapper clearfix&quot;&gt; &lt;div class=&quot;content&quot;&gt; // 这里是页面内容 &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;footer&quot;&gt; // 这里是footer的内容 &lt;/div&gt; css代码： .wrapper { min-height: 100%; } .wrapper .content{ padding-bottom: 50px; /* footer区块的高度 */ } .footer { position: relative; margin-top: -50px; /* 使footer区块正好处于content的padding-bottom位置 */ height: 50px; clear: both; } .clearfix::after { display: block; content: &quot;.&quot;; height: 0; clear: both; visibility: hidden; } 注意:content元素的padding-bottom、footer元素的高度以及footer元素的margin-top值必须要保持一致。]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS Sprites</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ionic3 关闭新增页面，跳转到原页面刷新数据(回显)]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F07%2F05%2Fionic5%2F</url>
+    <content type="text"><![CDATA[问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作 解决办法1.跳转前页面 引入modal组件 import {ModalController} from &apos;ionic-angular&apos;; constructor（public modalCtrl: ModalController）{} 跳转到表单添加页面 gotoLeaveAddPage() { let modal = this.modalCtrl.create(&apos;LeaveAddComponent&apos;,{ leave:this.leave }); modal.onDidDismiss(data =&gt; { //核心功能，在这里刷新，即重新查一遍即可 console.log(data); }); modal.present(); } LeaveAddComponent是跳转页面路径leave是传输数据 这里的重点是onDidDismiss()方法，通过这个方法，可以拿到跳转后的页面传过来的数据，怎么传数据下面会讲。 2.跳转后页面 引入ViewController组件 import {ViewController} from &apos;ionic-angular&apos;; constructor（public viewCtrl: ViewController）{} 使用dismiss()方法关闭页面，并传输数据 this.viewCtrl.dismiss({ &apos;danyuan_id&apos;: this.danyuan_id, }) 数据传输后，通过跳转前页面的，onDidDismiss()方法接收数据，并且在该方法内重新加载一次接口即可刷新数据。这样按返回就不会跳到表单页。]]></content>
+      <categories>
+        <category>ionic</category>
+      </categories>
+      <tags>
+        <tag>ionic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ionic3 父子组件相互传值及调用子组件方法]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F07%2F02%2Fionic4%2F</url>
+    <content type="text"><![CDATA[在开发中，对于创建的组件，一般都会涉及到传值，或者调用子组件的方法，这里介绍下我的用法。父组件向子组件传值 @Input()子组件： 1.子组件中import {Input} from ‘@angular/core’ 2.子组件使用Input定义接收的值。 @Input() info:any; 父组件： 例如定义的子组件标签为: &lt;child&gt;&lt;/child&gt; 那么传值给子元素的方法为： &lt;child [info]=&apos;childdata&apos; &gt;&lt;/child&gt; 其中，[info]为子元素接收的值，与子元素Input定义的值一样。childdata为父元素传给子元素的数据。 PS:这里要注意生命周期执行顺序，例如如果传输的和接收的值都放在constructor作用域里，可以无法拿到数据。 子组件向父组件传值子组件： 1.子组件引入Output,EventEmitter import {Output,EventEmitter}from ‘@angular/core’ 2.子组件使用@Output定义传输的值。 @Output() private event:EventEmitter&lt;Object&gt; = new EventEmitter&lt;Object&gt;(); 这里定义的值为：event 3.使用 this.event.emit(‘传递的数据’)来触发 this.event.emit(this.fromDatas); 传递数据一般写在函数里。 父组件： 例如定义的子组件标签为: &lt;child&gt;&lt;/child&gt; 那么传值给父组件的方法为： &lt;allform (event)=&apos;getForm($event)&apos;&gt;&lt;/allform&gt; 其中，event为子组件定义的值，getForm($event)为父组件定义的函数，子组件每次使用emit上传数据时都会调用此函数 getForm(event){ console.log(event); } PS:注意，getForm($event) 括号里的’$’不能省略。 父组件调用子组件的方法父组件： 1.在父组件控制器中声明一个由viewChild装饰器装饰的变量获得子组件的引用。 @ViewChild(&apos;formchild&apos;) child: AllFormComponent; 2.在组件中指定本地变量 &lt;allform #formchild&gt;&lt;/allform&gt; 3.调用子组件方法。 recordsForm(){ this.child.upward(); } PS:upward()函数为子组件定义的函数。recordsForm()函数为父组件里的函数。]]></content>
+      <categories>
+        <category>ionic</category>
+      </categories>
+      <tags>
+        <tag>ionic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ionic3 组件编写与使用]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F06%2F22%2Fionic3%2F</url>
+    <content type="text"><![CDATA[1组件的创建ionic g component ion-products 成功之后可以看到目录会发生变化： 2组件的数据交互通过@Input()来实现数据交互，ion-products.ts完整代码如下： 3组件的html,scss编码... 3组件的使用组建创建成功时候，可以看到默认有一个components.module.ts，说明此component建默认是支持懒加载的。 components.modules.ts： 3.1导入component在home.module.ts中导入components.module.ts home.module.ts 3.2使用component]]></content>
+      <categories>
+        <category>ionic</category>
+      </categories>
+      <tags>
+        <tag>ionic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ionic3 相机和相册获取图片]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F06%2F11%2Fionic2%2F</url>
+    <content type="text"><![CDATA[相机拍照和相册是 App 从手机获取图片的两种主要方式。在 App 业务需求中，经常会使用到图片获取的功能，最为常见的有用户头像设置等。插件介绍cordova-plugin-camera 相机插件： 安装方法： ionic cordova plugin add cordova-plugin-camera npm install --save @ionic-native/camera 作用：调用手机照相头，进行拍照获取图片、从相册获取单张图片。 cordova-plugin-image-picker 图片获取插件： 安装方法： // 注意： // 这个 &quot;your usage message&quot; 可以自己修改 // 这是在向用户请求权限时显示的文字 ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIBRARY_USAGE_DESCRIPTION=&quot;your usage message&quot; npm install --save @ionic-native/image-picker 作用：调用手机图库，获取照片，可选择多张。 使用方法：先把插件添加到 app.module.ts 的 providers Camera import { Camera, CameraOptions } from &apos;@ionic-native/camera&apos;; constructor( ... private camera: Camera) { } // 设置选项 const options: CameraOptions = { quality: 100, sourceType: this.camera.PictureSourceType.CAMERA, destinationType: this.camera.DestinationType.DATA_URL, encodingType: this.camera.EncodingType.JPEG, mediaType: this.camera.MediaType.PICTURE } // 获取图片 this.camera.getPicture(options).then((imageData) =&gt; { // 获取成功 let base64Image = &apos;data:image/jpeg;base64,&apos; + imageData; }, (err) =&gt; { console.log(&apos;获取图片失败&apos;); }); 理解起来应该不难，详细解释一下 CameraOptions 重点说一下 sourceType，这个参数设置为 PHOTOLIBRARY 就会从相册取图，设置为 CAMERA 会拍照，设置为 SAVEDPHOTOALBUM 会保存图片。 ImagePicker import { ImagePicker, ImagePickerOptions } from &apos;@ionic-native/image-picker&apos;; constructor( ... private imagePicker: ImagePicker) { } // 设置选项 const options: ImagePickerOptions = { maximumImagesCount: 6, width: IMAGE_SIZE, height: IMAGE_SIZE, quality: QUALITY_SIZE }; // 获取图片 this.imagePicker.getPictures(options).then((results) =&gt; { for (var i = 0; i &lt; results.length; i++) { console.log(&apos;Image URI: &apos; + results[i]); } }, (err) =&gt; { console.log(&apos;获取图片失败&apos;); }); 跟上面那个差不多，详细解释一下 ImagePickerOptions 图片上传 如果是 base64 图片上传，直接把二进制字符串作为参数传就好。 注意事项 iOS 无法打开相册 再执行一遍 $ ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIBRARY_USAGE_DESCRIPTION=&quot;your usage message&quot; 我们执行过后，会有一个插件 com.synconset.imagepicker 生成到 package.json 中，这个会导致 npm install 运行失败，解决方法只能把它删除。所以你再次安装的时候就会少一个这个插件，导致无法获取相册权限。Android 上没有这个问题。]]></content>
+      <categories>
+        <category>ionic</category>
+      </categories>
+      <tags>
+        <tag>ionic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F06%2F05%2Fionic%2F</url>
+    <content type="text"><![CDATA[title: ionic 常用命令date: 2018-06-05 16:34:00categories: ionic tags: [ionic]环境搭建需要安装以下软件和插件 1.安装nodeJS(自带npm),建议安装版本不要太高。 2.配置cnpm(使用淘宝镜像取代npm) 配置npm国内镜像： 因为国内的网络环境原因，在用npm下载安装各种包的时候经常会遇到无法正常下载的情况。所以我们需要将npm指向淘宝镜像 。cmd中分步输入以下内容： (1)、注册模块镜像：npm set registry https://registry.npm.taobao.org/ (2)、编译依赖的node的源码镜像：npm set distury https://npm.taobao.org/dist (3)、清空缓存：npm cache clean 最后查看一下npm配置列表是否已经指向淘宝镜像：npm config list 安装JAVA JDK 安装Android SDK(在项目打包安卓app的时候会用到，前期在浏览器环境测试开发暂时用不到) ionic常用代码1.跳转页面 注入NavController //NavController就是用来管理和导航页面的一个controlle import { NavController } from &apos;ionic-angular&apos;; constructor(public navCtrl: NavController) { } //通过代码的方式跳转 pushMorePage(){ console.log(&quot;代码方式跳转&quot;); //跳转到指定页面 this.navCtrl.push(MorePage,{&apos;参数名&apos;:&apos;我是参数&apos;}); } } 另一个页面获取参数 用NavParams来接收数据。 import { NavParams } from &apos;ionic-angular&apos;; constructor(public params: NavParams) { //获取传递过来的参数 this.title=this.params.get(&apos;参数名&apos;); } ionic npm/cordova相关命令 新建页面 ionic g page login 2.打包命令(run是使用数据线连接，直接安装到手机上，build是下载到目录里) ionic cordova build android --prod ionic cordova build android --prop ionic cordova build android --aot 3.查看插件安装情况 ionic cordova plugin list ionic cordova plugin --help 4.安装adnroid平台 cordova platform add android 5.安装/删除插件 ionic cordova plugin remove 插件名 //先根据上面的list列出插件，然后根据插件名卸载 ionic cordova plugin add 插件地址 //这个插件地址可以是github的项目地址，也可以是一个文件夹路径 ionic3 常用指令使用1 点击事件 （click）=&quot;myClick()&quot; 2 循环 *ngFor=&quot;let of items&quot; 3 hidden隐藏 [hidden]=&quot; &quot; 4 ngif *ngIf=&quot;&quot; 5 数据绑定 [(ngModel)]=&quot;&quot; 6 ngClass // *ngFor=&quot;let items of communityList, let i =index&quot; [ngClass]=&quot;{&apos;txt&apos;:activeIndex==i}&quot; input焦点事件 (ionBlur)=&quot;blurInput()&quot; (ionFocus)=&quot;focusInput()&quot; ionFocus为输入框获取焦点的属性 ionBlur为输入框失去焦点的属性 ionic3 js调用ionic3框架自带组件实例方法1.使用ViewChild定义 @ViewChild(&apos;SelectT&apos;) select1: Select; 2.在html加入定义的Select1 &lt;ion-select [(ngModel)]=&quot;loudongSelect&quot; #SelectT&gt;&lt;/ion-select&gt; 3.调用组件实例 this.select1.open();]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[NVS node版本切换工具]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F05%2F30%2Fnvs%2F</url>
+    <content type="text"><![CDATA[在项目中node的版本可能和现在电脑上的node版本不一致，导致项目无法运行，我在ionic的项目就碰到这种情况，我的项目是node 6.x版本的，但是电脑是node 8.x版本的。网上的解决方法是安装node的n模块，来切换版本，但是我电脑是windows系统，无法安装使用。后来找到了NVS版本切换工具，成功切换版本，运行项目。下载地址：https://github.com/jasongin/nvs/releases github：https://github.com/jasongin/nvs 里面有使用文档 常用命令：添加最新版本的节点或指定版本 nvs add latest 或 nvs add [version] 查看本地节点版本 nvs ls 在当前sell中使用节点版本 nvs use [version] a page-home { ion-title{ .toolbar-title{ color:#fff; } } .red{ width:100%; text-align: center; color:red; margin: 15px 0; } .title{ font-weight: 500; } .bg-color-gray{ background-color:#f1f1f1; } .user-info { width: 100%; height: 23vh; background: url(../images/bg.jpg) no-repeat center; background-size: 100%; padding-top: 15px; img { display: block; width: 6rem; height: 6rem; border-radius: 50%; border: 3px solid rgba(255, 255, 255, 0.8); margin: 0 auto; } h4,p{ color: #fff; text-align: center; text-shadow: 0 0 5px rgba(0, 0, 0, 0.31); } h4{ font-size: 1em; margin: 1rem 0 0 0; } p{ padding:0 0; font-size: 1em; margin: 0.3rem 0 0 0; } } .scroll-content{ margin-top: 0 !important; } ion-navbar{ transition: all .3s; .back-button,.bar-button{ //text-shadow: 0 0 5px #000000; color: #fff; } } .header-md::after{ background-image: none; } .header-ios .toolbar-background-ios,.toolbar-background-md,.toolbar-background-wp{ border-style: none; background: none; border-color: rgba(0, 0, 0, 0) } .show-background{ border-style: none; background: #488aff; } .transition{ transition: background-size .3s ease-in; } .content{ background-color: #fff; background-size: 100%; background-repeat: no-repeat; background-position: top center; } .person{ padding: 10px; background-color:#fff; border-bottom: 1px solid #dcdcdc; background-image: url(../images/bg.jpg); background-size:cover; background-position: center; background-repeat: no-repeat; p{ padding:0; margin:4px 0; color:#fff; } .fontsl6{ font-size:16px; } .dark{ color:#fff; } } .art-inner { width: 100%; font-size: 1.8rem; padding: 1rem 0 1rem .5rem; border-bottom: 1px solid #dcdcdc; .icon_td { float: left; display: inline-block; background: url(../images/gongneng.png) no-repeat center; width: 2.4rem; height: 2.4rem; background-size: 2.4rem; margin-right: .5rem; } } .thum{ min-width: 60px; min-height: 60px; img{ width: 60px; height: 60px; } } }]]></content>
+      <categories>
+        <category>node版本切换工具</category>
+      </categories>
+      <tags>
+        <tag>node版本切换工具 NVS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[微信小程序图片上传及全屏预览]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F05%2F15%2Fxiaochengxu3%2F</url>
+    <content type="text"><![CDATA[在小程序项目中上传资料的时候一般都需要上传图片，这里介绍一个多图上传，及全屏预览。####1.wxml &lt;image class=&apos;addimg&apos; src=&apos;../../images/addpic.png&apos; bindtap=&apos;upImg&apos;&gt;&lt;/image&gt; &lt;view class=&apos;l-pic-list&apos; wx:if=&quot;{{imgStatus}}&quot;&gt; &lt;image src=&apos;{{item}}&apos; wx:for=&quot;{{zhaopianImg}}&quot; class=&apos;zhaopianImg&apos; data-index=&quot;{{index}}&quot; bindtap=&quot;previewImage&quot;&gt;&lt;/image&gt; &lt;/view&gt; 这里是装图片的容器及路径。 2.jspictures: [], //预览图片array zhaopianImg: &apos;&apos;, imgStatus: false 初始化3个变量 //调用上传图片组件 upImg:function(){ var that =this; //图片选择 wx.chooseImage({ count: 4, // 默认9 sizeType: [&apos;original&apos;, &apos;compressed&apos;], // 可以指定是原图还是压缩图，默认二者都有 sourceType: [&apos;album&apos;], // 可以指定来源是相册还是相机，默认二者都有 success: function (res) { // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片 var tempFilePaths = res.tempFilePaths that.setData({ zhaopianImg: tempFilePaths, pictures: tempFilePaths, imgStatus: true }) console.log(that.data.zhaopianImg); // wx.uploadFile({ // url: &apos;&apos;, //仅为示例，非真实的接口地址 // filePath: tempFilePaths[0], // name: &apos;file&apos;, // formData: { // &apos;user&apos;: &apos;test&apos; // }, // success: function () { // } // }) } }) }, //图片预览 previewImage: function (e) { var that = this, //获取当前图片的下表 index = e.currentTarget.dataset.index, //数据源 pictures = this.data.pictures; wx.previewImage({ //当前显示下表 current: pictures[index], //数据源 urls: pictures }) }, 3.wxss.addimg{ width: 64rpx; height: 64rpx; } .zhaopianImg{ width: 160rpx; height: 160rpx; margin-right: 10rpx; } .l-pic-list{ margin-top: 30rpx; } 以上代码可以直接拷贝使用。]]></content>
+      <categories>
+        <category>微信小程序</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[理解JavaScript原型对象]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F05%2F10%2Fyuanxin%2F</url>
+    <content type="text"><![CDATA[为什么要使用原型对象]]></content>
+      <categories>
+        <category>js原型</category>
+      </categories>
+      <tags>
+        <tag>javascript原型对象</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[webPack学习之路]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F05%2F10%2FwebPack%2F</url>
+    <content type="text"><![CDATA[什么是webpack?WebPack可以看做是模块打包机：它做的事情是，分析你的项目结构，找到JavaScript模块以及其它的一些浏览器不能直接运行的拓展语言（Sass，TypeScript等），并将其转换和打包为合适的格式供浏览器使用。在3.0出现后，Webpack还肩负起了优化项目的责任。 1.打包：可以把多个Javascript文件打包成一个文件，减少服务器压力和下载带宽。2.转换： 拓展语言转换成为普通的JavaScript，让浏览器顺利运行。3.优化：前端变的越来越复杂后，性能也会遇到问题，而WebPack也开始肩负起了优化和提升性能的责任。 全局安装 npm install -g webpack 对项目进行安装 先切换至要安装的项目路径在命令行输入： npm init 会生成package.json文件 输入下面命令进行项目目录的安装： npm install --save-dev webpack 这里的参数-save是要保存到package.json中，dev是在开发时使用这个包，而生产环境中不使用。 开发环境and生产环境 1.开发环境：在开发时需要的环境，这里指在开发时需要依赖的包。 2.生产环境：程序开发完成，开始运行后的环境，这里指要使项目运行，所需要的依赖包。 查看webpack版本 webpack -v src文件夹：用来存放我们编写的javascript代码，可以简单的理解为用JavaScript编写的模块。dist文件夹：用来存放供浏览器读取的文件，这个是webpack打包成的文件。 webpack打包 webpack {entry file} {destination for bundled file} 1.{entry file}:入口文件的路径，src/2.{destination for bundled file}:填写打包后存放的路径，dist/注意：在命令行中不需要写{}。 配置文件webpack.config.jswebpack.config.js就是Webpack的配置文件，这个文件需要自己在项目根目录下手动建立。 module.exports={ //入口文件的配置项 entry:{}, //出口文件的配置项 output:{}, //模块：例如解读CSS,图片如何转换，压缩 module:{}, //插件，用于生产模版和各项功能 plugins:[], //配置webpack开发服务功能 devServer:{} } 1.entry:配置入口文件的地址，可以是单一入口，也可以是多入口。 2.output：配置文件的地址，在webpack2.X版本后，支持多出口配置。 3.resolve:模块相关配置]]></content>
+      <categories>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue-router的简单介绍及使用方法]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F05%2F10%2Fvue-router%2F</url>
+    <content type="text"><![CDATA[安装和引用首先安装依赖 npm install vue-router 接着在项目中引入vue-router 。一般我们在用vue-cli创建项目的时候，就会提示是否安装路由，选择是就可以了。 router.js的配置Vue.use是用加载全局组件的。 mode:默认为hash，用hash模式的话，页面地址为变成被加个#号，如： http://localhost:8080/#/xxx base:应用的基路径。例如，如果整个单页应用服务在 /app/ 下，然后 base 就应该设为 “/app/“。一般写成 __dirname，在webpack中有配置。 router:vue-router的核心，包含页面的所有配置 path:访问这个页面的路径name:给这个页面路径定义一个名字，当在页面进行跳转的时候也可以用名字跳转，要唯一。component组件，就是我们在最上面引入的 import …了，当然这个组件的写法还有一种懒加载 懒加载：懒加载的方式，我们就不需要再用import去引入组件了，直接如下即可。懒加载的好处是当你访问到这个页面的时候才会去加载相关资源，这样的话能提高页面的访问速度。 component: resolve =&gt; require([&apos;./page/linkParamsQuestion.vue&apos;], resolve) router传参数1.路由匹配参数 在路由配置文件router.js中设置参数 routers:[ { path:&apos;/linkParms/:name&apos;, name:&apos;linkParms&apos;, component:linkParms } ] 代码中获取name的方式如下： let name = this.$route.params.name; 链接里的name被封装进了 this.$route.params 2.GET请求传参 样例:http://localhost:8080/linkParamsQuestion?age=18 项目里获取： let age = this.$route.query.age; 3.编程式导航 使用来创建可跳转链接，还可以在方法里使用this.$router.push(‘xxx’)来进行跳转。 &lt;router-link to=&quot;/linkParams/xuxiao&quot;&gt;&lt;/router-link&gt; // 字符串,这里的字符串是路径path匹配噢，不是router配置里的name this.$router.push(&apos;home&apos;) // 对象 this.$router.push({ path: &apos;home&apos; }) // 命名的路由 这里会变成 /user/123 this.$router.push({ name: &apos;user&apos;, params: { userId: 123 }}) // 带查询参数，变成 /register?plan=private this.$router.push({ path: &apos;register&apos;, query: { plan: &apos;private&apos; }}) 导航钩子 导航钩子函数，主要是在导航跳转的时候做一些操作，比如可以做登录的拦截，而钩子函数根据其生效的范围可以分为 全局钩子函数、路由独享钩子函数和组件内钩子函数。]]></content>
+      <categories>
+        <category>vue-router</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>vue-router</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue1]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F05%2F09%2Fvue1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[axios]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F04%2F28%2Faxios%2F</url>
+    <content type="text"><![CDATA[在开发vue项目的时候，调用接口一般都是通过Axios的方法来获取数据。安装axios npm install axios --save 在需要的页面中引入Axios import axios from &apos;axios&apos; 使用 created(){ axios.get(&apos;url&apos;) .then(response=&gt;{ console.log(response); }) .catch(error=&gt;{ console.log(error); }) } 拉取报错，一般有两种情况： 1.网络不通：网络状况不是很好，这可以在失败后隔5秒再次请求。2.拒绝访问：这种多是后端程序员设置了不允许跨域访问。]]></content>
+      <categories>
+        <category>axios</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>axios</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[svg图片字体制作]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F04%2F22%2Fsvg1%2F</url>
+    <content type="text"><![CDATA[在项目中我们可以会用到svg的图标，我这里使用的###icomoon.io 这个网站，网站里有许多可用图标，也可以使用本地的svg图标，选择好后点击页面下方的Generate Font 进入设置页面，可以对选择好的图标进行一个设置，设置fontName名称、class名称等。确认好后点击下方的Download即可下载 下载好后，把压缩包下的fonts里的文件和style.css移到项目下即可使用。]]></content>
+      <tags>
+        <tag>svg图标字体</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[搞定项目图标iconfont]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F04%2F20%2Ficonfont%2F</url>
+    <content type="text"><![CDATA[在开发中经常会遇到小图标的使用问题，小图标的使用可以让程序更美观和增加可用性。这里我推荐大家使用IconFont，这是阿里巴巴的矢量图标库。Iconfont中有很多图标，我们可以像在超市逛街一样，挑选自己喜欢的商品，然后放入购物车。 挑选图标的过程（共6步）1.进入网站：Iconfont网址：http://www.iconfont.cn2.点击网站上方的“官方图标库”，选择自己喜欢的图标。3.选择好自己喜欢的图标，你可以有两个选择，下载代码 和 添加至项目。4.我这里选择添加至项目，然后新建项目，并输入名称。5.项目添加好后，会自动给我们转入到我们项目库中。点击查看在线链接，点击生成。(记得先选中Font class) //at.alicdn.com/t/font_636144_fi67t0dxpkkb7qfr.css 6.生产css引入的代码，生成后就可以在项目首页index.html引入了。 &lt;i class=&quot;icon iconfont icon-hanbao&quot;&gt;&lt;/i&gt; 添加更多图标： 1.去Iconfont网站继续挑选，把相中的图标加入购物车中。 2.把购物车中的图标加入到项目中。 3.重新生成在线链接。（这部很重要） 4.在项目主页中(index.html)，更换css引入链接。]]></content>
+      <categories>
+        <category>icon图标</category>
+      </categories>
+      <tags>
+        <tag>icon</tag>
+        <tag>图标库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vuex的简单介绍及使用方法]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F04%2F19%2Fvuex%2F</url>
+    <content type="text"><![CDATA[vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。 1.引入vuex（1）利用npm包管理工具，进行安装vuex.在控制命令行中输入 npm install vuex --save 需要注意的是这里一定要加上 –save，因为这个包我们在生产环境中是要使用的。 （2）新建一个vuex文件夹（这个不是必须的），并在文件夹下新建store.js文件，文件中引入我们的vue和vuex。 import Vue from &apos;vue&apos;; import Vuex from &apos;vuex&apos;; Vue.use(Vuex); 通过这三步的操作，vuex就算引用成功了 用export default封装代码，让外部可以引用 export default new Vuex.Store({ state }) 在.vue文件下使用store.js的代码 （1）引入store.js文件 import store from &apos;@/vuex/store&apos; export default{ data(){ return{ msg:&apos;hello vueX&apos; } }, store } PS：data下面加上store （2）使用store.js的代码 {{$store.state.count}} 2.state访问状态对象（1）通过computed的计算属性直接赋值computed属性可以在输出前，对data中的值进行改变。 computed:{ count(){ return this.$store.state.count; } } 这里需要注意的是return this.$store.state.count这一句，一定要写this，要不你会找不到$store的。这种写法很好理解，但是写起来是比较麻烦的， （2）通过mapState的对象来赋值首先要用import引入mapState import {mapState} from &apos;vuex&apos;; 然后还在computed计算属性里写如下代码： computed:mapState({ count:state=&gt;state.count }) 这里我们使用ES6的箭头函数来给count赋值。 （3）通过mapState的数组来赋值 computed:mapState([&apos;count&apos;]) 这个算是最简单的写法了。在实际项目开发当中也经常这样使用。 3.Mutations修改状态$store.commit()Vuex提供了commit方法来修改状态 .vue文件： &lt;button @click=&quot;$store.commit(&apos;add&apos;)&quot;&gt;+&lt;/button&gt; &lt;button @click=&quot;$store.commit(&apos;reduce&apos;)&quot;&gt;-&lt;/button&gt; store.js文件： const mutations={ add(state){ state.count++; }, reduce(state){ state.count--; } } 传值：在项目中我们常常要在修改状态时传值，就需要再mutations里再加上一个参数，并在commit的时候传递就可以了。 store.js文件: const mutations={ add(state,n){ state.count+=n; }, reduce(state){ state.count--; } } .vue文件: &lt;button @click=&quot;$store.commit(&apos;add&apos;,10)&quot;&gt;+&lt;/button&gt; &lt;button @click=&quot;$store.commit(&apos;reduce&apos;)&quot;&gt;-&lt;/button&gt; 模板获取mutations方法在实际开发中我们也不喜欢看到$store.commit()这样的方法出现，我们希望和调用模板里的方法以一样。 例如：@click=”reduce” 就和没饮用vuex插件一样。使用这种写法：（1）.在模板count.vue里用import引入我们的mapMutations. import { mapState,mapMutations } from &apos;vuex&apos;; （2）.在模板的&lt;’script’&gt;标签里添加methods属性,并加入mapMutations methods:mapMutations([ &apos;add&apos;,&apos;reduce&apos; ]), 修改后使用方法： &lt;button @click=&quot;add(10)&quot;&gt;+&lt;/button&gt; &lt;button @click=&quot;reduce&quot;&gt;-&lt;/button&gt; 4.getters计算过滤操作getters从表面是获得的意思，可以把他看作在获取数据之前进行的一种再编辑，相当于对数据的一个过滤和加工。可以看作store.js的计算属性。 首先要在store.js里用const声明getters属性 const getters = { count:function(state){ return state.count +=100; } } 对模板页的.vue文件进行配置，在vue的构造器里边只能有一个computed属性,如果你写多个，只有最后一个computed属性可用，所以要对computed属性进行一个改造。需要使用ES6中的扩展运算符”…” (同理，其他的的也一样,methods等) computed:{ ...mapState([&quot;count&quot;]), count(){ return this.$store.getters.count; } }, 需要注意的是，写了这个配置后，在每次count值发生变化的时候，都会执行这个函数。 mapGetters简化模板写法：首先用import引入我们的mapGetters import { mapState,mapMutations,mapGetters } from &apos;vuex&apos;; 在computed属性中加入mapGetters ...mapGetters([&quot;count&quot;]) 5.actions异步修改状态actions和Mutations功能基本一样，不同的是，actions是异步的改变state状态，而Mutations是同步改变状态。 在store.js中声明actions，actions是可以调用Mutations里的方法的， const actions ={ addAction(context){ context.commit(&apos;add&apos;,10) }, reduceAction({commit}){ commit(&apos;reduce&apos;) } } context: 上下文对象，这里可以理解称store本身。{commit}：直接把commit对象传递过来，可以让方法体逻辑和代码更清晰明了。 模板中的使用，mapActions 和上面的模板方法一样。]]></content>
+      <categories>
+        <category>vuex</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+        <tag>vuex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[百度离线地图]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F04%2F14%2Flixianditu1%2F</url>
+    <content type="text"><![CDATA[百度离线地图百度离线文件及详细使用说明已放在github上，可以下载使用 ‘https://github.com/liuyang996/lianxiCity’ 关于地图瓦片我使用的是太乐地图下载器。网上有资源可以自行下载。瓦片放的路径在图片已说明。]]></content>
+      <categories>
+        <category>百度离线地图</category>
+      </categories>
+      <tags>
+        <tag>百度离线地图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[javascript常用代码整理]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F04%2F12%2Fjs1%2F</url>
+    <content type="text"><![CDATA[在开发中经常会用到的代码。方便随时使用$.ajax$.ajax({ type:&quot;POST&quot;, url:&quot;{{url('')}}&quot;, async:true, data: {}, dateType: &apos;json&apos;, success : function(data){ var obj = {}; var obj = jQuery.parseJSON(data); console.log(obj); } });]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[快应用简单介绍及遇见问题总结]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F04%2F11%2Fkuaiyingyong%2F</url>
+    <content type="text"><![CDATA[随着3月20号北京开发的快应用(quickapp)的发布,各大手机应用厂商加入了快应用这个行列，该应用模块以标准js语法+重组css标签+Flexbox布局+mvvm模式。类似于微信小程序的依附在微信中，而快应用依附在各大应用市场，可搜索直接打开，无需安装的便捷操作方式。环境搭建（window平台）1.安装nodejs2.安装hap-toolkit（打开cmd-&gt;npm install -g hap-toolkit)3.安装完成输入命令(hap -V) 正确输出版本信息说明安装成功。例如（0.0.26） 所推荐使用的IDE推荐的ide为vscode+hap extension插件开发 初始化项目1.执行以下命令初始化项目 hap init (你的项目名称) 命令生成后，该目录的结构如下 ├── node_modules ├── sign rpk包签名模块 │ └── debug 调试环境 │ ├── certificate.pem 证书文件 │ └── private.pem 私钥文件 ├── src │ ├── Common 公用的资源文件和组件文件 │ │ └── logo.png manifest.json中配置的icon │ ├── Demo 页面目录 │ | └── index.ux 页面文件，文件名不必与父文件夹相同 │ ├── app.ux APP文件（用于包括公用资源） │ └── manifest.json 项目配置文件（如：应用描述、接口申明、页面路由等） └── package.json 定义项目需要的各种模块及配置信息，npm install根据这个配置文件，自动下载所需的运行和开发环境 编译项目先安装依赖，在项目根目录执行以下命令 npm install 待安装完成，使用以下命令编译打包生成rpk包 npm run build PS:(出现报错的话先执行一下 hap update –force，再build) hap update --force 编译打包成功后，项目根目录下会生成文件夹：build、dist 1.build：临时产出，包含编译后的页面js，图片等2.dist：最终产出，包含rpk文件。其实是将build目录下的资源打包压缩为一个文件，后缀名为rpk，这个rpk文件就是项目编译后的最终产出 使用以下命令可自动重新编译 npm run watch 开始开发开demo代码的时候，以为是跟vue差不多，但是在开发过程中发现，其实他并不是真正的html+css、很多html、css代码都不支持，视乎它只是模拟而已，因为会把它转为原生组件，暂时就没能全部支持，所以开发过程还是挺难受的，动不动就报错没有这个属性没有那个属性。 坑1：有很多样式是快应用是没有的。如果写上去没有生效，就编译下，cmd会有提示的。坑2：在设置图片路径的时候，怎么设都无效，设置自带的logo有效，尝试n久之后，原来要编译一下才能看到，因为以为开了watch就不需要编译了。坑3：在用标签写入内容的时候，在div里直接写文字不会渲染，要加个标签1.修改manifest.json配置信息{ &quot;package&quot;: &quot;cn.codebear.wanandroid&quot;, //应用包名 &quot;name&quot;: &quot;wanandroid&quot;, //应用名称 &quot;versionName&quot;: &quot;1.0.0&quot;, //版本名称 &quot;versionCode&quot;: &quot;1&quot;, //版本号 &quot;minPlatformVersion&quot;: &quot;101&quot;, //支持的最小平台版本号 &quot;icon&quot;: &quot;/Common/Image/logo.png&quot;, //应用logo &quot;features&quot;: [ //接口列表 { &quot;name&quot;: &quot;system.prompt&quot; }, { &quot;name&quot;: &quot;system.router&quot; }, { &quot;name&quot;: &quot;system.shortcut&quot; }, { &quot;name&quot;: &quot;system.fetch&quot; }, { &quot;name&quot;: &quot;system.webview&quot; }, { &quot;name&quot;: &quot;system.storage&quot; } ], &quot;permissions&quot;: [ { &quot;origin&quot;: &quot;*&quot; } ], &quot;config&quot;: { //系统配置信息 &quot;logLevel&quot;: &quot;debug&quot; }, &quot;router&quot;: { //路由信息 &quot;entry&quot;: &quot;Wanandroid&quot;, &quot;pages&quot;: { &quot;Wanandroid&quot;: { &quot;component&quot;: &quot;index&quot; }, &quot;Webview&quot;: { &quot;component&quot;: &quot;index&quot; } } }, &quot;display&quot;: { //UI显示相关配置 &quot;titleBar&quot;: true, &quot;titleBarBackgroundColor&quot;: &quot;#24b9ff&quot;, &quot;titleBarTextColor&quot;: &quot;#ffffff&quot;, &quot;titleBarText&quot;: &quot;首页&quot;, &quot;pages&quot;: { } } } 具体如何配置，官方文档写的挺详细。]]></content>
+      <categories>
+        <category>快应用</category>
+      </categories>
+      <tags>
+        <tag>快应用</tag>
+        <tag>quickapp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[vue仿饿了么app项目]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F24%2FvueSell%2F</url>
+    <content type="text"><![CDATA[记录vue饿了么app项目过程的一些可用点1.图标字图制作 icomoon.io 字图图标网站，可以在该网站使用svg图片做字体图标 2.项目目录 主要设置src文件下的目录， 1.src下新建一个common文件夹，这个文件夹是用来充当公用文件夹，里面新建fonts文件夹、js文件夹、stylus文件夹。 2.components文件夹一般不直接放.vue文件，根据组件化新建文件夹，如header组件，可以新建header文件夹，在里面创建header.vue。 3.mock数据(模拟后台数据) 在项目build文件夹下的，webpack.dev.conf.js（以前是dev-server.js） 1.在const portfinder = require(‘portfinder’)后添加 //添加mock数据 const express = require(&apos;express&apos;) const app = express() var appData = require(&apos;../data.json&apos;); var seller = appData.seller; var goods = appData.goods; var ratings = appData.ratings; var apiRoutes = express.Router(); app.use(&apos;/api&apos;,apiRoutes) 2.//然后找到devServer,在里面添加 before(app){ app.get(&apos;/api/seller&apos;,(req,res)=&gt;{ res.json({ errno:0, data:seller }) }); app.get(&apos;/api/goods&apos;,(req,res)=&gt;{ res.json({ errno:0, data:goods }) }); app.get(&apos;/api/ratings&apos;,(req,res)=&gt;{ res.json({ errno:0, data:ratings }) }) } 3、然后npm run dev，一定要重启 一下就可以http:/localhost:8080/api/seller 访问了 4.截图 vue-loader依赖postcss搞定css兼容问题，所以不用再写css兼容样式 4.开发webapp用手机查看效果小技巧当我们在PC端上开发webapp时，有时候想用手机查看效果时，可以用这个办法实现。 1.先查看电脑的ip地址，命令行 ipconfig，查到后在地址栏把localhost换成你的IP地址，如果是vue的话，检查下，build-config-index.js文件，找打module.exports里的host，把localhost改为自己的IP地址。 2.使用草料二维码，把网址生成成一个二维码，用微信扫一下即可查看效果。 PS：保证电脑和手机在一个网段。 5.父组件向子组件通信父组件：&lt;v-header :seller=&apos;seller&apos;&gt;&lt;/v-header&gt; data(){ return{ seller:{}, } }, 组件 “:seller” 为传递名称 ‘=’后的seller为传递值 子组件子组件通过props来接收数据： 方式1： props:[&apos;seller&apos;] 方式2： props: { seller: Object } 方式3： props: { seller: { type: Object, default:{} } } 写的函数在vue作用域中可以相互调用 访问DOM方法 html： &lt;div ref=&apos;wrapper&apos;&gt;&lt;/div&gt; js: this.$refs.wrapper]]></content>
+      <categories>
+        <category>vue项目</category>
+      </categories>
+      <tags>
+        <tag>vue项目</tag>
+        <tag>vue饿了么app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[微信小程序-短信倒计时效果]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F20%2Fxiaochengxu2%2F</url>
+    <content type="text"><![CDATA[在项目中，经常会有注册功能，那么就会用到短信验证码，为了防止用户重复请求，造成的资源浪费，就可以使用短信倒计时的效果。.wxml &lt;view class=&apos;list&apos;&gt; &lt;view class=&quot;list-tit&quot;&gt;手机号&lt;/view&gt; &lt;view class=&quot;list-input&quot;&gt; &lt;input type=&quot;digit&quot; class=&quot;input&quot; bindinput=&quot;tels&quot; name=&quot;tel&quot; value=&quot;{{ptel}}&quot; &gt;&lt;/input&gt; &lt;/view&gt; &lt;/view&gt; &lt;view class=&apos;list&apos;&gt; &lt;view class=&quot;list-tit list-tit2&quot;&gt;验证码&lt;/view&gt; &lt;view class=&quot;list-input list-input2&quot;&gt; &lt;input type=&quot;digit&quot; class=&quot;input&quot; name=&quot;yzm&quot; value=&quot;{{pyzm}}&quot; &gt;&lt;/input&gt; &lt;/view&gt; &lt;view class=&apos;btn-yzm {{sendmsg}}&apos; bindtap=&quot;sendmessg&quot;&gt;{{getmsg}}&lt;/view&gt; .js 初始化 data: { ptel:&apos;&apos;, sendmsg: &quot;sendmsg&quot;, getmsg: &quot;获取短信验证码&quot;, pyzm:&apos;&apos;, timer:1 }, 获取短信验证码 sendmessg: function (e) { var that = this console.log(e.detail.value) if (this.data.timer == 1) { if (this.data.ptel == &quot;&quot;) { wx.showModal({ title: &apos;提示&apos;, content: &apos;请输入手机号&apos; }) } else { console.log(that.data.ptel) //倒计时 var time = 60 that.setData({ sendmsg: &quot;sendmsgafter&quot;, timer: 0 }) var inter = setInterval(function () { that.setData({ getmsg: time + &quot;s后重新发送&quot;, }) time-- if (time &lt; 0) { that.setData({ timer: 1, }) clearInterval(inter) that.setData({ sendmsg: &quot;sendmsg&quot;, getmsg: &quot;获取短信验证码&quot;, }) } }, 1000) wx.showToast({ title: &quot;获取验证码成功&quot; }) } } }, 思路：将点击后样式和内容设为变量，点击之后setData将其改变即可实现过程：函数执行先判断timer的值，这个值是用来让定时器不重复执行。默认为1表示可以执行。当为1时，进入执行流程，先判断输入框是否有内容，如果有，则设置倒计时的时间，然后改变timer的值，我这里设置为0，sendmsg字段用来动态改变文字样式。然后设置定时器，每秒动态改变getmsg的值，当time小于0时，停止停止器，修改timer的值为1。input输入框事件 tels: function (e) { // console.log(e.detail.value); this.setData({ ptel: e.detail.value }) }, 实时获取内容，并赋值给ptel字段]]></content>
+      <categories>
+        <category>微信小程序</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6-新增的数组知识]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F16%2Fes6-5%2F</url>
+    <content type="text"><![CDATA[JSON数组格式转换Array.from(json) 数组的遍历这种形式比ES5的for循环要简单而且高效。 let arr=[&apos;html&apos;,&apos;css&apos;,&apos;js&apos;] for(let item of arr){ console.log(item); } for…of数组索引:for (let index of arr.keys()){ console.log(index); } 同时输出数组的内容和索引:用entries()这个实例方法，配合我们的for…of循环就可以同时输出内容和索引了。 for (let [index,val] of arr.entries()){ console.log(index+&apos;:&apos;+val); }]]></content>
+      <categories>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6-数字操作]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F16%2Fes6-4%2F</url>
+    <content type="text"><![CDATA[数字判断和转换数字验证Number.isFinite( xx )，只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。 let a= 11/4; console.log(Number.isFinite(a));//true console.log(Number.isFinite(&apos;xxx&apos;));//false NaN验证 Number.isNaN()console.log(Number.isNaN(NaN)); //true 判断是否为整数Number.isInteger(xx)let a=123.1; console.log(Number.isInteger(a)); //false]]></content>
+      <categories>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6-字符串模板]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F16%2Fes6-3%2F</url>
+    <content type="text"><![CDATA[字符串模板使用字符串模板可以比较方便的让我们拼接字符串 let york = &apos;穿过繁华&apos;; let blog = `这是我的博客，博客名字叫${york}`; 在拼接的时候，使用不是单引号或双引号，而是反引号（在tab键上面）变量用 ${} 符号来引入。 对运算的支持let a =1; let b =2; let add = `${a+b}`; 字符串查找（支持中文查找）查找是否存在：.includes() 返回布尔值let blog = &apos;博客&apos;； let jies = &apos;Hello 大家好，这是我的博客，欢迎大家瞧一瞧&apos;; console.log(jies.includes(blog)); 判断开头是否存在 .startsWith() 返回布尔值console.log(jies.startsWith(blog)); 判断结尾是否存在 .endsWith() 返回布尔值console.log(jies.endsWith(blog)); 复制字符串 .repeat()document.write(&apos;blog&apos;.repeat(3));]]></content>
+      <categories>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6-对象扩展运算符]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F15%2Fes6-2%2F</url>
+    <content type="text"><![CDATA[对象扩展运算符（…）当编写一个方法时，我们允许它传入的参数是不确定的。这时候我们可以使用对象扩展运算符来做参数。 fuction ly(...arg){ console.log(arg[0]); console.log(arg[1]); console.log(arg[2]); console.log(arg[3]); } ly(1,2,3) 这时我们看到控制台输出了1,2,3,undefined,说明时可以传入多个值，并且就算方法引入多了也不会报错。 扩展运算符的用处我们声明两个数组arr1和arr2,然后我们把arr1赋值给arr2,然后在改变arr2的值，这时arr1的值也改变了，因为我们这是对内存堆栈的引用，而不是真正的赋值。 利用对象扩展运算符解决这个问题。 let arr1 = [&apos;css3&apos;,&apos;html&apos;,&apos;js&apos;]; //let arr2 = arr1; let arr2 = [...arr1]; console.log(arr2); //[&apos;css3&apos;,&apos;html&apos;,&apos;js&apos;] arr2.push(&apos;ES6&apos;); console.log(arr2);//[&apos;css3&apos;,&apos;html&apos;,&apos;js&apos;,&apos;ES6&apos;] console.log(arr1);//[&apos;css3&apos;,&apos;html&apos;,&apos;js&apos;]]]></content>
+      <categories>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ES6-变量的解构赋值]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F15%2Fes6-1%2F</url>
+    <content type="text"><![CDATA[解构赋值ES6允许按照一定模式，从数组和对象那个中提取值，对变量进行赋值，这被称为解构。解构赋值在实际开发中可以大量减少我们的代码了，并且让我们的程序解构更清晰。 let [a,b,c]=[1,2,3]; 上面的代码表示，可以从数组中提取值，按照位置的对象关系对变量赋值。 解构的默认值解构赋值是允许使用默认值的 let [a,b=&apos;liuyang&apos;] = [&apos;web&apos;] console.log(a+b); // &apos;webliuyang&apos; 需要注意下undefined和null的区别，undefined相当于什么都没有，null有值，但为空。 对象的解构赋值let {foot,bar} = { foo:&apos;liuyang&apos;,bar:&apos;gggg&apos;}; console.log(a+b); // &apos;liuyanggggg&apos; 注意：对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。 字符串解构const [a,b,c,d,e,f]=&quot;liuyang&quot;;]]></content>
+      <categories>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[微信小程序开发中遇到的问题及经常使用的代码]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F03%2F02%2Fxiaochengxu1%2F</url>
+    <content type="text"><![CDATA[开发已上线小程序（在微信小程序可搜索以下名称）1.在线巡更2.在线培训学习3.智慧旅店 开发注意事项1.在使用接口的时候必须使用https协议。2.openid返回40029。出现这个问题，可以是前后端的密钥不匹配，或者使用的是个人的appid3.在发布的时候，appid需要替换成正式appid，这时候记得要在正式开发账号(正式appid的账号)，添加你为开发者，不然是无法创建项目的。4.在上线的时候，正式账号上，记得要配置域名，不然就无法调用接口。 开发问题1.在小程序中使用map地图的时候在页面中定义view等标签，在模拟器中可以显示，但是真机上是不显示的，因为，在真机上map的z-index层次是最高的，会覆盖其他的标签。 解决办法：使用map标签的controls属性，来设置地图上的按钮等元素。 设置controls后截图 1&lt;map longitude=&quot;&#123;&#123;longitude&#125;&#125;&quot; latitude=&quot;&#123;&#123;latitude&#125;&#125;&quot; markers=&quot;&#123;&#123;markers&#125;&#125;&quot; controls=&quot;&#123;&#123;controls&#125;&#125;&quot; scale=&quot;20&quot; polyline=&quot;&#123;&#123;polyline&#125;&#125;&quot; circles=&quot;&#123;&#123;circles&#125;&#125;&quot; bindcontroltap=&quot;controltap&quot;&gt;&lt;/map&gt; 说明：longitude属性表示中心经度；latitude属性表示中心纬度；markers属性表示地图的标注点；controls属性就是设置控件的如按钮等，格式为数组对象;scale表示缩放级别；polyline表示路线；circles表示以自己位置为中点的圆；bindcontroltap=”controltap”事件作用是对controls属性里的控件做回调事件可以通过对controls里的id值来判断对某个按钮做操作。 我们在初始化了map标签里的属性之后，在后面可能会修改他的值，我这里修改的方式是先修改需要改变的属性里的值，然后在用setData重新赋值,例如 that.data.controls[1].iconPath = &quot;/images/xunluoJ.png&quot;； this.setData({ controls: that.data.controls }) 2.获取用户坐标 wx.getLocation({ //type: &apos;wgs84&apos;, type: &apos;gcj02&apos;, //altitude:false, success: function (res) { that.globalData.latitude = res.latitude that.globalData.longitude = res.longitude //var speed = res.speed //var accuracy = res.accuracy } }) 参数说明 altitude 表示是否启用高精度定位，启用的话定位较准，但是会减慢接口返回速度 3.判断两个坐标之间的距离 var EARTH_RADIUS = 6378.137; //地球半径 function rad(d) { return d * Math.PI / 180.0; } function getDistance(lng1, lat1, lng2, lat2) { var radLat1 = rad(lat1); var radLat2 = rad(lat2); var a = radLat1 - radLat2; var b = rad(lng1) - rad(lng2); var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2))); s = s * EARTH_RADIUS; s = Math.round(s * 10000) / 10000; return s;//返回数值单位：公里 } 4.使用wx.setStorageSync保存全局变量值 wx.setStorageSync(&apos;我是给保存的变量取个名字&apos;, 我是要保存的变量) 5.使用wx.setStorageSync获取全局变量值 wx.getStorageSync(&apos;我是保存变量的名字&apos;), 6.页面下拉刷新 设置页面的下拉刷新首先需要再app.json文件下的window对象里设置 &quot;window&quot;:{ &quot;enablePullDownRefresh&quot;:true } 然后在需要下拉刷新的页面中的.js文件下的 onPullDownRefresh 函数中写下拉操作 //下拉刷新 onPullDownRefresh:function() { wx.showNavigationBarLoading() //在标题栏中显示加载 //模拟加载 setTimeout(function() { // complete wx.hideNavigationBarLoading() //完成停止加载 wx.stopPullDownRefresh() //停止下拉刷新 },1500); }, 7.设置单个页面标题 在需要设置页面标题的.js文件中 wx.setNavigationBarTitle({ title: &apos;标题&apos;, }) 8.请求接口 function sendRequest(path, data, callback) { wx.request({ url: path, data: data, header: { &apos;content-type&apos;: &apos;application/json&apos; }, method: &quot;POST&quot;, success: callback, fail:(res)=&gt;{ console.log(res) } }) } 9.跳转页面常用方式 wx.navigateTo({ //保留当前页面 url: &apos;&apos; }) wx.redirectTo({ //关闭当前页面 url: &apos;&apos; }) wx.switchTab({ //跳转tabBar页面 url: &apos;../b/b&apos; }); PS:有些很基本的代码块放在这里是为了开发的时候直接Ctrl+C、V加快速度 (#^.^#)]]></content>
+      <categories>
+        <category>微信小程序</category>
+      </categories>
+      <tags>
+        <tag>微信小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[css常用样式]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F02%2F20%2Fcss%2F</url>
+    <content type="text"><![CDATA[/*公共样式--开始*/ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select { margin: 0; padding: 0; } *{box-sizing: border-box;} html, body { min-height: 100%; } body { font-family: &quot;Microsoft YaHei&quot;; font-size:14px; color:#333; } h1, h2, h3, h4, h5, h6{font-weight:normal;} ul,ol { list-style: none; } img { border: none; vertical-align: middle; } a { text-decoration: none; color: #232323; } table { border-collapse: collapse; table-layout: fixed; } input, textarea { outline: none; border: none; } textarea { resize: none; overflow: auto; } .clearfix { zoom: 1; } .clearfix:after { content: &quot;.&quot;; width: 0; height: 0; visibility: hidden; display: block; clear: both; overflow:hidden; } .fl { float: left } .fr { float: right } .tl { text-align: left; } .tc { text-align: center } .tr { text-align: right; } .ellipse { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .inline{ display: inline-block; *display: inline; *zoom: 1; } 自定义模态弹窗&lt;div class=&quot;dialog-overlay&quot;&gt;&lt;/div&gt; &lt;div class=&quot;dialog-box&quot;&gt; &lt;div class=&quot;dialog-content&quot;&gt; &lt;/div&gt; &lt;div class=&quot;close&quot;&gt;x&lt;/div&gt; &lt;/div&gt; css: /* 弹框样式 */ .dialog-overlay{ width:100%; height:100%; filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5; position:absolute; background:#000; top:0; left:0; z-index:999; display:block; } .dialog-box{ /* -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); -moz-border-radius: 5px; -webkit-border-radius: 5px; */ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); border-radius: 5px; background:#fbf9fe; position:absolute; z-index:1000; display:block; left: 50%; top: 50%; transform: translate(-50%, -50%); } dialog-content{ text-align:left; padding:20rpx; color:#666; font-family:arial; font-size:24rpx; position: relative; } .dialog-box .close{ padding: 0; position: absolute; right: -20rpx; top: -20rpx; z-index: 1099; background-color: #e33100; display: block; width:50rpx; height:50rpx; line-height: 44rpx; border-radius: 50%; color: #fff; text-decoration: none; font-weight: bold; text-align:center; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); border-bottom: 1px solid rgba(0,0,0,0.25); cursor: pointer; } 单行或多行文字实现垂直居中父元素: display:table 子元素： display:table-cell 背景模拟效果html: &lt;div class=&apos;wrap&apos;&gt; &lt;div class=&apos;background&apos;&gt; &lt;img src=&quot;images/ex4.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%;height: 100%;&quot;&gt; &lt;/div&gt; &lt;/div&gt; css: .wrap{ position:relative } .background{ position: absolute; left: 0; top: 0; width: 100%; height: 100%; -webkit-filter: blur(10px); /* Chrome, Opera */ -moz-filter: blur(10px); -ms-filter: blur(10px); filter: blur(10px); z-index: -1; }]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[krpano360全景漫游常用代码及使用说明整理]]></title>
+    <url>%2Fliuyang996.github.io%2F2018%2F02%2F03%2Fkrpano1%2F</url>
+    <content type="text"><![CDATA[前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。(3)支持多种类型的全景图已及全景视频和环物全景tip:全景图拍摄、拼接的教程&lt;a href=”http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程&lt;a href=”https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航 krpano常用设置PS:常用设置一般都是在.xml文件下设置的 1.小行星开场littleplanetintro=&quot;true&quot; 2.自动循环浏览&lt;autorotate enabled=&quot;true&quot; waittime=&quot;2.0&quot; speed=&quot;-10.0&quot; horizon=&quot;0.0&quot; /&gt; &lt;events name=&quot;onautorotateevents&quot; keep=&quot;true&quot; onautorotateoneround=&quot;nextscene()&quot;/&gt; 3.添加场景&lt;scene&gt;&lt;/scene&gt; 注：可以使用.bat文件在别处生成一个场景，然后把生成的.xml文件里的scene标签拷过来，还要拷panos文件夹里的文件。 4.添加热点&lt;hotspot name=&quot;spot4&quot; style=&quot;skin_hotspotstyle&quot; ath=&quot;82.688&quot; atv=&quot;44.260&quot; linkedscene=&quot;scene_otc3&quot; /&gt; 注：ath、atv是热点的坐标，可以通过krpano的图形界面软件点选生成热点。linkedscene是跳转场景，值是跳转场景的title 5.热点添加图片&lt;hotspot name=&quot;spot4&quot; url=&quot;new_spotd7_gif.png&quot; /&gt; 注：我这里的图片路径和tour.xml文件为同一路径，可根据需要更改 6.热点图片，文字样式。我们可能会需要图片带有一闪一闪的动效，这样会提示用户去点，还有图片的颜色等&lt;!-- 定义热点风格 - 白色热点 --&gt; &lt;style name=&quot;hotspot_ani_white&quot; crop=&quot;0|0|128|128&quot; framewidth=&quot;128&quot; frameheight=&quot;128&quot; frame=&quot;0&quot; lastframe=&quot;19&quot; onloaded=&quot;hotspot_animate();add_all_the_time_tooltip();&quot; /&gt; &lt;!-- 热点动画action，每隔0.03秒改变crop的内容，从而实现动画效果， inc是一个每次递增指定数值的方法，这里是让frame这个变量每次增加1， 当到达19时，则从0又开始递增。mul是乘法运算，将高度乘以当前帧序号， 得到crop中y的位置。txtadd对crop的内容进行了设定。因为每一次ypos 的值都会发生变化，所以crop中所显示的内容也发生变化。 最后是0.03秒后再次执行自身。 --&gt; &lt;action name=&quot;hotspot_animate&quot;&gt; inc(frame,1,get(lastframe),0); mul(ypos,frame,frameheight); txtadd(crop,&apos;0|&apos;,get(ypos),&apos;|&apos;,get(framewidth),&apos;|&apos;,get(frameheight)); delayedcall(0.03, if(loaded, hotspot_animate() ) ); &lt;/action&gt; &lt;!--热点文字提示--&gt; &lt;action name=&quot;add_all_the_time_tooltip&quot;&gt; txtadd(tooltipname, &apos;tooltip_&apos;, get(name)); addplugin(get(tooltipname)); txtadd(plugin[get(tooltipname)].parent, &apos;hotspot[&apos;, get(name), &apos;]&apos;); set(plugin[get(tooltipname)].url,&apos;%SWFPATH%/plugins/textfield.swf&apos;); set(plugin[get(tooltipname)].align,top); set(plugin[get(tooltipname)].edge,bottom); set(plugin[get(tooltipname)].x,0); set(plugin[get(tooltipname)].y,0); set(plugin[get(tooltipname)].autowidth,true); set(plugin[get(tooltipname)].autowidth,true); set(plugin[get(tooltipname)].background,true); set(plugin[get(tooltipname)].backgroundcolor,0x000000); set(plugin[get(tooltipname)].roundedge,5); set(plugin[get(tooltipname)].backgroundalpha,0.65); set(plugin[get(tooltipname)].padding,5); set(plugin[get(tooltipname)].border,false); set(plugin[get(tooltipname)].glow,0); set(plugin[get(tooltipname)].glowcolor,0xFFFFFF); set(plugin[get(tooltipname)].css,&apos;text-align:center; color:#FFFFFF; font-family:MicrosoftYahei; font-size:14px;&apos;); if(device.mobile,set(plugin[get(tooltipname)].css,&apos;text-align:center; color:#FFFFFF; font-family:MicrosoftYahei; font-weight:bold; font-size:22px;&apos;); set(plugin[get(tooltipname)].y,0);); set(plugin[get(tooltipname)].textshadow,0); set(plugin[get(tooltipname)].textshadowrange,6.0); set(plugin[get(tooltipname)].textshadowangle,90); copy(plugin[get(tooltipname)].html,hotspot[get(name)].tooltip); &lt;!--设置hotspot命名为tooltip标签--&gt; set(plugin[get(tooltipname)].enabled,false); &lt;/action&gt; &lt;!--热点动态模式--&gt; &lt;action name=&quot;do_crop_animation_onclick&quot;&gt; if(hotspot[get(name)].animated === null OR hotspot[get(name)].animated == false, set(hotspot[get(name)].animated,true); setinterval(calc(&apos;crop_anim_&apos; + name), calc(1.0 / %3), inc(frame); if(frame GE frames, if(onlastframe !== null, onlastframe() ); set(frame,0); ); mod(xpos, frame, xframes); div(ypos, frame, xframes); Math.floor(ypos); mul(xpos, %1); mul(ypos, %2); calc(crop, xpos + &apos;|&apos; + ypos + &apos;|%1|%2&apos;); ); , set(hotspot[get(name)].animated,false); clearinterval(calc(&apos;crop_anim_&apos; + name)); set(crop, &apos;0|0|%1|%2&apos;); ); PS:我这里把热点标签hotspot的命名方式改成了tooltip属性，在给hotspot命名时只需要设置它的tooltip属性就可以了。 原始为： &lt;!--设置hotspot命名为scene标签的title属性--&gt; &lt;!--copy(plugin[get(tooltipname)].html,scene[get(linkedscene)].title);--&gt; 上面是对热点设置的一系列属性，直接都拷贝过去用就可以了。 7.热点命名上面已经说了，可以看看6 8.热点添加点击js事件&lt;hotspot onclick=&quot;js(Aqu())&quot; /&gt; 注：这里要注意下函数名外面要套一个js(),负责不会生效的。 页面效果截图展示]]></content>
+      <categories>
+        <category>krpano</category>
+      </categories>
+      <tags>
+        <tag>krpano</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ECharts常用代码及说明整理]]></title>
+    <url>%2Fliuyang996.github.io%2F2017%2F11%2F10%2Fecharts1%2F</url>
+    <content type="text"><![CDATA[在开发可视化分析或者大数据展示的时候，经常会用到echarts图表，有许多经常会用的参数，这里给大家列举一下，以方便在需要的时候直接使用即可。1.引入echarts.js这个网上下一个或者用cdn。2.html加一个放图表的容器&lt;div id=&quot;main&quot; style=&quot;width:400px;height:400px&quot;&gt;&lt;/div&gt; 3.找到这个标签var myChart = echarts.init(document.getElementById(&apos;main&apos;)) 4.放入需要的option数据(一般直接在echarts官网选好了复制即可)5.为echarts对象加载数据myChart.setOption(option); PS:建议3、4、5步用函数封装起来，这样图表多的时候也好找些。 myChart(); function myChart(){ var myChart = echarts.init(document.getElementById(&apos;main&apos;)) option ={...} myChart.setOption(option); } 图表X轴内容全部显示有时候我们X轴的文字会很长，多个的话就会挤到一起，这时候我们需要这样设置，在xAxis对象里加： axisLabel:{ interval:0, //横轴信息全部显示 rotate:-30, // -30度角倾斜显示 } 图表图例字体颜色，大小， 在legend对象里加：textStyle:{ //图例文字的样式 color:&apos;#fff&apos;, fontSize:12 } 图表数据颜色，在series对象里加itemStyle:{ normal:{ color:&apos;#ceee61&apos; } }, 图表字体颜色设置（在xAxis或yAxis里加）axisLabel: { show: true, textStyle: { color: &apos;#fff&apos; } } 调整图表在div中的大小和位置grid:[ { x: &apos;2%&apos;, y: &apos;2%&apos;, width: &apos;80%&apos;, height: &apos;80%&apos; } ], 设置图表背景颜色(和title、tooltip等同级)backgroundColor: [&apos;#02204a&apos;], 设置饼图数据在圈内在series数组里设置，注意，label和data数组统计，不要把label放在itemStyle里面。 label: { normal: { position: &apos;inner&apos;, formatter: &apos;{b} : {c} ({d}%)&apos;, textStyle: { color: &apos;#fff&apos;, fontWeight: &apos;bold&apos;, fontSize: 14 } } },]]></content>
+      <categories>
+        <category>ECharts</category>
+      </categories>
+      <tags>
+        <tag>ECharts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTML、CSS中雪碧图的使用]]></title>
+    <url>%2Fliuyang996.github.io%2F2017%2F06%2F30%2Fcss2%2F</url>
+    <content type="text"><![CDATA[雪碧图：多个图片集成在一个图片中的图。使用雪碧图可以减少网络请求的次数，加快运行的速度。 需用方法，主要用到background-position属性 推荐一个在线生产雪碧图的网站，只需要上传小图标即可 https://www.toptal.com/developers/css/sprite-generator]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS Sprites</tag>
+      </tags>
+  </entry>
+</search>
