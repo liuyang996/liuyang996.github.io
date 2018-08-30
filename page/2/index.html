@@ -547,7 +547,7 @@ path:访问这个页面的路径name:给这个页面路径定义一个名字，�
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  435
                 </span>
               
 
@@ -563,7 +563,7 @@ path:访问这个页面的路径name:给这个页面路径定义一个名字，�
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -586,8 +586,22 @@ path:访问这个页面的路径name:给这个页面路径定义一个名字，�
       
         
           
-          
-          
+          vue阅读文档记录笔记修饰符&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
+作用：事件会调用event.preventDefault();
+缩写1 v-bind缩写  
+&lt;a v-bind:href=&quot;url&quot;&gt;...&lt;/a&gt;
+
+&lt;a :href=&quot;url&quot;&gt;...&lt;/a&gt;
+2 v-on缩写
+&lt;a v-on:click=&quot;dosomething&quot;&gt;&lt;/a&gt;
+&lt;a @click=&quot;dosomething&quot;&gt;&lt;/a&gt;
+计算属性对于任何复杂逻辑，都应当使用计算属性   
+computed:{
+  //计算属性的getter
+   reversedMessage:function(){
+       return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)
+
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/liuyang996.github.io/2018/05/09/vue1/#more" rel="contents">
@@ -2191,7 +2205,7 @@ var sell
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2276,7 +2290,7 @@ var sell
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共12.3k字</span>
+	  <span class="post-count">博客全站共13.0k字</span>
 	</div>
   
 </div>

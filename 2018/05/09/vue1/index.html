@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="vue阅读文档记录笔记修饰符&amp;lt;form v-on:submit.prevent=&amp;quot;onSubmit&amp;quot;&amp;gt;&amp;lt;/form&amp;gt; 作用：事件会调用event.preventDefault(); 缩写1 v-bind缩写   &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;...&amp;lt;/a&amp;gt;  &amp;lt;a :href=&amp;quot;ur">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue1">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/05/09/vue1/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
+<meta property="og:description" content="vue阅读文档记录笔记修饰符&amp;lt;form v-on:submit.prevent=&amp;quot;onSubmit&amp;quot;&amp;gt;&amp;lt;/form&amp;gt; 作用：事件会调用event.preventDefault(); 缩写1 v-bind缩写   &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;...&amp;lt;/a&amp;gt;  &amp;lt;a :href=&amp;quot;ur">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-09T02:01:39.191Z">
+<meta property="og:updated_time" content="2018-08-24T09:29:48.430Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue1">
+<meta name="twitter:description" content="vue阅读文档记录笔记修饰符&amp;lt;form v-on:submit.prevent=&amp;quot;onSubmit&amp;quot;&amp;gt;&amp;lt;/form&amp;gt; 作用：事件会调用event.preventDefault(); 缩写1 v-bind缩写   &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;...&amp;lt;/a&amp;gt;  &amp;lt;a :href=&amp;quot;ur">
 
 
 
@@ -354,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  435
                 </span>
               
 
@@ -370,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -391,7 +394,55 @@
       
 
       
-        
+        <h3 id="vue阅读文档记录笔记"><a href="#vue阅读文档记录笔记" class="headerlink" title="vue阅读文档记录笔记"></a>vue阅读文档记录笔记</h3><h5 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h5><pre><code>&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
+</code></pre><p>作用：事件会调用event.preventDefault();</p>
+<h5 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h5><p>1 v-bind缩写  </p>
+<pre><code>&lt;a v-bind:href=&quot;url&quot;&gt;...&lt;/a&gt;
+
+&lt;a :href=&quot;url&quot;&gt;...&lt;/a&gt;
+</code></pre><p>2 v-on缩写</p>
+<pre><code>&lt;a v-on:click=&quot;dosomething&quot;&gt;&lt;/a&gt;
+&lt;a @click=&quot;dosomething&quot;&gt;&lt;/a&gt;
+</code></pre><h5 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h5><p>对于任何复杂逻辑，都应当使用计算属性   </p>
+<pre><code>computed:{
+  //计算属性的getter
+   reversedMessage:function(){
+       return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)
+    }
+}
+</code></pre><h5 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h5><p>虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的侦听器。这就是为什么 Vue 通过 watch 选项提供了一个更通用的方法，来响应数据的变化。当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。  </p>
+<pre><code>var watchExampleVM = new Vue({
+    el: &apos;#watch-example&apos;,
+    data: {
+        question: &apos;&apos;,
+        answer: &apos;I cannot give you an answer until you ask a question!&apos;
+    },
+    watch: {
+     // 如果 `question` 发生改变，这个函数就会运行
+        question: function (newQuestion, oldQuestion) {
+            this.answer = &apos;111&apos;
+        }
+
+    }
+
+}）
+</code></pre><h5 id="Class与Style绑定"><a href="#Class与Style绑定" class="headerlink" title="Class与Style绑定"></a>Class与Style绑定</h5><pre><code>&lt;div :class=&quot;{active:isAactive}&quot;&gt;&lt;/div&gt;
+</code></pre><p>上面的语法表示 active 这个 class 存在与否将取决于数据属性 isActive 的 truthiness。</p>
+<pre><code>&lt;div v-bind:style=&quot;styleObject&quot;&gt;&lt;/div&gt;  
+
+data: {
+  styleObject: {
+    color: &apos;red&apos;,
+    fontSize: &apos;13px&apos;
+  }
+}
+</code></pre><h5 id="props"><a href="#props" class="headerlink" title="props"></a>props</h5><p>用法：props可以是数组或对象，用于接收来自父组件的数据。props可以是简单的数组，或者使用对象作为代替。 </p>
+<p>$emit  </p>
+<p>$refs</p>
+<h5 id="nextTick"><a href="#nextTick" class="headerlink" title="$nextTick"></a>$nextTick</h5><p>用法：在下次DOM更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的DOM.</p>
+<h5 id="Vue-set-target-key-value"><a href="#Vue-set-target-key-value" class="headerlink" title="Vue.set(target,key,value)"></a>Vue.set(target,key,value)</h5><p>用法： 向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。 </p>
+<h5 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h5><p>用法：监听数据变化来执行回调函数。</p>
+<h4 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h4>
       
     </div>
     
@@ -488,8 +539,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -508,7 +568,7 @@
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -566,6 +626,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue阅读文档记录笔记"><span class="nav-number">1.</span> <span class="nav-text">vue阅读文档记录笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修饰符"><span class="nav-number">1.0.1.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缩写"><span class="nav-number">1.0.2.</span> <span class="nav-text">缩写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计算属性"><span class="nav-number">1.0.3.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#侦听器"><span class="nav-number">1.0.4.</span> <span class="nav-text">侦听器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Class与Style绑定"><span class="nav-number">1.0.5.</span> <span class="nav-text">Class与Style绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#props"><span class="nav-number">1.0.6.</span> <span class="nav-text">props</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nextTick"><span class="nav-number">1.0.7.</span> <span class="nav-text">$nextTick</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Vue-set-target-key-value"><span class="nav-number">1.0.8.</span> <span class="nav-text">Vue.set(target,key,value)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#watch"><span class="nav-number">1.0.9.</span> <span class="nav-text">watch</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">1.1.</span> <span class="nav-text">生命周期钩子</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -593,7 +669,7 @@
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共12.3k字</span>
+	  <span class="post-count">博客全站共13.0k字</span>
 	</div>
   
 </div>
