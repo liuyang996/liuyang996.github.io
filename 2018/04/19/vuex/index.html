@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="穿过繁华的博客">
 <meta property="og:description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   1.引入vuex（1）利用npm包管理工具，进行安装v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T07:28:46.582Z">
+<meta property="og:updated_time" content="2018-09-26T06:32:12.774Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex的简单介绍及使用方法">
 <meta name="twitter:description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   1.引入vuex（1）利用npm包管理工具，进行安装v">
@@ -349,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/vuex/" itemprop="url" rel="index">
-                    <span itemprop="name">vuex</span>
+                  <a href="/liuyang996.github.io/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,138
+                  1,033
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  4
                 </span>
               
             </div>
@@ -451,17 +451,24 @@ export default{
     }
 }
 </code></pre><p>这里需要注意的是return this.$store.state.count这一句，一定要写this，要不你会找不到$store的。这种写法很好理解，但是写起来是比较麻烦的，</p>
-<p>（2）通过mapState的对象来赋值<br>首先要用import引入mapState  </p>
+<p>（2）mapState 辅助函数</p>
+<p>首先要用import引入mapState  </p>
 <pre><code>import {mapState} from &apos;vuex&apos;;
 </code></pre><p>然后还在computed计算属性里写如下代码：  </p>
 <pre><code> computed:mapState({
    count:state=&gt;state.count
 })
 </code></pre><p>这里我们使用ES6的箭头函数来给count赋值。</p>
-<p>（3）通过mapState的数组来赋值</p>
+<p>当映射的计算属性的名称与 state 的子节点名称相同时，我们也可以给 mapState 传一个字符串数组。</p>
 <pre><code>computed:mapState([&apos;count&apos;])  
-</code></pre><p>这个算是最简单的写法了。在实际项目开发当中也经常这样使用。  </p>
-<h4 id="3-Mutations修改状态"><a href="#3-Mutations修改状态" class="headerlink" title="3.Mutations修改状态"></a>3.Mutations修改状态</h4><h5 id="store-commit"><a href="#store-commit" class="headerlink" title="$store.commit()"></a>$store.commit()</h5><p>Vuex提供了commit方法来修改状态  </p>
+</code></pre><p>（3）对象展开运算符  </p>
+<pre><code>computed: {
+    ...mapState({
+       //...
+    })
+
+}
+</code></pre><h4 id="3-Mutations修改状态"><a href="#3-Mutations修改状态" class="headerlink" title="3.Mutations修改状态"></a>3.Mutations修改状态</h4><h5 id="store-commit"><a href="#store-commit" class="headerlink" title="$store.commit()"></a>$store.commit()</h5><p>Vuex提供了commit方法来修改状态  </p>
 <p>.vue文件：</p>
 <pre><code>&lt;button @click=&quot;$store.commit(&apos;add&apos;)&quot;&gt;+&lt;/button&gt;
 &lt;button @click=&quot;$store.commit(&apos;reduce&apos;)&quot;&gt;-&lt;/button&gt;  
@@ -499,20 +506,13 @@ export default{
 &lt;button @click=&quot;reduce&quot;&gt;-&lt;/button&gt;
 </code></pre><h4 id="4-getters计算过滤操作"><a href="#4-getters计算过滤操作" class="headerlink" title="4.getters计算过滤操作"></a>4.getters计算过滤操作</h4><p>getters从表面是获得的意思，可以把他看作在获取数据之前进行的一种再编辑，相当于对数据的一个过滤和加工。可以看作store.js的计算属性。</p>
 <p>首先要在store.js里用const声明getters属性  </p>
-<pre><code>const getters = {
+<pre><code>const getters:{
     count:function(state){
         return state.count +=100;
     }
 }  
-</code></pre><p>对模板页的.vue文件进行配置，在vue的构造器里边只能有一个computed属性,如果你写多个，只有最后一个computed属性可用，所以要对computed属性进行一个改造。需要使用ES6中的扩展运算符”…”  (同理，其他的的也一样,methods等)</p>
-<pre><code>   computed:{
-    ...mapState([&quot;count&quot;]),
-    count(){
-        return this.$store.getters.count;
-    }
-},
-</code></pre><p>需要注意的是，写了这个配置后，在每次count值发生变化的时候，都会执行这个函数。  </p>
-<h5 id="mapGetters简化模板写法："><a href="#mapGetters简化模板写法：" class="headerlink" title="mapGetters简化模板写法："></a>mapGetters简化模板写法：</h5><p>首先用import引入我们的mapGetters  </p>
+</code></pre><h5 id="通过属性访问"><a href="#通过属性访问" class="headerlink" title="通过属性访问"></a>通过属性访问</h5><pre><code>store.getters.count // count+100;
+</code></pre><h5 id="mapGetters简化模板写法："><a href="#mapGetters简化模板写法：" class="headerlink" title="mapGetters简化模板写法："></a>mapGetters简化模板写法：</h5><p>首先用import引入我们的mapGetters  </p>
 <pre><code>import { mapState,mapMutations,mapGetters } from &apos;vuex&apos;;  
 </code></pre><p> 在computed属性中加入mapGetters  </p>
 <pre><code>...mapGetters([&quot;count&quot;])
@@ -661,7 +661,7 @@ export default{
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -672,7 +672,7 @@ export default{
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -683,7 +683,7 @@ export default{
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -728,7 +728,7 @@ export default{
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#vuex是一个专门为vue-js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。"><span class="nav-number">1.</span> <span class="nav-text">vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引入vuex"><span class="nav-number"></span> <span class="nav-text">1.引入vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-state访问状态对象"><span class="nav-number">1.</span> <span class="nav-text">2.state访问状态对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Mutations修改状态"><span class="nav-number">2.</span> <span class="nav-text">3.Mutations修改状态</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#store-commit"><span class="nav-number">2.1.</span> <span class="nav-text">$store.commit()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#传值："><span class="nav-number">2.2.</span> <span class="nav-text">传值：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模板获取mutations方法"><span class="nav-number">2.3.</span> <span class="nav-text">模板获取mutations方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-getters计算过滤操作"><span class="nav-number">3.</span> <span class="nav-text">4.getters计算过滤操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#mapGetters简化模板写法："><span class="nav-number">3.1.</span> <span class="nav-text">mapGetters简化模板写法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-actions异步修改状态"><span class="nav-number">4.</span> <span class="nav-text">5.actions异步修改状态</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模板中的使用，mapActions-和上面的模板方法一样。"><span class="nav-number">4.1.</span> <span class="nav-text">模板中的使用，mapActions 和上面的模板方法一样。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#vuex是一个专门为vue-js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。"><span class="nav-number">1.</span> <span class="nav-text">vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引入vuex"><span class="nav-number"></span> <span class="nav-text">1.引入vuex</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-state访问状态对象"><span class="nav-number">1.</span> <span class="nav-text">2.state访问状态对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Mutations修改状态"><span class="nav-number">2.</span> <span class="nav-text">3.Mutations修改状态</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#store-commit"><span class="nav-number">2.1.</span> <span class="nav-text">$store.commit()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#传值："><span class="nav-number">2.2.</span> <span class="nav-text">传值：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模板获取mutations方法"><span class="nav-number">2.3.</span> <span class="nav-text">模板获取mutations方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-getters计算过滤操作"><span class="nav-number">3.</span> <span class="nav-text">4.getters计算过滤操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#通过属性访问"><span class="nav-number">3.1.</span> <span class="nav-text">通过属性访问</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mapGetters简化模板写法："><span class="nav-number">3.2.</span> <span class="nav-text">mapGetters简化模板写法：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-actions异步修改状态"><span class="nav-number">4.</span> <span class="nav-text">5.actions异步修改状态</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模板中的使用，mapActions-和上面的模板方法一样。"><span class="nav-number">4.1.</span> <span class="nav-text">模板中的使用，mapActions 和上面的模板方法一样。</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -762,7 +762,7 @@ export default{
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共13.0k字</span>
+	  <span class="post-count">博客全站共16.0k字</span>
 	</div>
   
 </div>

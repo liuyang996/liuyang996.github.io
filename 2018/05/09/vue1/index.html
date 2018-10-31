@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="vue阅读文档记录笔记修饰符&amp;lt;form v-on:submit.prevent=&amp;quot;onSubmit&amp;quot;&amp;gt;&amp;lt;/form&amp;gt; 作用：事件会调用event.preventDefault(); 缩写1 v-bind缩写   &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;...&amp;lt;/a&amp;gt;  &amp;lt;a :href=&amp;quot;ur">
+<meta name="description" content="vue基础知识vue-cli 一级文件介绍.bablerc: bable相关配置 es6转es5.edittorconfig:编辑器相关配置 如空格，编码等.eslintrc.js : eslint相关配置，可设置检查语法配置.gitignore:git提交项，忽视文件等如node_modules.postcssre.js:css相关规则设置.packages.json:整个文件的描述 重定向和别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue1">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/05/09/vue1/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="vue阅读文档记录笔记修饰符&amp;lt;form v-on:submit.prevent=&amp;quot;onSubmit&amp;quot;&amp;gt;&amp;lt;/form&amp;gt; 作用：事件会调用event.preventDefault(); 缩写1 v-bind缩写   &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;...&amp;lt;/a&amp;gt;  &amp;lt;a :href=&amp;quot;ur">
+<meta property="og:description" content="vue基础知识vue-cli 一级文件介绍.bablerc: bable相关配置 es6转es5.edittorconfig:编辑器相关配置 如空格，编码等.eslintrc.js : eslint相关配置，可设置检查语法配置.gitignore:git提交项，忽视文件等如node_modules.postcssre.js:css相关规则设置.packages.json:整个文件的描述 重定向和别">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T09:29:48.430Z">
+<meta property="og:updated_time" content="2018-10-31T06:35:39.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue1">
-<meta name="twitter:description" content="vue阅读文档记录笔记修饰符&amp;lt;form v-on:submit.prevent=&amp;quot;onSubmit&amp;quot;&amp;gt;&amp;lt;/form&amp;gt; 作用：事件会调用event.preventDefault(); 缩写1 v-bind缩写   &amp;lt;a v-bind:href=&amp;quot;url&amp;quot;&amp;gt;...&amp;lt;/a&amp;gt;  &amp;lt;a :href=&amp;quot;ur">
+<meta name="twitter:description" content="vue基础知识vue-cli 一级文件介绍.bablerc: bable相关配置 es6转es5.edittorconfig:编辑器相关配置 如空格，编码等.eslintrc.js : eslint相关配置，可设置检查语法配置.gitignore:git提交项，忽视文件等如node_modules.postcssre.js:css相关规则设置.packages.json:整个文件的描述 重定向和别">
 
 
 
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  435
+                  1,376
                 </span>
               
 
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -394,55 +394,139 @@
       
 
       
-        <h3 id="vue阅读文档记录笔记"><a href="#vue阅读文档记录笔记" class="headerlink" title="vue阅读文档记录笔记"></a>vue阅读文档记录笔记</h3><h5 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h5><pre><code>&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;
-</code></pre><p>作用：事件会调用event.preventDefault();</p>
-<h5 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h5><p>1 v-bind缩写  </p>
-<pre><code>&lt;a v-bind:href=&quot;url&quot;&gt;...&lt;/a&gt;
+        <h3 id="vue基础知识"><a href="#vue基础知识" class="headerlink" title="vue基础知识"></a>vue基础知识</h3><h4 id="vue-cli-一级文件介绍"><a href="#vue-cli-一级文件介绍" class="headerlink" title="vue-cli 一级文件介绍"></a>vue-cli 一级文件介绍</h4><p>.bablerc: bable相关配置 es6转es5<br>.edittorconfig:编辑器相关配置 如空格，编码等<br>.eslintrc.js : eslint相关配置，可设置检查语法配置<br>.gitignore:git提交项，忽视文件等如node_modules<br>.postcssre.js:css相关规则设置<br>.packages.json:整个文件的描述</p>
+<h4 id="重定向和别名"><a href="#重定向和别名" class="headerlink" title="重定向和别名"></a>重定向和别名</h4><p>router-link改变默认点击事件 用event属性  </p>
+<pre><code>&lt;router-link event=&quot;mouseover&quot;&gt;&lt;/router-link&gt; 
+</code></pre><h5 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h5><pre><code>export default new Router({
+    routers:[
+        {
+            path:&apos;*&apos;,
+            redirect:{path:&apos;/About&apos;}
+            redirect:(to)=&gt;{
+                //to 目标路由
+                return xx;
+            }
+        }
+    ]    
+})
+</code></pre><p>redirect 可以写上path值，也可以写上name值,还可以使用箭头函数</p>
+<h4 id="嵌套路由的使用"><a href="#嵌套路由的使用" class="headerlink" title="嵌套路由的使用"></a>嵌套路由的使用</h4><pre><code>export default new Router([
 
-&lt;a :href=&quot;url&quot;&gt;...&lt;/a&gt;
-</code></pre><p>2 v-on缩写</p>
-<pre><code>&lt;a v-on:click=&quot;dosomething&quot;&gt;&lt;/a&gt;
-&lt;a @click=&quot;dosomething&quot;&gt;&lt;/a&gt;
-</code></pre><h5 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h5><p>对于任何复杂逻辑，都应当使用计算属性   </p>
-<pre><code>computed:{
-  //计算属性的getter
-   reversedMessage:function(){
-       return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)
-    }
-}
-</code></pre><h5 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h5><p>虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的侦听器。这就是为什么 Vue 通过 watch 选项提供了一个更通用的方法，来响应数据的变化。当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。  </p>
-<pre><code>var watchExampleVM = new Vue({
-    el: &apos;#watch-example&apos;,
-    data: {
-        question: &apos;&apos;,
-        answer: &apos;I cannot give you an answer until you ask a question!&apos;
-    },
-    watch: {
-     // 如果 `question` 发生改变，这个函数就会运行
-        question: function (newQuestion, oldQuestion) {
-            this.answer = &apos;111&apos;
+    {
+        path:&apos;/home&apos;,
+        component:Home,
+        children:[
+            {
+                path:&apos;&apos;,  //记得加上默认的子路由
+                component:stady
+            }
+
+        ]
+    }    
+])
+</code></pre><p>在router-link中默认路由标签会自带active样式，使用exact 属性取消默认样式,使用嵌套路由时，父路由的name属性要去掉。<br>在 router-link中，默认路由的路径可以直接填写父路由的路径即可。  </p>
+<pre><code>&lt;router-link :to=&quot;{path:&apos;/home&apos;}&quot; tag=&quot;li&quot;&gt;&lt;a&gt;study&lt;/a&gt;&lt;/router-link&gt;
+</code></pre><h4 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h4><p>配置多个视图</p>
+<pre><code>export default new Router([
+
+        {
+            path:&apos;/home&apos;,
+            components:{
+                defualt:document,
+                slider:slider
+            },
+
+        }    
+    ])
+</code></pre><h4 id="滚动行为"><a href="#滚动行为" class="headerlink" title="滚动行为"></a>滚动行为</h4><p>记录浏览器前进后退、切换导航时，滚动条的位置。在路由配置中设置<strong>scrollBehavior(to,from,savePosition)函数</strong>  </p>
+<pre><code>scrollBehavior(to,from,savePosition){ // 在点击浏览器的“前进/后退”，或者切换导航的时候触发。
+    console.log(to) // to：要进入的目标路由对象，到哪里去
+    console.log(from) // from：离开的路由对象，哪里来
+    console.log(savePosition) // savePosition：会记录滚动条的坐标，点击前进/后退的时候记录值{x:?,y:?}
+
+     if(savePosition){
+          return savePosition;
+        }else{
+          return {x:0,y:0};
         }
 
+}
+</code></pre><h4 id="动态路径"><a href="#动态路径" class="headerlink" title="动态路径"></a>动态路径</h4><p>匹配到的所有路由，全都映射到同一个组件</p>
+<p>路径 :/user/:userId? userId为动态路径参数</p>
+<p>获取参数: 路由信息对象的params</p>
+<h4 id="监控-route路由信息对象"><a href="#监控-route路由信息对象" class="headerlink" title="监控$route路由信息对象"></a>监控$route路由信息对象</h4><pre><code> watch:{
+    $route(){
+        console.log(this.$route.params.userId);
+        var id = this.$route.params.userId;
+        this.getData(id);
+    }
+},
+</code></pre><h4 id="query-字符串传参"><a href="#query-字符串传参" class="headerlink" title="query 字符串传参"></a>query 字符串传参</h4><pre><code>&lt;router-link :to=&quot;{path:&apos;&apos;,query:{info:&apos;1&apos;,follow:&apos;1&apos;}}&quot;&gt;他的爱好&lt;/router-link&gt;
+</code></pre><h4 id="导航切换过渡动画transiton使用"><a href="#导航切换过渡动画transiton使用" class="headerlink" title="导航切换过渡动画transiton使用"></a>导航切换过渡动画transiton使用</h4><p>v-enter:进入时的开始状态<br>v-enter-to:进入时的结束状态<br>v-enter-active:进入时的持续时间<br>v-leave:离开时开始状态<br>v-leave-to:离开时结束状态<br>v-leave-active:离开时的持续时间。</p>
+<p>过渡模式 </p>
+<p>in-out:新元素先进行过渡，完成之后当前元素过渡离开。<br>out-in:当前元素先进行过渡，完成之后新元素过渡进入。</p>
+<h4 id="动态设置name属性左右切换"><a href="#动态设置name属性左右切换" class="headerlink" title="动态设置name属性左右切换"></a>动态设置name属性左右切换</h4><p>绑定name属性，可以动态设置动画样式，如页面左右切换，可以通过监听路由属性来实现。  </p>
+<p>路由元信息  </p>
+<p>在路由配置中meta可以配置一些数据，用在路由信息对象中访问meta中数据:$route.meta。  </p>
+<h4 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h4><p>借助于router的实例方法，通过编写代码来实现导航的切换。  </p>
+<p>back 回退一步<br>forward 前进一步<br>go 指定前进回退步数<br>push 导航到不同url,向history栈添加一个新的记录<br>replace 导航到不同url,替换history栈中当前记录</p>
+<h4 id="导航钩子函数"><a href="#导航钩子函数" class="headerlink" title="导航钩子函数"></a>导航钩子函数</h4><p>导航发生变化时，导航钩子主要用来拦截导航，让它完成跳转或取消</p>
+<h5 id="执行钩子函数位置"><a href="#执行钩子函数位置" class="headerlink" title="执行钩子函数位置"></a>执行钩子函数位置</h5><p>router全局  单个路由 组件中  </p>
+<h5 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h5><p>router实例上: beforeEach、afterEach<br>单个路由中: beforeEnter<br>组件内的钩子: beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave  (进入、更新、离开) 可以控制组件是否可以进入、更新、离开。</p>
+<h5 id="钩子函数接收的参数"><a href="#钩子函数接收的参数" class="headerlink" title="钩子函数接收的参数"></a>钩子函数接收的参数</h5><p>to: 要进入的目标路由的参数 到那里去<br>from: 正要离开导航的路由对象 从哪里去<br>next: 用来决定跳转或取消导航。</p>
+<h4 id="Vue插件的编写"><a href="#Vue插件的编写" class="headerlink" title="Vue插件的编写"></a>Vue插件的编写</h4><p>vue可以通过Vue实例的方式来添加全局属性 </p>
+<pre><code>Vue.prototype.$custom = &quot;这是自定义的属性&quot;  
+</code></pre><p>也可以使用对象的方法来添加全局方法   </p>
+<pre><code>let obj = {
+    install:function(Vue,options){
+        Vue.prototype.$abc = &quot;自定义&quot;
+        console.log(Vue)
+        console.log(options)        
     }
 
-}）
-</code></pre><h5 id="Class与Style绑定"><a href="#Class与Style绑定" class="headerlink" title="Class与Style绑定"></a>Class与Style绑定</h5><pre><code>&lt;div :class=&quot;{active:isAactive}&quot;&gt;&lt;/div&gt;
-</code></pre><p>上面的语法表示 active 这个 class 存在与否将取决于数据属性 isActive 的 truthiness。</p>
-<pre><code>&lt;div v-bind:style=&quot;styleObject&quot;&gt;&lt;/div&gt;  
-
-data: {
-  styleObject: {
-    color: &apos;red&apos;,
-    fontSize: &apos;13px&apos;
-  }
 }
-</code></pre><h5 id="props"><a href="#props" class="headerlink" title="props"></a>props</h5><p>用法：props可以是数组或对象，用于接收来自父组件的数据。props可以是简单的数组，或者使用对象作为代替。 </p>
-<p>$emit  </p>
-<p>$refs</p>
-<h5 id="nextTick"><a href="#nextTick" class="headerlink" title="$nextTick"></a>$nextTick</h5><p>用法：在下次DOM更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的DOM.</p>
-<h5 id="Vue-set-target-key-value"><a href="#Vue-set-target-key-value" class="headerlink" title="Vue.set(target,key,value)"></a>Vue.set(target,key,value)</h5><p>用法： 向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。 </p>
-<h5 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h5><p>用法：监听数据变化来执行回调函数。</p>
-<h4 id="生命周期钩子"><a href="#生命周期钩子" class="headerlink" title="生命周期钩子"></a>生命周期钩子</h4>
+
+Vue.use(obj,{a:1})
+</code></pre><h5 id="vue的插件，用来获取和设置localStorage存储"><a href="#vue的插件，用来获取和设置localStorage存储" class="headerlink" title="vue的插件，用来获取和设置localStorage存储"></a>vue的插件，用来获取和设置localStorage存储</h5><pre><code>let local = {
+    save(key,value){
+        localStorage.setItem(key,JSON.stringify(value))
+    },
+    fetch(key){
+        return JSON.parse(localStorage.getItem(key)) || {}
+    }
+}
+
+export defualt {
+    install: function (vm){
+        vm.prototype.$local = local
+    }
+
+}
+</code></pre><p> 在main.js文件引入  </p>
+<pre><code>Vue.use(xx)
+</code></pre><h4 id="emit"><a href="#emit" class="headerlink" title="$emit"></a>$emit</h4><p>监听当前实例上的自定义事件。事件可以由vm.$emit触发。回调函数会接收所有传入事件触发函数的额外参数。  </p>
+<h4 id="on"><a href="#on" class="headerlink" title="$on"></a>$on</h4><p>触发当前实例上的事件。附加参数都会传给监听器回调。  </p>
+<h4 id="非父子组件-兄弟组件-通信"><a href="#非父子组件-兄弟组件-通信" class="headerlink" title="非父子组件(兄弟组件)通信"></a>非父子组件(兄弟组件)通信</h4><p> 当非父子组件通信时，需要通过一个全局的vue实例或者说需要一个桥梁(媒介),</p>
+<pre><code> EventBus.js
+
+import Vue from &apos;vue&apos;
+export default new Vue();
+</code></pre><p> 在需要通行的组件中引入  </p>
+<pre><code>import Bus from &apos;../../common/js/eventBus&apos;;  
+</code></pre><p>  触发事件  </p>
+<pre><code>Bus.$emit(&apos;rating.select&apos;,type);       
+</code></pre><p>  接收事件  </p>
+<pre><code>Bus.$on(&apos;rating.select&apos;,selectType =&gt; {
+   console.log(&apos;监听组件type值,&apos;+selectType);
+ })
+</code></pre><h4 id="ref、-refs"><a href="#ref、-refs" class="headerlink" title="ref、$refs"></a>ref、$refs</h4><h5 id="nextTick"><a href="#nextTick" class="headerlink" title="$nextTick"></a>$nextTick</h5><p>用法：在下次DOM更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的DOM.</p>
+<h5 id="Vue-set-target-key-value"><a href="#Vue-set-target-key-value" class="headerlink" title="Vue.set(target,key,value)"></a>Vue.set(target,key,value)</h5><p>target:要更改的数据<br>key:数据的第几项<br>value:更改后的数据</p>
+<p>用法： 向响应式对象中添加一个属性，并确保这个新属性同样是响应式的，且触发视图更新。 </p>
+<h4 id="使用better-scroll滚动插件时，阻止点击事件执行两次"><a href="#使用better-scroll滚动插件时，阻止点击事件执行两次" class="headerlink" title="使用better-scroll滚动插件时，阻止点击事件执行两次"></a>使用better-scroll滚动插件时，阻止点击事件执行两次</h4><pre><code>if(!event._constructed){
+    return;
+}  
+</code></pre><p>PS:事件需传入$event对象</p>
+
       
     </div>
     
@@ -568,7 +652,7 @@ data: {
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -579,7 +663,7 @@ data: {
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -590,7 +674,7 @@ data: {
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -635,7 +719,7 @@ data: {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue阅读文档记录笔记"><span class="nav-number">1.</span> <span class="nav-text">vue阅读文档记录笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#修饰符"><span class="nav-number">1.0.1.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#缩写"><span class="nav-number">1.0.2.</span> <span class="nav-text">缩写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#计算属性"><span class="nav-number">1.0.3.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#侦听器"><span class="nav-number">1.0.4.</span> <span class="nav-text">侦听器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Class与Style绑定"><span class="nav-number">1.0.5.</span> <span class="nav-text">Class与Style绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#props"><span class="nav-number">1.0.6.</span> <span class="nav-text">props</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nextTick"><span class="nav-number">1.0.7.</span> <span class="nav-text">$nextTick</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Vue-set-target-key-value"><span class="nav-number">1.0.8.</span> <span class="nav-text">Vue.set(target,key,value)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#watch"><span class="nav-number">1.0.9.</span> <span class="nav-text">watch</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期钩子"><span class="nav-number">1.1.</span> <span class="nav-text">生命周期钩子</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue基础知识"><span class="nav-number">1.</span> <span class="nav-text">vue基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-cli-一级文件介绍"><span class="nav-number">1.1.</span> <span class="nav-text">vue-cli 一级文件介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重定向和别名"><span class="nav-number">1.2.</span> <span class="nav-text">重定向和别名</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#重定向"><span class="nav-number">1.2.1.</span> <span class="nav-text">重定向</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套路由的使用"><span class="nav-number">1.3.</span> <span class="nav-text">嵌套路由的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名视图"><span class="nav-number">1.4.</span> <span class="nav-text">命名视图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#滚动行为"><span class="nav-number">1.5.</span> <span class="nav-text">滚动行为</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态路径"><span class="nav-number">1.6.</span> <span class="nav-text">动态路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监控-route路由信息对象"><span class="nav-number">1.7.</span> <span class="nav-text">监控$route路由信息对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#query-字符串传参"><span class="nav-number">1.8.</span> <span class="nav-text">query 字符串传参</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导航切换过渡动画transiton使用"><span class="nav-number">1.9.</span> <span class="nav-text">导航切换过渡动画transiton使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态设置name属性左右切换"><span class="nav-number">1.10.</span> <span class="nav-text">动态设置name属性左右切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编程式导航"><span class="nav-number">1.11.</span> <span class="nav-text">编程式导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导航钩子函数"><span class="nav-number">1.12.</span> <span class="nav-text">导航钩子函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#执行钩子函数位置"><span class="nav-number">1.12.1.</span> <span class="nav-text">执行钩子函数位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#钩子函数"><span class="nav-number">1.12.2.</span> <span class="nav-text">钩子函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#钩子函数接收的参数"><span class="nav-number">1.12.3.</span> <span class="nav-text">钩子函数接收的参数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue插件的编写"><span class="nav-number">1.13.</span> <span class="nav-text">Vue插件的编写</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#vue的插件，用来获取和设置localStorage存储"><span class="nav-number">1.13.1.</span> <span class="nav-text">vue的插件，用来获取和设置localStorage存储</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#emit"><span class="nav-number">1.14.</span> <span class="nav-text">$emit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#on"><span class="nav-number">1.15.</span> <span class="nav-text">$on</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非父子组件-兄弟组件-通信"><span class="nav-number">1.16.</span> <span class="nav-text">非父子组件(兄弟组件)通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ref、-refs"><span class="nav-number">1.17.</span> <span class="nav-text">ref、$refs</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#nextTick"><span class="nav-number">1.17.1.</span> <span class="nav-text">$nextTick</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Vue-set-target-key-value"><span class="nav-number">1.17.2.</span> <span class="nav-text">Vue.set(target,key,value)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用better-scroll滚动插件时，阻止点击事件执行两次"><span class="nav-number">1.18.</span> <span class="nav-text">使用better-scroll滚动插件时，阻止点击事件执行两次</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -669,7 +753,7 @@ data: {
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共13.0k字</span>
+	  <span class="post-count">博客全站共16.0k字</span>
 	</div>
   
 </div>
