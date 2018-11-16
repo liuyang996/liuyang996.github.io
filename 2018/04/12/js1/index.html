@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="在开发中经常会用到的代码。方便随时使用$.ajax$.ajax({      type:&amp;quot;POST&amp;quot;,      url:&amp;quot;{{url(&apos;&apos;)}}&amp;quot;,      async:true,      data: {},        dateType: &amp;apos;json&amp;apos;,        success : function(data){">
+<meta name="description" content="$.ajax$.ajax({      type:&amp;quot;POST&amp;quot;,      url:&amp;quot;{{url(&apos;&apos;)}}&amp;quot;,      async:true,      data: {},        dateType: &amp;apos;json&amp;apos;,        success : function(data){         var obj =">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript常用代码整理">
+<meta property="og:title" content="javascript- 浅拷贝与深拷贝">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/04/12/js1/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="在开发中经常会用到的代码。方便随时使用$.ajax$.ajax({      type:&amp;quot;POST&amp;quot;,      url:&amp;quot;{{url(&apos;&apos;)}}&amp;quot;,      async:true,      data: {},        dateType: &amp;apos;json&amp;apos;,        success : function(data){">
+<meta property="og:description" content="$.ajax$.ajax({      type:&amp;quot;POST&amp;quot;,      url:&amp;quot;{{url(&apos;&apos;)}}&amp;quot;,      async:true,      data: {},        dateType: &amp;apos;json&amp;apos;,        success : function(data){         var obj =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T07:23:17.311Z">
+<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/04/12/js1/js2/js1.jpg">
+<meta property="og:updated_time" content="2018-11-14T09:34:30.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript常用代码整理">
-<meta name="twitter:description" content="在开发中经常会用到的代码。方便随时使用$.ajax$.ajax({      type:&amp;quot;POST&amp;quot;,      url:&amp;quot;{{url(&apos;&apos;)}}&amp;quot;,      async:true,      data: {},        dateType: &amp;apos;json&amp;apos;,        success : function(data){">
+<meta name="twitter:title" content="javascript- 浅拷贝与深拷贝">
+<meta name="twitter:description" content="$.ajax$.ajax({      type:&amp;quot;POST&amp;quot;,      url:&amp;quot;{{url(&apos;&apos;)}}&amp;quot;,      async:true,      data: {},        dateType: &amp;apos;json&amp;apos;,        success : function(data){         var obj =">
+<meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/04/12/js1/js2/js1.jpg">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <title>javascript常用代码整理 | 穿过繁华的博客</title>
+  <title>javascript- 浅拷贝与深拷贝 | 穿过繁华的博客</title>
   
 
 
@@ -314,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javascript常用代码整理</h1>
+          <h1 class="post-title" itemprop="name headline">javascript- 浅拷贝与深拷贝</h1>
         
 
         <div class="post-meta">
@@ -380,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  42
+                  361
                 </span>
               
 
@@ -396,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -417,7 +419,8 @@
       
 
       
-        <h3 id="在开发中经常会用到的代码。方便随时使用"><a href="#在开发中经常会用到的代码。方便随时使用" class="headerlink" title="在开发中经常会用到的代码。方便随时使用"></a>在开发中经常会用到的代码。方便随时使用</h3><h4 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax"></a>$.ajax</h4><pre><code>$.ajax({
+        <p><img src="/liuyang996.github.io/2018/04/12/js1/js2/js1.jpg" alt="name" title="截图">    </p>
+<h4 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax"></a>$.ajax</h4><pre><code>$.ajax({
      type:&quot;POST&quot;,
      url:&quot;{{url('')}}&quot;,
      async:true,
@@ -430,6 +433,49 @@
     }
 
  });
+</code></pre><h4 id="浅拷贝与深拷贝-对象"><a href="#浅拷贝与深拷贝-对象" class="headerlink" title="浅拷贝与深拷贝   对象"></a>浅拷贝与深拷贝   对象</h4><blockquote>
+<p>浅拷贝：只复制指向某个对象的指针，而不复制对象本身，新旧对象共享一块内存；<br>深拷贝：复制并创建一个一摸一样的对象，不共享内存，修改新对象，旧对象保持不变。  </p>
+</blockquote>
+<p>浅拷贝可以直接用原对象赋值给新对象  </p>
+<p>深拷贝的实现  </p>
+<h5 id="1-object-assign"><a href="#1-object-assign" class="headerlink" title="1. object.assign()"></a>1. object.assign()</h5><pre><code>let foo = {
+    a: 1,
+    b: 2,
+    c: {
+        d: 1,
+    }
+}
+let bar = {};
+Object.assign(bar, foo)
+</code></pre><p>只能对非嵌套对象进行深拷贝。如果对象中出现嵌套情况。那么嵌套对象的值就变为浅拷贝  </p>
+<h4 id="2-转成JSON-不仅可拷贝数组还能拷贝对象"><a href="#2-转成JSON-不仅可拷贝数组还能拷贝对象" class="headerlink" title="2. 转成JSON   (不仅可拷贝数组还能拷贝对象)"></a>2. 转成JSON   (不仅可拷贝数组还能拷贝对象)</h4><pre><code>var obj1 = { body: { a: 10 } };
+var obj2 = JSON.parse(JSON.stringify(obj1));   
+</code></pre><p>缺点是会破坏原型链，并且无法拷贝属性值为function的属性。</p>
+<h4 id="浅拷贝与深拷贝-数组"><a href="#浅拷贝与深拷贝-数组" class="headerlink" title="浅拷贝与深拷贝   数组"></a>浅拷贝与深拷贝   数组</h4><blockquote>
+<p>浅拷贝与对象类似   </p>
+</blockquote>
+<p>深拷贝的实现。   </p>
+<p>如果是普通的数组，则可以用 concat、slice方式返回一个新数组  </p>
+<pre><code>var arr = [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;];  
+var arr2 = arr.slice();
+arr2[1] = &apos;aaa&apos;;
+console.log(arr); // [&apos;1&apos;,&apos;2&apos;,&apos;3&apos;];
+console.log(arr2); // [&apos;1&apos;,&apos;aaa&apos;,&apos;3&apos;];
+</code></pre><h4 id="then-方法"><a href="#then-方法" class="headerlink" title="then()方法"></a>then()方法</h4><blockquote>
+<p>then()方法用于指定当前实例状态发生改变时的回调函数。它返回一个新的Primose实例。</p>
+</blockquote>
+<pre><code>const p = function(){
+
+    return new Promise(function(resolve,reject){
+        console.log(&apos;我先执行&apos;);
+        resolve();    
+ })
+}
+
+
+p().then(()=&gt;{
+    console.log(&apos;我后执行&apos;)
+})
 </code></pre>
       
     </div>
@@ -562,7 +608,7 @@
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -573,7 +619,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -584,7 +630,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -629,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在开发中经常会用到的代码。方便随时使用"><span class="nav-number">1.</span> <span class="nav-text">在开发中经常会用到的代码。方便随时使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ajax"><span class="nav-number">1.1.</span> <span class="nav-text">$.ajax</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#ajax"><span class="nav-number">1.</span> <span class="nav-text">$.ajax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浅拷贝与深拷贝-对象"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝   对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-object-assign"><span class="nav-number">2.1.</span> <span class="nav-text">1. object.assign()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-转成JSON-不仅可拷贝数组还能拷贝对象"><span class="nav-number">3.</span> <span class="nav-text">2. 转成JSON   (不仅可拷贝数组还能拷贝对象)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浅拷贝与深拷贝-数组"><span class="nav-number">4.</span> <span class="nav-text">浅拷贝与深拷贝   数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#then-方法"><span class="nav-number">5.</span> <span class="nav-text">then()方法</span></a></li></ol></div>
             
 
           </div>
@@ -663,7 +709,7 @@
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共16.0k字</span>
+	  <span class="post-count">博客全站共19.8k字</span>
 	</div>
   
 </div>

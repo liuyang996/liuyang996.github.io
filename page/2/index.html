@@ -293,6 +293,988 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/07/05/ionic5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/07/05/ionic5/" itemprop="url">ionic3 关闭新增页面，跳转到原页面刷新数据(回显)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T08:40:31+08:00">
+                2018-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/ionic/" itemprop="url" rel="index">
+                    <span itemprop="name">ionic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  340
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作   
+解决办法1.跳转前页面    
+引入modal组件  
+import {ModalController} from &apos;ionic-angular&apos;;
+
+constructor（public modalCtrl: ModalController）{}
+跳转到表单添加页面  
+gotoLeaveAddPage() {
+       let modal = this.modalCtrl.create(&apos;LeaveAddComponent&apos;,{
+           leave:this.leave
+       });
+
+       modal.onDidDismiss(data =&gt; {
+       //核心功能，在这里刷新
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/07/05/ionic5/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+	  <div>
+		
+	 </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/07/02/ionic4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/07/02/ionic4/" itemprop="url">ionic3 父子组件相互传值及调用子组件方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-02T16:31:49+08:00">
+                2018-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/ionic/" itemprop="url" rel="index">
+                    <span itemprop="name">ionic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  464
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          在开发中，对于创建的组件，一般都会涉及到传值，或者调用子组件的方法，这里介绍下我的用法。父组件向子组件传值  @Input()子组件：
+ 1.子组件中import 
+{Input} from ‘@angular/core’  
+ 2.子组件使用Input定义接收的值。 
+@Input() info:any;
+父组件：  
+  例如定义的子组件标签为:
+&lt;child&gt;&lt;/child&gt;
+  那么传值给子元素的方法为：  
+&lt;child [info]=&apos;childdata&apos; &gt;&lt;/child&gt;
+  其中，[info]为子元素接收的值，与子元素Input定义的值一样。childdata为父元素传给子元素的数据。
+PS:这里要注意生命周期执行顺序，例如如果传输的和接收的值都放在constructor作用域里，可以无法拿到数据。
+子组件向父组件传值子组件：
+1.子组件引入Output,EventEmitter  
+import {Output,EventEmitter}from ‘@angular/core’
+2.子组件使用@Ou
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/07/02/ionic4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+	  <div>
+		
+	 </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/06/22/ionic3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/06/22/ionic3/" itemprop="url">ionic3 组件编写与使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-22T17:49:32+08:00">
+                2018-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/ionic/" itemprop="url" rel="index">
+                    <span itemprop="name">ionic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  123
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1组件的创建ionic g component  ion-products    
+成功之后可以看到目录会发生变化：  
+   
+2组件的数据交互通过@Input()来实现数据交互，ion-products.ts完整代码如下：  
+ 
+3组件的html,scss编码...  
+3组件的使用组建创建成功时候，可以看到默认有一个components.module.ts，说明此component建默认是支持懒加载的。  
+components.modules.ts：  
+
+3.1导入component在home.module.ts中导入components.module.ts  
+home.module.ts    
+
+3.2使用component
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/06/22/ionic3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+	  <div>
+		
+	 </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/06/11/ionic2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/06/11/ionic2/" itemprop="url">ionic3 相机和相册获取图片</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T14:46:25+08:00">
+                2018-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/ionic/" itemprop="url" rel="index">
+                    <span itemprop="name">ionic</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  541
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          相机拍照和相册是 App 从手机获取图片的两种主要方式。在 App 业务需求中，经常会使用到图片获取的功能，最为常见的有用户头像设置等。插件介绍cordova-plugin-camera 相机插件：
+安装方法：  
+ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
+作用：调用手机照相头，进行拍照获取图片、从相册获取单张图片。  
+cordova-plugin-image-picker 图片获取插件： 
+安装方法：  
+// 注意： 
+// 这个 &quot;your usage message&quot; 可以自己修改
+// 这是在向用户请求权限时显示的文字
+
+ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIBRARY_USAGE_DESCRIPTION=&quot;your usage message&quot;
+npm install --save @
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/06/11/ionic2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+	  <div>
+		
+	 </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/05/30/nvs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="York">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="穿过繁华的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/liuyang996.github.io/2018/05/30/nvs/" itemprop="url">NVS node版本切换工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T16:28:14+08:00">
+                2018-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/liuyang996.github.io/categories/node版本切换工具/" itemprop="url" rel="index">
+                    <span itemprop="name">node版本切换工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  485
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          在项目中node的版本可能和现在电脑上的node版本不一致，导致项目无法运行，我在ionic的项目就碰到这种情况，我的项目是node 6.x版本的，但是电脑是node 8.x版本的。网上的解决方法是安装node的n模块，来切换版本，但是我电脑是windows系统，无法安装使用。后来找到了NVS版本切换工具，成功切换版本，运行项目。下载地址：https://github.com/jasongin/nvs/releases
+github：https://github.com/jasongin/nvs
+里面有使用文档
+
+常用命令：添加最新版本的节点或指定版本
+nvs add latest 或   nvs add [version]
+查看本地节点版本 
+nvs ls
+在当前sell中使用节点版本
+nvs use [version]
+a
+    page-home {
+    ion-title{
+        .toolbar-title{
+           color:#fff; 
+        }
+    }
+    .red{
+        width:100%;
+      
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/05/30/nvs/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+	  <div>
+		
+	 </div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/05/15/xiaochengxu3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1067,7 +2049,7 @@ path:访问这个页面的路径name:给这个页面路径定义一个名字，�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/liuyang996.github.io/2018/05/09/vue1/" itemprop="url">vue1</a></h1>
+                <a class="post-title-link" href="/liuyang996.github.io/2018/05/09/vue1/" itemprop="url">vue知识储备</a></h1>
         
 
         <div class="post-meta">
@@ -1111,7 +2093,7 @@ path:访问这个页面的路径name:给这个页面路径定义一个名字，�
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,376
+                  1,538
                 </span>
               
 
@@ -1165,934 +2147,6 @@ path:访问这个页面的路径name:给这个页面路径定义一个名字，�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/liuyang996.github.io/2018/05/09/vue1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-	  <div>
-		
-	 </div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/28/axios/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/04/28/axios/" itemprop="url">axios</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T09:35:31+08:00">
-                2018-04-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/axios/" itemprop="url" rel="index">
-                    <span itemprop="name">axios</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  127
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在开发vue项目的时候，调用接口一般都是通过Axios的方法来获取数据。安装axios  
-npm install axios --save
-在需要的页面中引入Axios
-import axios from &apos;axios&apos;
-使用  
-created(){
-    axios.get(&apos;url&apos;)
-    .then(response=&gt;{
-        console.log(response);
-    })
-    .catch(error=&gt;{
-        console.log(error);
-    })
-
-}
-拉取报错，一般有两种情况：  
-1.网络不通：网络状况不是很好，这可以在失败后隔5秒再次请求。2.拒绝访问：这种多是后端程序员设置了不允许跨域访问。
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/04/28/axios/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-	  <div>
-		
-	 </div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/22/svg1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/04/22/svg1/" itemprop="url">svg图片字体制作</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T10:19:19+08:00">
-                2018-04-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  131
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在项目中我们可以会用到svg的图标，我这里使用的###icomoon.io 这个网站，网站里有许多可用图标，也可以使用本地的svg图标，选择好后点击页面下方的Generate Font 进入设置页面，可以对选择好的图标进行一个设置，设置fontName名称、class名称等。确认好后点击下方的Download即可下载  
-  
-下载好后，把压缩包下的fonts里的文件和style.css移到项目下即可使用。
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/04/22/svg1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-	  <div>
-		
-	 </div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/20/iconfont/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/04/20/iconfont/" itemprop="url">搞定项目图标iconfont</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T08:50:46+08:00">
-                2018-04-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/icon图标/" itemprop="url" rel="index">
-                    <span itemprop="name">icon图标</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  340
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在开发中经常会遇到小图标的使用问题，小图标的使用可以让程序更美观和增加可用性。这里我推荐大家使用IconFont，这是阿里巴巴的矢量图标库。Iconfont中有很多图标，我们可以像在超市逛街一样，挑选自己喜欢的商品，然后放入购物车。  
-挑选图标的过程（共6步）1.进入网站：Iconfont网址：http://www.iconfont.cn2.点击网站上方的“官方图标库”，选择自己喜欢的图标。3.选择好自己喜欢的图标，你可以有两个选择，下载代码 和 添加至项目。4.我这里选择添加至项目，然后新建项目，并输入名称。5.项目添加好后，会自动给我们转入到我们项目库中。点击查看在线链接，点击生成。(记得先选中Font class) 
-//at.alicdn.com/t/font_636144_fi67t0dxpkkb7qfr.css
-6.生产css引入的代码，生成后就可以在项目首页index.html引入了。   
-&lt;i class=&quot;icon iconfont icon-hanbao&quot;&gt;&lt;/i&gt;
-添加更多图标： 1.去Iconfont网站继续挑选，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/04/20/iconfont/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-	  <div>
-		
-	 </div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/19/vuex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/04/19/vuex/" itemprop="url">vuex的简单介绍及使用方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T14:42:01+08:00">
-                2018-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,033
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。  
-1.引入vuex（1）利用npm包管理工具，进行安装vuex.在控制命令行中输入  
-npm install vuex --save  
-需要注意的是这里一定要加上 –save，因为这个包我们在生产环境中是要使用的。
-（2）新建一个vuex文件夹（这个不是必须的），并在文件夹下新建store.js文件，文件中引入我们的vue和vuex。  
-import Vue from &apos;vue&apos;;
-import Vuex from &apos;vuex&apos;;  
-Vue.use(Vuex);  
-通过这三步的操作，vuex就算引用成功了
-用export default封装代码，让外部可以引用
-export default new 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/04/19/vuex/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-	  <div>
-		
-	 </div>
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://liuyang996.github.io/liuyang996.github.io/liuyang996.github.io/2018/04/14/lixianditu1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="York">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/liuyang996.github.io/images/toux.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="穿过繁华的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/liuyang996.github.io/2018/04/14/lixianditu1/" itemprop="url">百度离线地图</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-14T11:44:55+08:00">
-                2018-04-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/liuyang996.github.io/categories/百度离线地图/" itemprop="url" rel="index">
-                    <span itemprop="name">百度离线地图</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  76
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          百度离线地图百度离线文件及详细使用说明已放在github上，可以下载使用  
-‘https://github.com/liuyang996/lianxiCity’  
-  
-   
-  
-关于地图瓦片我使用的是太乐地图下载器。网上有资源可以自行下载。瓦片放的路径在图片已说明。
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/liuyang996.github.io/2018/04/14/lixianditu1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2187,7 +2241,7 @@ export default new
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2198,7 +2252,7 @@ export default new
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2209,7 +2263,7 @@ export default new
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2272,7 +2326,7 @@ export default new
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共16.0k字</span>
+	  <span class="post-count">博客全站共19.8k字</span>
 	</div>
   
 </div>
