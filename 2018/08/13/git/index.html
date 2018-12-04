@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="分布式版本控制系统    在windows 上安装Git,可以从Git官网直接下载安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！   安装完成后，还需要最后一步设置，在命令行输入:   $ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config">
+<meta name="description" content="分布式版本控制系统    在windows 上安装Git,可以从Git官网直接下载安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git使用教程">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/08/13/git/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="分布式版本控制系统    在windows 上安装Git,可以从Git官网直接下载安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！   安装完成后，还需要最后一步设置，在命令行输入:   $ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config">
+<meta property="og:description" content="分布式版本控制系统    在windows 上安装Git,可以从Git官网直接下载安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/08/13/git/git.jpg">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/08/13/git/git2.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/08/13/git/git3.png">
-<meta property="og:updated_time" content="2018-11-13T08:22:34.724Z">
+<meta property="og:updated_time" content="2018-11-24T05:45:22.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用教程">
-<meta name="twitter:description" content="分布式版本控制系统    在windows 上安装Git,可以从Git官网直接下载安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！   安装完成后，还需要最后一步设置，在命令行输入:   $ git config --global user.name &amp;quot;Your Name&amp;quot; $ git config">
+<meta name="twitter:description" content="分布式版本控制系统    在windows 上安装Git,可以从Git官网直接下载安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/08/13/git/git.jpg">
 
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  555
+                  1,425
                 </span>
               
 
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  5
                 </span>
               
             </div>
@@ -404,6 +404,7 @@
 <p>分布式版本控制系统  </p>
 </blockquote>
 <h4 id="在windows-上安装Git-可以从Git官网直接下载"><a href="#在windows-上安装Git-可以从Git官网直接下载" class="headerlink" title="在windows 上安装Git,可以从Git官网直接下载"></a>在windows 上安装Git,可以从Git官网直接下载</h4><p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！  </p>
+<a id="more"></a>
 <p>安装完成后，还需要最后一步设置，在命令行输入:  </p>
 <pre><code>$ git config --global user.name &quot;Your Name&quot;
 $ git config --global user.email &quot;email@example.com&quot; 
@@ -411,7 +412,7 @@ $ git config --global user.email &quot;email@example.com&quot;
 <h5 id="先在一个合适的地方创建一个空目录。-目录名不要包含中文，包括父级"><a href="#先在一个合适的地方创建一个空目录。-目录名不要包含中文，包括父级" class="headerlink" title="先在一个合适的地方创建一个空目录。(目录名不要包含中文，包括父级)"></a>先在一个合适的地方创建一个空目录。(目录名不要包含中文，包括父级)</h5><h5 id="通过git-init-命令把这个目录变成Git可以管理的仓库。"><a href="#通过git-init-命令把这个目录变成Git可以管理的仓库。" class="headerlink" title="通过git init 命令把这个目录变成Git可以管理的仓库。"></a>通过git init 命令把这个目录变成Git可以管理的仓库。</h5><pre><code>$ git init  
 </code></pre><p>建好后，当前目录会多一个.git的目录，不要随意修改这个目录，可能会把Git仓库弄乱。(如果没有看到.git目录，是因为这个目录默认是隐藏的。)  </p>
 <p>在windows系统下不要使用自带的记事本编辑文件文件。可以使用别的。如Notepad++ </p>
-<h5 id="把需要上传的文件放到Git目录下，然后-用命令-git-add-告诉Git，把问价添加到仓库："><a href="#把需要上传的文件放到Git目录下，然后-用命令-git-add-告诉Git，把问价添加到仓库：" class="headerlink" title="把需要上传的文件放到Git目录下，然后 用命令 git add 告诉Git，把问价添加到仓库："></a>把需要上传的文件放到Git目录下，然后 用命令 git add 告诉Git，把问价添加到仓库：</h5><pre><code>$ git add readme.txt  
+<h5 id="把需要上传的文件放到Git目录下，然后-用命令-git-add-告诉Git，把文件添加到仓库："><a href="#把需要上传的文件放到Git目录下，然后-用命令-git-add-告诉Git，把文件添加到仓库：" class="headerlink" title="把需要上传的文件放到Git目录下，然后 用命令 git add 告诉Git，把文件添加到仓库："></a>把需要上传的文件放到Git目录下，然后 用命令 git add 告诉Git，把文件添加到仓库：</h5><pre><code>$ git add readme.txt  
 </code></pre><p>PS:readme.txt是我放的文件  </p>
 <h5 id="用命令-git-commit-告诉Git，把文件提交到仓库："><a href="#用命令-git-commit-告诉Git，把文件提交到仓库：" class="headerlink" title="用命令 git commit 告诉Git，把文件提交到仓库："></a>用命令 git commit 告诉Git，把文件提交到仓库：</h5><pre><code>$ git commit -m &apos;wrote a readme file&apos;   
 </code></pre><p>-m 后面输入的是提交的说明。  </p>
@@ -420,7 +421,39 @@ $ git config --global user.email &quot;email@example.com&quot;
 <h4 id="时光机穿梭"><a href="#时光机穿梭" class="headerlink" title="时光机穿梭"></a>时光机穿梭</h4><h5 id="git-status-命令可以让我们时刻掌握仓库当前的状态。"><a href="#git-status-命令可以让我们时刻掌握仓库当前的状态。" class="headerlink" title="git status  命令可以让我们时刻掌握仓库当前的状态。"></a>git status  命令可以让我们时刻掌握仓库当前的状态。</h5><p><img src="/liuyang996.github.io/2018/08/13/git/git3.png" alt="name">  </p>
 <p>我改了readme.txt里的内容后使用命令，会出现上面这个截图。告诉我们，readme.txt被修改过了，但还没有准备提交的修改。  </p>
 <h5 id="git-diff-查看difference，看看文件做了什么修改，然后在提交"><a href="#git-diff-查看difference，看看文件做了什么修改，然后在提交" class="headerlink" title="git diff 查看difference，看看文件做了什么修改，然后在提交"></a>git diff 查看difference，看看文件做了什么修改，然后在提交</h5><p>提交还是用 git add ‘’   git commit -m ‘’  </p>
-<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><h5 id="git-log-命令显示从最近到最远的提交日志。"><a href="#git-log-命令显示从最近到最远的提交日志。" class="headerlink" title="git log 命令显示从最近到最远的提交日志。"></a>git log 命令显示从最近到最远的提交日志。</h5>
+<h4 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h4><h5 id="git-log-命令显示从最近到最远的提交日志。"><a href="#git-log-命令显示从最近到最远的提交日志。" class="headerlink" title="git log 命令显示从最近到最远的提交日志。"></a>git log 命令显示从最近到最远的提交日志。</h5><h4 id="–hard-HEAD"><a href="#–hard-HEAD" class="headerlink" title="–hard HEAD^"></a>–hard HEAD^</h4><pre><code>git reset --hard HEAD^  
+</code></pre><p>使用 <strong>–hard HEAD^</strong>可以回退到上一个版本，上上一个版本就是<strong>HEAD^^</strong><br>如果回退100个版本，可以写成HEAD~100  </p>
+<p>回退后，之前的版本就看不到了。可以使用git log查看。  </p>
+<p>如果想要再回到之前的版本肿么办呢。只要这个命令窗口还没有被关掉，就可以顺着往上找，找到那个 commit ID，就可以返回到指定版本   </p>
+<pre><code>git reset --hard bf30  
+</code></pre><p>版本号不需要写全，前几位就可以了。  </p>
+<p>如果回退到了某个版本，关掉了电脑，第二天又后悔了，想恢复到新版本怎么办？找不到新版本的commit id 怎么办 ？<br>当你用 <strong>git reset –hard HEAD^</strong> 回退到<strong>add distributed</strong> 版本时，再想恢复到新版本。Git提供了一个命令，git reflog 用来记录你的每一次命令。可以 从命令输出里查看版本的commit id，然后回到指定版本 </p>
+<pre><code>$ git reflog
+e475afc HEAD@{1}: reset: moving to HEAD^
+1094adb (HEAD -&gt; master) HEAD@{2}: commit: append GPL
+e475afc HEAD@{3}: commit: add distributed
+eaadf4e HEAD@{4}: commit (initial): wrote a readme file
+</code></pre><h4 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h4><p>工作区： 平时看到的目录了就是工作区。<br>版本库： 工作区有一个隐藏目录<font color="red">.git</font>,这个是Git的版本库。</p>
+<p>Git的版本库里存了很多东西，其中最重要的就是称为stage(或者叫index)的暂存区，还有Git为我们自动创建的第一个分支<font color="red">master</font>,以及指向master的一个指针叫做<font color="red">HEAD</font>.</p>
+<p>我们把文件往Git版本库里添加的时候，是分两步执行的：    </p>
+<ul>
+<li>第一步是用 git add把文件添加进去，实际上就是把文件修改添加到暂存区。</li>
+<li>第二部是用 git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</li>
+</ul>
+<p>实际上就是把需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
+<h4 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h4><p>Git管理的是修改，每次修改后 使用 <font color="red">git add</font> 文件 把修改放入暂存区，如果修改后没有使用 <font color="red">git add</font> 话，那么在使用<font color="red">git commit</font> 提交的时候，便不会把这个修改的内容提交。  </p>
+<p>我可以使用 <font color="red">git diff HEAD – readme.txt</font> ，命令可以查看工作区和版本库里面最新版本的区别。</p>
+<h4 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h4><pre><code>$ git checkout -- readme.txt  
+</code></pre><p>命令git checkout – readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销：</p>
+<ul>
+<li>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态 </li>
+<li>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</li>
+</ul>
+<p>注意 <font color="red">git checkout – file</font> 命令中的 <font color="red">–</font> 。</p>
+<h4 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h4><p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。</p>
+<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。</file></p>
+<p>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退，不过前提是没有推送到远程库。</p>
+
       
     </div>
     
@@ -501,6 +534,8 @@ $ git config --global user.email &quot;email@example.com&quot;
           
 
   
+  
+  
 
 
 
@@ -552,7 +587,7 @@ $ git config --global user.email &quot;email@example.com&quot;
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -563,7 +598,7 @@ $ git config --global user.email &quot;email@example.com&quot;
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -574,7 +609,7 @@ $ git config --global user.email &quot;email@example.com&quot;
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -619,7 +654,7 @@ $ git config --global user.email &quot;email@example.com&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在windows-上安装Git-可以从Git官网直接下载"><span class="nav-number">1.</span> <span class="nav-text">在windows 上安装Git,可以从Git官网直接下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.</span> <span class="nav-text">创建版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#先在一个合适的地方创建一个空目录。-目录名不要包含中文，包括父级"><span class="nav-number">2.1.</span> <span class="nav-text">先在一个合适的地方创建一个空目录。(目录名不要包含中文，包括父级)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过git-init-命令把这个目录变成Git可以管理的仓库。"><span class="nav-number">2.2.</span> <span class="nav-text">通过git init 命令把这个目录变成Git可以管理的仓库。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#把需要上传的文件放到Git目录下，然后-用命令-git-add-告诉Git，把问价添加到仓库："><span class="nav-number">2.3.</span> <span class="nav-text">把需要上传的文件放到Git目录下，然后 用命令 git add 告诉Git，把问价添加到仓库：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用命令-git-commit-告诉Git，把文件提交到仓库："><span class="nav-number">2.4.</span> <span class="nav-text">用命令 git commit 告诉Git，把文件提交到仓库：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时光机穿梭"><span class="nav-number">3.</span> <span class="nav-text">时光机穿梭</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-status-命令可以让我们时刻掌握仓库当前的状态。"><span class="nav-number">3.1.</span> <span class="nav-text">git status  命令可以让我们时刻掌握仓库当前的状态。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-diff-查看difference，看看文件做了什么修改，然后在提交"><span class="nav-number">3.2.</span> <span class="nav-text">git diff 查看difference，看看文件做了什么修改，然后在提交</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回退"><span class="nav-number">4.</span> <span class="nav-text">版本回退</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-log-命令显示从最近到最远的提交日志。"><span class="nav-number">4.1.</span> <span class="nav-text">git log 命令显示从最近到最远的提交日志。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#在windows-上安装Git-可以从Git官网直接下载"><span class="nav-number">1.</span> <span class="nav-text">在windows 上安装Git,可以从Git官网直接下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建版本库"><span class="nav-number">2.</span> <span class="nav-text">创建版本库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#先在一个合适的地方创建一个空目录。-目录名不要包含中文，包括父级"><span class="nav-number">2.1.</span> <span class="nav-text">先在一个合适的地方创建一个空目录。(目录名不要包含中文，包括父级)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过git-init-命令把这个目录变成Git可以管理的仓库。"><span class="nav-number">2.2.</span> <span class="nav-text">通过git init 命令把这个目录变成Git可以管理的仓库。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#把需要上传的文件放到Git目录下，然后-用命令-git-add-告诉Git，把文件添加到仓库："><span class="nav-number">2.3.</span> <span class="nav-text">把需要上传的文件放到Git目录下，然后 用命令 git add 告诉Git，把文件添加到仓库：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用命令-git-commit-告诉Git，把文件提交到仓库："><span class="nav-number">2.4.</span> <span class="nav-text">用命令 git commit 告诉Git，把文件提交到仓库：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时光机穿梭"><span class="nav-number">3.</span> <span class="nav-text">时光机穿梭</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-status-命令可以让我们时刻掌握仓库当前的状态。"><span class="nav-number">3.1.</span> <span class="nav-text">git status  命令可以让我们时刻掌握仓库当前的状态。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-diff-查看difference，看看文件做了什么修改，然后在提交"><span class="nav-number">3.2.</span> <span class="nav-text">git diff 查看difference，看看文件做了什么修改，然后在提交</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回退"><span class="nav-number">4.</span> <span class="nav-text">版本回退</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git-log-命令显示从最近到最远的提交日志。"><span class="nav-number">4.1.</span> <span class="nav-text">git log 命令显示从最近到最远的提交日志。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#–hard-HEAD"><span class="nav-number">5.</span> <span class="nav-text">–hard HEAD^</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作区和暂存区"><span class="nav-number">6.</span> <span class="nav-text">工作区和暂存区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管理修改"><span class="nav-number">7.</span> <span class="nav-text">管理修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销修改"><span class="nav-number">8.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结："><span class="nav-number">9.</span> <span class="nav-text">小结：</span></a></li></ol></div>
             
 
           </div>
@@ -653,7 +688,7 @@ $ git config --global user.email &quot;email@example.com&quot;
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共19.8k字</span>
+	  <span class="post-count">博客全站共23.5k字</span>
 	</div>
   
 </div>

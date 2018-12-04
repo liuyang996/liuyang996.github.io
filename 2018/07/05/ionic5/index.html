@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作    解决办法1.跳转前页面     引入modal组件   import {Mod">
+<meta name="description" content="问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作">
 <meta name="keywords" content="ionic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ionic3 关闭新增页面，跳转到原页面刷新数据(回显)">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/07/05/ionic5/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作    解决办法1.跳转前页面     引入modal组件   import {Mod">
+<meta property="og:description" content="问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-17T07:22:52.873Z">
+<meta property="og:updated_time" content="2018-11-16T03:45:06.090Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ionic3 关闭新增页面，跳转到原页面刷新数据(回显)">
-<meta name="twitter:description" content="问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作    解决办法1.跳转前页面     引入modal组件   import {Mod">
+<meta name="twitter:description" content="问题描述在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作">
 
 
 
@@ -418,6 +418,7 @@
 
       
         <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在项目中，我们经常会遇见新增表单的情况，如登录注册、列表项新增，那么在这种情况下，如果我们用常用的push来跳转页面，在新增完后，如果跳转到新增前页面，就会有返回箭头，按手机返回键也会导致页面回到新增表单页，这样用户体验很不好，解决的办法是用，modal组件和ViewController组件来完成这种操作   </p>
+<a id="more"></a>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>1.跳转前页面    </p>
 <p>引入modal组件  </p>
 <pre><code>import {ModalController} from &apos;ionic-angular&apos;;
@@ -528,6 +529,8 @@ constructor（public viewCtrl: ViewController）{}
           
 
   
+  
+  
 
 
 
@@ -579,7 +582,7 @@ constructor（public viewCtrl: ViewController）{}
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -590,7 +593,7 @@ constructor（public viewCtrl: ViewController）{}
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -601,7 +604,7 @@ constructor（public viewCtrl: ViewController）{}
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -680,7 +683,7 @@ constructor（public viewCtrl: ViewController）{}
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共19.8k字</span>
+	  <span class="post-count">博客全站共23.5k字</span>
 	</div>
   
 </div>

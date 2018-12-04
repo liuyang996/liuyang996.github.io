@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化">
+<meta name="description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。">
 <meta name="keywords" content="krpano">
 <meta property="og:type" content="article">
 <meta property="og:title" content="krpano360全景漫游常用代码及使用说明整理">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化">
+<meta property="og:description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p1.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p2.png">
-<meta property="og:updated_time" content="2018-07-17T07:23:51.610Z">
+<meta property="og:updated_time" content="2018-11-16T03:45:26.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="krpano360全景漫游常用代码及使用说明整理">
-<meta name="twitter:description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。 krpano特点(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化">
+<meta name="twitter:description" content="前言在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/02/03/krpano1/p1.png">
 
 
@@ -421,6 +421,7 @@
 
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在一次项目中，有个需求是希望能够全景展示社区里的面貌和管理，智能化的体现“智慧小区”的概念，最开始在网上找的一个js的插件，发现效果并不好，不好修改源码。然后一直找一直找(#^.^#)，找到了这个，krpano全景展示工具，还是比较好用的。</p>
+<a id="more"></a>
 <h4 id="krpano特点"><a href="#krpano特点" class="headerlink" title="krpano特点"></a>krpano特点</h4><h5 id="1-兼容HTML5和Flash-支持Webgl下的WebVR展示。"><a href="#1-兼容HTML5和Flash-支持Webgl下的WebVR展示。" class="headerlink" title="(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。"></a>(1)兼容HTML5和Flash,支持Webgl下的WebVR展示。</h5><h5 id="2-使用专用的krpano-xml代码编写全景漫游，可开发出高定制化的项目。"><a href="#2-使用专用的krpano-xml代码编写全景漫游，可开发出高定制化的项目。" class="headerlink" title="(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。"></a>(2)使用专用的krpano xml代码编写全景漫游，可开发出高定制化的项目。</h5><h5 id="3-支持多种类型的全景图已及全景视频和环物全景"><a href="#3-支持多种类型的全景图已及全景视频和环物全景" class="headerlink" title="(3)支持多种类型的全景图已及全景视频和环物全景"></a>(3)支持多种类型的全景图已及全景视频和环物全景</h5><h3 id="tip-全景图拍摄、拼接的教程"><a href="#tip-全景图拍摄、拼接的教程" class="headerlink" title="tip:全景图拍摄、拼接的教程"></a>tip:全景图拍摄、拼接的教程</h3><p>&lt;a href=”<a href="http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程" target="_blank" rel="noopener">http://bbs.720yun.com/forum.php?mod=viewthread&amp;tid=211&amp;extra=page%3D1&quot;target=&quot;_blank&quot;&gt;720云新手全景摄影入门教程</a><br>&lt;a href=”<a href="https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航" target="_blank" rel="noopener">https://hao.chinavr.net/index.php/&quot;target=&quot;_blank&quot;&gt;全景VR资源网站导航</a> </p>
 <h3 id="krpano常用设置"><a href="#krpano常用设置" class="headerlink" title="krpano常用设置"></a>krpano常用设置</h3><p>PS:常用设置一般都是在.xml文件下设置的</p>
 <h4 id="1-小行星开场"><a href="#1-小行星开场" class="headerlink" title="1.小行星开场"></a>1.小行星开场</h4><pre><code>littleplanetintro=&quot;true&quot;
@@ -598,6 +599,8 @@
           
 
   
+  
+  
 
 
 
@@ -649,7 +652,7 @@
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -660,7 +663,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -671,7 +674,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -750,7 +753,7 @@
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共19.8k字</span>
+	  <span class="post-count">博客全站共23.5k字</span>
 	</div>
   
 </div>

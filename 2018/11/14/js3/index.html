@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="使用Object.defineProperty定义新属性或修改原有的属性。    语法：    Object.defineProperty(obj,prop,descriptor) 参数说明：    obj:必须。目标对象。    prop:必须。需定义或修改的属性的名字。  descriptor:必须。目标属性所拥有的特性。 返回值：   传入函数的对象。即第一个参数obj   针对属性">
+<meta name="description" content="使用Object.defineProperty定义新属性或修改原有的属性。    语法：    Object.defineProperty(obj,prop,descriptor)">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="理解Object.defineProperty的作用">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/14/js3/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="使用Object.defineProperty定义新属性或修改原有的属性。    语法：    Object.defineProperty(obj,prop,descriptor) 参数说明：    obj:必须。目标对象。    prop:必须。需定义或修改的属性的名字。  descriptor:必须。目标属性所拥有的特性。 返回值：   传入函数的对象。即第一个参数obj   针对属性">
+<meta property="og:description" content="使用Object.defineProperty定义新属性或修改原有的属性。    语法：    Object.defineProperty(obj,prop,descriptor)">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/14/js3/js1.jpg">
-<meta property="og:updated_time" content="2018-11-14T09:33:40.146Z">
+<meta property="og:updated_time" content="2018-11-16T06:17:24.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解Object.defineProperty的作用">
-<meta name="twitter:description" content="使用Object.defineProperty定义新属性或修改原有的属性。    语法：    Object.defineProperty(obj,prop,descriptor) 参数说明：    obj:必须。目标对象。    prop:必须。需定义或修改的属性的名字。  descriptor:必须。目标属性所拥有的特性。 返回值：   传入函数的对象。即第一个参数obj   针对属性">
+<meta name="twitter:description" content="使用Object.defineProperty定义新属性或修改原有的属性。    语法：    Object.defineProperty(obj,prop,descriptor)">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/14/js3/js1.jpg">
 
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  740
+                  1,116
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  5
                 </span>
               
             </div>
@@ -425,7 +425,8 @@
 </blockquote>
 <p>语法：   </p>
 <pre><code>Object.defineProperty(obj,prop,descriptor)
-</code></pre><p>参数说明：   </p>
+</code></pre><a id="more"></a>
+<p>参数说明：   </p>
 <pre><code>obj:必须。目标对象。  
 
 prop:必须。需定义或修改的属性的名字。
@@ -549,7 +550,44 @@ Object.defineProperty(obj,&quot;newKey&quot;,{
     configurable:true
 });
 console.log( obj.newKey ); //hello
-</code></pre>
+</code></pre><p>定义对象的时候添加的属性，是可删除、可重写、可枚举的。 </p>
+<p>一旦使用Object.definePropery给对象添加属性，那么如果不设置属性的话，configurable、enumerable、writable这些值都为默认的false。这就导致了nekyey这个是不能重写、不能枚举、不能再次设置特性。  </p>
+<h4 id="设置的特性总结："><a href="#设置的特性总结：" class="headerlink" title="设置的特性总结："></a>设置的特性总结：</h4><blockquote>
+<p>value : 设置属性的值<br>writable: 值是否可以重写。 true | false<br>enumerable: 目标属性是否可以被枚举。 true | false<br>configurable: 目标属性是否可以被删除或是否可以再次修改特性 true | false  </p>
+</blockquote>
+<h3 id="存取器描述"><a href="#存取器描述" class="headerlink" title="存取器描述"></a>存取器描述</h3><p>当使用存取器描述属性的特性的时候，允许设置以下特性属性：  </p>
+<pre><code>var obj = {};
+Object.defineProperty(obj,&quot;newKey&quot;,{
+    get:function (){} | undefined,
+    set:function (value){} | undefined,
+    configurable: true | false,
+    enumerable: true | false,
+})
+</code></pre><p>注意：当使用了getter和setter方法，不允许使用writable和value这两个属性  </p>
+<h4 id="getter-setter"><a href="#getter-setter" class="headerlink" title="getter/setter"></a>getter/setter</h4><p>当设置或获取对象的某个属性的值的时候，可以提供getter/setter方法。  </p>
+<ul>
+<li>getter 是一种获得属性值的方法。 </li>
+<li>setter 是一种设置属性值的方法。  </li>
+</ul>
+<p>在特性中使用get/set属性来定义对应方法。  </p>
+<pre><code>var obj = {};
+var initVlue = &apos;hello&apos;;
+Object.defineProperty(obj,&apos;newKey&apos;,{
+    get: function (){ 
+        //当获取值的时候调用此函数
+        return initVlue;
+    },
+    set: function (value){
+        initVlue  = value;
+    }
+});
+//获取值
+console.log(obj.newKey);
+//设置值
+obj.newKey = &apos;world&apos;;
+console.log(obj.newKey);
+</code></pre><p>注意：get或set不是必须成对出现，认写其一就可以。如果不设置，则set/get的默认值为undefined。</p>
+<h5 id="configurable-和-enumerable和上面用法一样。"><a href="#configurable-和-enumerable和上面用法一样。" class="headerlink" title="configurable 和 enumerable和上面用法一样。"></a>configurable 和 enumerable和上面用法一样。</h5>
       
     </div>
     
@@ -630,6 +668,8 @@ console.log( obj.newKey ); //hello
           
 
   
+  
+  
 
 
 
@@ -681,7 +721,7 @@ console.log( obj.newKey ); //hello
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -692,7 +732,7 @@ console.log( obj.newKey ); //hello
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -703,7 +743,7 @@ console.log( obj.newKey ); //hello
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -748,7 +788,7 @@ console.log( obj.newKey ); //hello
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据描述"><span class="nav-number">1.</span> <span class="nav-text">数据描述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据描述"><span class="nav-number">1.</span> <span class="nav-text">数据描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置的特性总结："><span class="nav-number">2.</span> <span class="nav-text">设置的特性总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存取器描述"><span class="nav-number"></span> <span class="nav-text">存取器描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getter-setter"><span class="nav-number">1.</span> <span class="nav-text">getter/setter</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#configurable-和-enumerable和上面用法一样。"><span class="nav-number">1.1.</span> <span class="nav-text">configurable 和 enumerable和上面用法一样。</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -782,7 +822,7 @@ console.log( obj.newKey ); //hello
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共19.8k字</span>
+	  <span class="post-count">博客全站共23.5k字</span>
 	</div>
   
 </div>

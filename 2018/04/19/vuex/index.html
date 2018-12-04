@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   1.引入vuex（1）利用npm包管理工具，进行安装v">
+<meta name="description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。">
 <meta name="keywords" content="vue,vuex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vuex的简单介绍及使用方法">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/04/19/vuex/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   1.引入vuex（1）利用npm包管理工具，进行安装v">
+<meta property="og:description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-26T06:32:12.774Z">
+<meta property="og:updated_time" content="2018-11-16T03:47:21.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex的简单介绍及使用方法">
-<meta name="twitter:description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。   1.引入vuex（1）利用npm包管理工具，进行安装v">
+<meta name="twitter:description" content="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。">
 
 
 
@@ -418,6 +418,7 @@
 
       
         <h4 id="vuex是一个专门为vue-js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。"><a href="#vuex是一个专门为vue-js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。" class="headerlink" title="vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。"></a>vuex是一个专门为vue.js设计的集中式状态管理架构。状态理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是data中需要共用的属性。</h4><p>####例如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。  </p>
+<a id="more"></a>
 <h3 id="1-引入vuex"><a href="#1-引入vuex" class="headerlink" title="1.引入vuex"></a>1.引入vuex</h3><p>（1）利用npm包管理工具，进行安装vuex.在控制命令行中输入  </p>
 <pre><code>npm install vuex --save  
 </code></pre><p>需要注意的是这里一定要加上 –save，因为这个包我们在生产环境中是要使用的。</p>
@@ -610,6 +611,8 @@ export default{
           
 
   
+  
+  
 
 
 
@@ -661,7 +664,7 @@ export default{
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -672,7 +675,7 @@ export default{
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -683,7 +686,7 @@ export default{
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -762,7 +765,7 @@ export default{
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共19.8k字</span>
+	  <span class="post-count">博客全站共23.5k字</span>
 	</div>
   
 </div>

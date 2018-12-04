@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。在util.js文件加入如下代码function wxPromisify(fn) {   return function (obj = {}) {     return new Promise((resolve, reject) =&amp;gt; {">
+<meta name="description" content="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。">
 <meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序-promise的用法">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/08/29/xiaochengxu4/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。在util.js文件加入如下代码function wxPromisify(fn) {   return function (obj = {}) {     return new Promise((resolve, reject) =&amp;gt; {">
+<meta property="og:description" content="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-29T09:25:37.395Z">
+<meta property="og:updated_time" content="2018-11-16T03:48:12.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序-promise的用法">
-<meta name="twitter:description" content="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。在util.js文件加入如下代码function wxPromisify(fn) {   return function (obj = {}) {     return new Promise((resolve, reject) =&amp;gt; {">
+<meta name="twitter:description" content="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。">
 
 
 
@@ -417,7 +417,8 @@
       
 
       
-        <h4 id="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。"><a href="#在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。" class="headerlink" title="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。"></a>在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。</h4><h5 id="在util-js文件加入如下代码"><a href="#在util-js文件加入如下代码" class="headerlink" title="在util.js文件加入如下代码"></a>在util.js文件加入如下代码</h5><pre><code>function wxPromisify(fn) {
+        <h4 id="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。"><a href="#在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。" class="headerlink" title="在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。"></a>在写业务逻辑的时候，经常会碰到在一个接口里需要回调另外一个接口，或者更多，这样代码看起来非常冗长，而且不易维护。用promise可以很好的解决这个问题。</h4><a id="more"></a>
+<h5 id="在util-js文件加入如下代码"><a href="#在util-js文件加入如下代码" class="headerlink" title="在util.js文件加入如下代码"></a>在util.js文件加入如下代码</h5><pre><code>function wxPromisify(fn) {
   return function (obj = {}) {
     return new Promise((resolve, reject) =&gt; {
       obj.success = function (res) {
@@ -538,6 +539,8 @@ Wxrequest({
           
 
   
+  
+  
 
 
 
@@ -589,7 +592,7 @@ Wxrequest({
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -600,7 +603,7 @@ Wxrequest({
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -611,7 +614,7 @@ Wxrequest({
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -690,7 +693,7 @@ Wxrequest({
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共19.8k字</span>
+	  <span class="post-count">博客全站共23.5k字</span>
 	</div>
   
 </div>
