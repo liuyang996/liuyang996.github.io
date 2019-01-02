@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图： 实现功能： 滑动歌手列表，右侧的快速入口会对应当前歌手首字母高亮 滑动歌手列表，歌手标题会置顶，且有被顶上去的样式 点击右侧的快速入口选项，歌手列表会滚动到该类上。 滑动右侧的快速入口选项，歌手列表会滚动到该类上。  实现思路 左右联动效果，做侧或右侧滑动，会影响对方。所以需要知道实时">
+<meta name="description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图：">
 <meta name="keywords" content="vue-通讯录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-仿通讯录功能开发">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图： 实现功能： 滑动歌手列表，右侧的快速入口会对应当前歌手首字母高亮 滑动歌手列表，歌手标题会置顶，且有被顶上去的样式 点击右侧的快速入口选项，歌手列表会滚动到该类上。 滑动右侧的快速入口选项，歌手列表会滚动到该类上。  实现思路 左右联动效果，做侧或右侧滑动，会影响对方。所以需要知道实时">
+<meta property="og:description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/gspic.png">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/gspic2.png">
-<meta property="og:updated_time" content="2018-11-30T07:10:20.475Z">
+<meta property="og:updated_time" content="2018-12-26T08:05:54.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-仿通讯录功能开发">
-<meta name="twitter:description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图： 实现功能： 滑动歌手列表，右侧的快速入口会对应当前歌手首字母高亮 滑动歌手列表，歌手标题会置顶，且有被顶上去的样式 点击右侧的快速入口选项，歌手列表会滚动到该类上。 滑动右侧的快速入口选项，歌手列表会滚动到该类上。  实现思路 左右联动效果，做侧或右侧滑动，会影响对方。所以需要知道实时">
+<meta name="twitter:description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图：">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png">
 
 
@@ -425,6 +425,7 @@
 <p>我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。  </p>
 </blockquote>
 <h4 id="效果截图："><a href="#效果截图：" class="headerlink" title="效果截图："></a>效果截图：</h4><p><img src="/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png" alt="name"></p>
+<a id="more"></a>
 <h4 id="实现功能："><a href="#实现功能：" class="headerlink" title="实现功能："></a>实现功能：</h4><ul>
 <li>滑动歌手列表，右侧的快速入口会对应当前歌手首字母高亮</li>
 <li>滑动歌手列表，歌手标题会置顶，且有被顶上去的样式</li>
@@ -580,6 +581,10 @@ _normalizeSinger(list) {
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/liuyang996.github.io/2018/12/24/js-debounce/" rel="prev" title="js-防抖、节流">
+                js-防抖、节流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -670,7 +675,7 @@ _normalizeSinger(list) {
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -758,7 +763,7 @@ _normalizeSinger(list) {
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -771,7 +776,7 @@ _normalizeSinger(list) {
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共23.5k字</span>
+	  <span class="post-count">博客全站共24.5k字</span>
 	</div>
   
 </div>
