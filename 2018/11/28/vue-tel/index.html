@@ -79,21 +79,19 @@
 
 
 
-<meta name="description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图：">
+<meta name="description" content="实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。  效果截图：">
 <meta name="keywords" content="vue-通讯录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-仿通讯录功能开发">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图：">
+<meta property="og:description" content="实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。  效果截图：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png">
-<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/gspic.png">
-<meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/gspic2.png">
-<meta property="og:updated_time" content="2018-12-26T08:05:54.285Z">
+<meta property="og:updated_time" content="2019-01-04T03:28:24.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-仿通讯录功能开发">
-<meta name="twitter:description" content="我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。    效果截图：">
+<meta name="twitter:description" content="实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。  效果截图：">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png">
 
 
@@ -384,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  860
+                  601
                 </span>
               
 
@@ -400,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -422,7 +420,7 @@
 
       
         <blockquote>
-<p>我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。  </p>
+<p>实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。</p>
 </blockquote>
 <h4 id="效果截图："><a href="#效果截图：" class="headerlink" title="效果截图："></a>效果截图：</h4><p><img src="/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png" alt="name"></p>
 <a id="more"></a>
@@ -435,7 +433,7 @@
 <h4 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h4><ol>
 <li>左右联动效果，做侧或右侧滑动，会影响对方。所以需要知道实时滚动位置。</li>
 <li>根据滚动位置，知道落在哪一个高度区间。</li>
-<li>知道落在高度区间，可以知道右侧索引高亮</li>
+<li>知道落在高度区间，可以知道右侧索引高亮。</li>
 </ol>
 <h4 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h4><h5 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h5><p>这个页面中，我们会在滚动时做一些操作。所以我使用better-scroll插件，且把它封装好了。具体封装代码，请看另外一篇 <font color="red">滚动插件-better-scroll封装</font> 。</p>
 <pre><code>&lt;template&gt;
@@ -470,77 +468,30 @@
         &lt;/div&gt;
     &lt;/scroll&gt;
 &lt;/template&gt;  
-</code></pre><h5 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h5><p>一般后端给的数据是一个数组里，多个歌手对象数据。我这需要把这个数据改造一下。例如下面这个数据：</p>
-<p><img src="/liuyang996.github.io/2018/11/28/vue-tel/gspic.png" alt="name"></p>
-<ul>
-<li>标题(相当于歌手名字首字母 A,B…)，这个数据最好由后端给，比较省事儿^_^，如没有的话，自行百度转换。 </li>
-<li>子字母相同的歌手数组<ul>
-<li>歌手名字</li>
-<li>歌手头像</li>
-<li>歌手id</li>
-</ul>
-</li>
-</ul>
-<h5 id="转化数据"><a href="#转化数据" class="headerlink" title="转化数据"></a>转化数据</h5><pre><code>//处理转化数据函数
-_normalizeSinger(list) {
-    let map = {
-        hot:{
-            title:HOT_NAME,
-            items:[]
-        }
-    }
-    list.forEach((item,index) =&gt; {
-        if(index&lt;HOT_SINGER_LEN){
-             map.hot.items.push( new Singer({
-                id:item.Fsinger_mid,
-                name:item.Fsinger_name
-            }))
-        }
-        const key = item.Findex;
-        //map里没有 key则，添加map[key]
-        if(!map[key]){
-            map[key] = {
-                title:key,
-                items:[]
-            }
-        }
-        map[key].items.push(new Singer({
-            id:item.Fsinger_mid,
-            name:item.Fsinger_name
-        }))
-    });
-    console.log(map);
-    //为了得到有序列表，我们需要处理map
-    let ret = [];
-    let hot = [];
-    for(let key in map) {
-        let val = map[key];
-        if(val.title.match(/[a-zA-Z]/)) {
-            ret.push(val);
-        }else if(val.title === HOT_NAME){
-            hot.push(val);
-        }
-    }
-    ret.sort((a,b) =&gt; {
-         return a.title.charCodeAt(0) - b.title.charCodeAt(0)       
-    })
-    return [...hot,...ret];
-} 
-</code></pre><p>说明：</p>
-<ol>
-<li>函数传过来的list是获取的数据</li>
-<li>定义了一个map对象，并初始化了热门对象hot(我这里有一个热门的类，没有可以不写)</li>
-<li>对list进行遍历，<font color="red">HOT_NAME、HOT_SINGER_LEN</font> 为我定义的常量，用于初始化hot，并把数据前HOT_SINGER_LEN位加入到热门里去，没有这个需求的可以忽略。</li>
-<li>获取item里的歌手首字母，并判断map里有没有这一类，然后添加到该类。</li>
-<li>我这里拿了数据里的歌手id,名称、还有头像。 注意这里 <font color="red">new Singer() 类</font>，是我自定义的类  </li>
-</ol>
-<p><img src="/liuyang996.github.io/2018/11/28/vue-tel/gspic2.png" alt="name"></p>
-<p>大家可以不需要用这个。直接push一个对象就行了。</p>
-<ol start="6">
-<li>拿到数据需要把字母正序排列一下，遍历每一项的title去比较。</li>
-<li>最后合并两个数组。</li>
-</ol>
-<p>##### </p>
+</code></pre><h5 id="点击右侧快速入口，歌手滚动到该区域区间"><a href="#点击右侧快速入口，歌手滚动到该区域区间" class="headerlink" title="点击右侧快速入口，歌手滚动到该区域区间"></a>点击右侧快速入口，歌手滚动到该区域区间</h5><blockquote>
+<p>给右侧入口添加点击事件。这里没有给li添加点击事件，而是给外层div添加点击事件。目的是为了之后的滑动事件获取点击的pageY值。</p>
+</blockquote>
+<pre><code>onShortcutTouchStart(e) {
+        let anchorIndex = getData(e.target,&apos;index&apos;); 
+        let firstTouch = e.touches[0];
+        this.touch.y1 = firstTouch.pageY;
+        this.touch.anchorIndex = anchorIndex;
+        this._scrollTo(anchorIndex); 
+}
+</code></pre><p>说明：<br>1.<strong>getData</strong>函数用来获取点击的子元素索引，拿到索引后，让scroll滚动到当前的位置。<br>2.获取点击的pageY值，存放到touch对象里，在计算移动距离的时候会用到。</p>
+<pre><code>_scrollTo(index) {
+       if (!index &amp;&amp; index !== 0) {
+           return
+       }
+       if(index&lt;0) {
+           index = 0; 
+       }else if (index &gt; this.listHeight.length -2) {
+           index = this.listHeight.length-2;
+       }
+       this.scrollY = -this.listHeight[index];
+       this.$refs.listview.scrollToElement(this.$refs.listGroup[index],0);
+   },
+</code></pre><p><strong>_scrollTo</strong> 方法是用于滚动到指定位置。里面做了边界处理。</p>
 
       
     </div>
@@ -742,7 +693,7 @@ _normalizeSinger(list) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果截图："><span class="nav-number">1.</span> <span class="nav-text">效果截图：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现功能："><span class="nav-number">2.</span> <span class="nav-text">实现功能：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现思路"><span class="nav-number">3.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体实现"><span class="nav-number">4.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#页面布局"><span class="nav-number">4.1.</span> <span class="nav-text">页面布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据格式"><span class="nav-number">4.2.</span> <span class="nav-text">数据格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#转化数据"><span class="nav-number">4.3.</span> <span class="nav-text">转化数据</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果截图："><span class="nav-number">1.</span> <span class="nav-text">效果截图：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现功能："><span class="nav-number">2.</span> <span class="nav-text">实现功能：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现思路"><span class="nav-number">3.</span> <span class="nav-text">实现思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体实现"><span class="nav-number">4.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#页面布局"><span class="nav-number">4.1.</span> <span class="nav-text">页面布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#点击右侧快速入口，歌手滚动到该区域区间"><span class="nav-number">4.2.</span> <span class="nav-text">点击右侧快速入口，歌手滚动到该区域区间</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -776,7 +727,7 @@ _normalizeSinger(list) {
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共24.5k字</span>
+	  <span class="post-count">博客全站共24.2k字</span>
 	</div>
   
 </div>

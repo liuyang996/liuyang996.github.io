@@ -416,67 +416,14 @@
 
       
         
-          
-            <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
-<p>打乱数组排序:应用场景(随机系列)</p>
-</blockquote>
-<pre><code>//随机得到最小数和最大数之间的数
- function getRandomInt(min,max) {
-    return  Math.floor(Math.random() * (max-min +1) + min)
-}
-//打乱顺序
- function shuffle(arr) {
-    let _arr = arr.slice();
-    for(let i =0;i&lt;_arr.length;i++) {
-        let j = getRandomInt(0,i);
-        let t = _arr[i];
-        _arr[i] = _arr[j];
-        _arr[j] = t;
-    }
-    return _arr
-}
-</code></pre><p>原理：<strong>getRandomInt</strong>函数随机的最小数和最大数之间的数。其中 +1的作用是未了避免为0，+min的作用是保证值在min和max之间。<br>通过<strong>getRandomInt</strong>函数获得0-i之间(包含i)的随机数j，用做下标，和当前项的值交换。通过arr.slice()方法返回一个新数组，不改变原数组。</p>
-<h3 id="js-transform兼容"><a href="#js-transform兼容" class="headerlink" title="js-transform兼容"></a>js-transform兼容</h3><blockquote>
-<p>在vue中，css3兼容有css-loader去处理。我们一般不用去管。<br>比如有时候我们需要在js中去使用transform。这时候就需要去处理一下。</p>
-</blockquote>
-<pre><code>let elementStyle = document.createElement(&apos;div&apos;).style
-
-let vendor = (() =&gt; {
-    let transformNames = {
-        webkit: &apos;webkitTransform&apos;,
-        Moz: &apos;MozTransform&apos;,
-        O: &apos;OTransform&apos;,
-        ms: &apos;msTransform&apos;,
-        standard: &apos;transform&apos;
-    }
-
-    for(let key in transformNames) {
-        if (elementStyle[transformNames[key]] !== undefined) {
-            return key
-        }
-    }
-
-    return false
-})()
-
-export function prefixStyle(style) {
-    if (vendor === false) {
-        return false
-    }
-
-    if (vendor === &apos;strandard&apos;) {
-        return style
-    }
-
-    return vendor + style.charAt(0).toUpperCase() + style.substr(1)
-}
-</code></pre><p>引入方式：  </p>
-<pre><code>import {prefixStyle} from &apos;common/js/dom&apos;
-const transform = prefixStyle(&apos;transform&apos;)
-
-this.$refs.cdWrapper.style[transform] = &apos;&apos;;
-</code></pre>
-          
+          <p><img src="/liuyang996.github.io/2018/12/29/js-util1/js1.jpg" alt="name"><br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/12/29/js-util1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -649,72 +596,17 @@ this.$refs.cdWrapper.style[transform] = &apos;&apos;;
 
       
         
-          
-            <p><img src="/liuyang996.github.io/2018/12/24/js-debounce/js3/js1.jpg" alt="name" title="截图">  </p>
+          <p><img src="/liuyang996.github.io/2018/12/24/js-debounce/js1.jpg" alt="name" title="截图">  </p>
 <h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><blockquote>
 <p>函数防抖(debounce)：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。</p>
 </blockquote>
-<h4 id="一个简单的debounce"><a href="#一个简单的debounce" class="headerlink" title="一个简单的debounce"></a>一个简单的debounce</h4><pre><code>function debounce(fn, wait) {
-       var timeout = null;
-       return function () {
-           if (timeout !== null) {
-               clearTimeout(timeout);
-           }
-           timeout = setTimeout(fn, wait);
-       }
-   }
-   //处理函数
-   function handle() {
-       console.log(Math.random());
-   }
-
-   // 滚动事件
-   window.addEventListener(&apos;scroll&apos;, debounce(handle, 1000));
-</code></pre><h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><blockquote>
-<p>函数节流：当持续触发事件时，保证一定时间段内只调用一次事件处理函数。</p>
-</blockquote>
-<h4 id="函数节流主要有两种实现方法：时间戳和定时器。"><a href="#函数节流主要有两种实现方法：时间戳和定时器。" class="headerlink" title="函数节流主要有两种实现方法：时间戳和定时器。"></a>函数节流主要有两种实现方法：时间戳和定时器。</h4><h5 id="节流（时间戳）"><a href="#节流（时间戳）" class="headerlink" title="节流（时间戳）"></a>节流（时间戳）</h5><pre><code>var throttle = function(func, delay) {
-        let prev = Date.now();
-        return function() {
-            let context = this;
-            let args = arguments;
-            let now = Date.now();
-            if (now - prev &gt;= delay) {
-                func.apply(context, args);
-                prev = now;
-            }
-        }
-    }
-    function handle() {
-        console.log(Math.random());
-    }
-window.addEventListener(&apos;scroll&apos;, throttle(handle, 1000));
-</code></pre><p>当高频事件触发时，第一次会立即执行（因为给scroll函数绑定函数与真正触发事件的间隔一般大于delay）。之后会根据当前时间戳减上一次时间戳如果小于设定的delay则，事件不会被执行了。这里用了闭包的方法把prev封闭在作用域内。</p>
-<h5 id="节流（定时器）"><a href="#节流（定时器）" class="headerlink" title="节流（定时器）"></a>节流（定时器）</h5><pre><code>var throttle = function(func,delay) {
-      let timer = null;
-      return function() {
-          let context = this;
-          let args = arguments;
-          if(!timer) {
-              timer = setTimeout(function(){
-                  func.apply(context,args);
-                  timer = null;
-              },delay)
-          }
-      }
-  }
-
-  function handle() {
-      console.log(Math.random());
-  }
-
-  window.addEventListener(&apos;scroll&apos;,throttle(handle,1000));
-</code></pre><p>当触发事件的时候，我们设置一个定时器，再次触发事件的时候，如果定时器存在，就不执行，直到delay时间后，定时器执行函数，并且清空定时器，这样就可以设置下个定时器。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><strong>函数防抖</strong>：原理是维护一个定时器，规定在delay时间后触发函数，但是再delay时间内再次触发的话，就会取消之前的计时器而重新设置。这样一来，只有最后一次操作能被触发。</p>
-<p><strong>函数节流</strong>：在一定时间内只触发一次函数。原理是通过判断是否达到一定时间来触发函数。</p>
-<p><strong>区别</strong>：函数节流不管事件触发有多频繁，都会保证在规定时间内一定会执行一次真正的事件处理函数，而函数防抖只是在最后一次事件后才触发一次函数。 比如在页面的无限加载场景下，我们需要用户在滚动页面时，每隔一段时间发一次 Ajax 请求，而不是在用户停下滚动页面操作时才去请求数据。这样的场景，就适合用节流技术来实现。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/12/24/js-debounce/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -849,7 +741,7 @@ window.addEventListener(&apos;scroll&apos;, throttle(handle, 1000));
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  860
+                  601
                 </span>
               
 
@@ -865,7 +757,7 @@ window.addEventListener(&apos;scroll&apos;, throttle(handle, 1000));
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -888,7 +780,7 @@ window.addEventListener(&apos;scroll&apos;, throttle(handle, 1000));
       
         
           <blockquote>
-<p>我这里实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。主要参考，思路和实现方法。  </p>
+<p>实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。</p>
 </blockquote>
 <h4 id="效果截图："><a href="#效果截图：" class="headerlink" title="效果截图："></a>效果截图：</h4><p><img src="/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png" alt="name"></p>
           <!--noindex-->
@@ -2483,7 +2375,7 @@ router.post(&apos;/signin&apos;, async (ctx, next) =&gt; {
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共24.5k字</span>
+	  <span class="post-count">博客全站共24.2k字</span>
 	</div>
   
 </div>
