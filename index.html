@@ -1143,49 +1143,15 @@
 
       
         
-          
-            <h3 id="fastclick-处理移动端click事件300毫秒延迟"><a href="#fastclick-处理移动端click事件300毫秒延迟" class="headerlink" title="fastclick 处理移动端click事件300毫秒延迟"></a>fastclick 处理移动端click事件300毫秒延迟</h3><pre><code>npm install fastclick -S 
+          <h3 id="fastclick-处理移动端click事件300毫秒延迟"><a href="#fastclick-处理移动端click事件300毫秒延迟" class="headerlink" title="fastclick 处理移动端click事件300毫秒延迟"></a>fastclick 处理移动端click事件300毫秒延迟</h3><pre><code>npm install fastclick -S 
 </code></pre><p>之后，在main.js中引入，并绑定到body  </p>
-<pre><code>import FastClick from &apos;fastclick&apos; 
-
-FastClick.attach(document.body); 
-</code></pre><h3 id="babel-runtime-和babel-polyfill"><a href="#babel-runtime-和babel-polyfill" class="headerlink" title="babel-runtime 和babel-polyfill"></a>babel-runtime 和babel-polyfill</h3><blockquote>
-<p>babel-polyfill:当运行环境中并没有实现的一些方法，babel-polyfill 会给其做兼容。<br>babel-runtime: 不污染全局对象和内置的对象原型的情况下，使用新语法。</p>
-</blockquote>
-<p>babel-polyfill 安装：</p>
-<pre><code> npm install --save babel-polyfill
-import &quot;babel-polyfill
-</code></pre><p>babel-runtime 安装：  </p>
-<pre><code>npm install --save-dev babel-plugin-transform-runtime  
-npm install --save babel-runtime  
-
-写入 &apos;.babelrc&apos; 
-
-{
-  &quot;plugins&quot;: [&quot;transform-runtime&quot;]
-}  
-</code></pre><h3 id="lib-flexible-移动端适配"><a href="#lib-flexible-移动端适配" class="headerlink" title="lib-flexible 移动端适配"></a>lib-flexible 移动端适配</h3><pre><code>npm install lib-flexible --save  
-</code></pre><p>在项目的入口js文件中引入lib-flexible </p>
-<pre><code>import &apos;lib-flexible&apos;  
-</code></pre><p>使用px2rem-loader自动将css中的px转换成rem  </p>
-<pre><code>npm install px2rem-loader --save-dev 
-</code></pre><p>配置px2rem-loader  </p>
-<p>打开build/utils.js文件，找到exports.cssLoaders方法，在里面添加如下代码  </p>
-<pre><code>const px2remLoader = {
-    loader: &apos;px2rem-loader&apos;,
-    options: {
-      remUint: 75
-    }
-  }
-</code></pre><p>修改generateLoaders方法中的loaders  </p>
-<pre><code>const loaders = options.usePostCSS ? [cssLoader, postcssLoader,px2remLoader] : [cssLoader,px2remLoader]
-</code></pre><p>index.html文件的mete标签修改为：  </p>
-<pre><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0&quot;&gt;
-</code></pre><p>注意：</p>
-<p>1.此方法只能将.vue文件style标签中的px转成rem，不能将script标签和元素style里面定义的px转成rem</p>
-<p>2.如果在.vue文件style中的某一行代码不希望被转成rem，只要在后面写上注释 /<em> no</em>/就可以了</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/11/21/vue-music/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
