@@ -79,19 +79,16 @@
 
 
 
-<meta name="description" content="一 JavaScript中的this、call、apply和bindthis判断this关键字的引用，函数被调用时先看一看点好左侧。如果有”点”就查看点左侧的对象，这个对象就是this的应用。没有点则指向为window">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javaScript的XX个概念">
+<meta property="og:title" content="javaScript的常用高阶函数使用">
 <meta property="og:url" content="http://liuyang996.github.io/liuyang996.github.io/2018/10/22/js2/index.html">
 <meta property="og:site_name" content="穿过繁华的博客">
-<meta property="og:description" content="一 JavaScript中的this、call、apply和bindthis判断this关键字的引用，函数被调用时先看一看点好左侧。如果有”点”就查看点左侧的对象，这个对象就是this的应用。没有点则指向为window">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/10/22/js2/js1.jpg">
-<meta property="og:updated_time" content="2018-12-14T08:11:33.895Z">
+<meta property="og:updated_time" content="2019-01-28T02:33:33.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javaScript的XX个概念">
-<meta name="twitter:description" content="一 JavaScript中的this、call、apply和bindthis判断this关键字的引用，函数被调用时先看一看点好左侧。如果有”点”就查看点左侧的对象，这个对象就是this的应用。没有点则指向为window">
+<meta name="twitter:title" content="javaScript的常用高阶函数使用">
 <meta name="twitter:image" content="http://liuyang996.github.io/liuyang996.github.io/2018/10/22/js2/js1.jpg">
 
 
@@ -128,7 +125,7 @@
 
 
 
-  <title>javaScript的XX个概念 | 穿过繁华的博客</title>
+  <title>javaScript的常用高阶函数使用 | 穿过繁华的博客</title>
   
 
 
@@ -316,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">javaScript的XX个概念</h1>
+          <h1 class="post-title" itemprop="name headline">javaScript的常用高阶函数使用</h1>
         
 
         <div class="post-meta">
@@ -382,7 +379,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  602
+                  407
                 </span>
               
 
@@ -398,7 +395,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  2
                 </span>
               
             </div>
@@ -420,41 +417,8 @@
 
       
         <p><img src="/liuyang996.github.io/2018/10/22/js2/js1.jpg" alt="name">  </p>
-<h3 id="一-JavaScript中的this、call、apply和bind"><a href="#一-JavaScript中的this、call、apply和bind" class="headerlink" title="一 JavaScript中的this、call、apply和bind"></a>一 JavaScript中的this、call、apply和bind</h3><h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>判断this关键字的引用，函数被调用时先看一看点好左侧。如果有”点”就查看点左侧的对象，这个对象就是this的应用。没有点则指向为window</p>
 <a id="more"></a>
-<pre><code>const user = {
-  name: &apos;Tyler&apos;,
-  age: 27,
-  greet() {
-    alert(`Hello, my name is ${this.name}`)
-  }
-}
-
-user.greet()
-</code></pre><p>如这个例子，点的左侧为user,this则指向了user。</p>
-<h4 id="call"><a href="#call" class="headerlink" title="call"></a>call</h4><pre><code>&gt; &quot;call&quot;是每个函数都有的一个方法，它允许你在调用函数时为函数指定上下文。
-</code></pre><p>.  </p>
-<pre><code>const user = {
-  name: &apos;Tyler&apos;,
-  age: 27,
-
-}
-var newArray = [&apos;js&apos;,&apos;css&apos;,&apos;html&apos;];
-function greet(lang1,lang2,lang3) {
-    alert(`Hello, my name is ${lang1},${lang2},${lang3}`)
-  }
-
-
-greet.call(user,newArray[0],newArray[1],newArray[2]);
-</code></pre><p>注意：<strong>call</strong>是每个函数都有的一个属性，并且传递给它的第一个参数会作为函数被调用时的上下文。也就是说，this会指向传递给call的第一个参数</p>
-<p>如果要在call调用的函数中传入其他参数，直接在第一个参数后依次传入。(必须一个一个传入)</p>
-<h4 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h4><p>apply和 call本质相同，但不是一个一个传入参数，可以用数组传参而且.apply会在函数中自动帮你展开。</p>
-<pre><code>greet.apply(user,newArray);
-</code></pre><h4 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h4><p>bind和call完全相同，除了不会立刻调动函数，而是返回一个能以后调用的新函数。</p>
-<pre><code>const newFn = greet.call(user,newArray[0],newArray[1],newArray[2]);
-
-newFn();
-</code></pre><h3 id="二-map-reduce-filter等高阶函数"><a href="#二-map-reduce-filter等高阶函数" class="headerlink" title="二 map,reduce,filter等高阶函数"></a>二 map,reduce,filter等高阶函数</h3><blockquote>
+<h3 id="map-reduce-filter等高阶函数"><a href="#map-reduce-filter等高阶函数" class="headerlink" title="map,reduce,filter等高阶函数"></a>map,reduce,filter等高阶函数</h3><blockquote>
 <p>一个函数可以接收另一个函数作为参数，这种函数就称之为高阶函数</p>
 </blockquote>
 <h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><blockquote>
@@ -488,7 +452,27 @@ var result = flatten(array)
         return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
     }, []);
 }
-</code></pre>
+</code></pre><h4 id="some"><a href="#some" class="headerlink" title="some"></a>some</h4><blockquote>
+<p>some() 方法用于检测数组中的元素是否满足指定条件.</p>
+</blockquote>
+<ul>
+<li>如果有一个元素满足条件，则表达式返回true,剩下的元素不会再执行。</li>
+<li><p>如果没有满足条件的元素，则返回false.</p>
+<pre><code>function isBigEnough(element, index, array) {
+return (element &gt;= 10);
+}
+var passed = [2, 5, 8, 1, 4].some(isBigEnough);
+</code></pre></li>
+</ul>
+<h4 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h4><blockquote>
+<p>findIndex() 方法返回传入一个符合条件的数组第一个元素位置。</p>
+</blockquote>
+<ul>
+<li>当数组有符合条件的元素时，返回索引位置 </li>
+<li>如果没有符合条件的元素返回-1</li>
+<li>不会改变数组的原始值。 </li>
+</ul>
+
       
     </div>
     
@@ -622,7 +606,7 @@ var result = flatten(array)
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -633,7 +617,7 @@ var result = flatten(array)
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -644,7 +628,7 @@ var result = flatten(array)
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -689,7 +673,7 @@ var result = flatten(array)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-JavaScript中的this、call、apply和bind"><span class="nav-number">1.</span> <span class="nav-text">一 JavaScript中的this、call、apply和bind</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#this"><span class="nav-number">1.1.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call"><span class="nav-number">1.2.</span> <span class="nav-text">call</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#apply"><span class="nav-number">1.3.</span> <span class="nav-text">apply</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bind"><span class="nav-number">1.4.</span> <span class="nav-text">bind</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-map-reduce-filter等高阶函数"><span class="nav-number">2.</span> <span class="nav-text">二 map,reduce,filter等高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">2.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reduce"><span class="nav-number">2.2.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">2.3.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扁平化-flatten-数组"><span class="nav-number">2.4.</span> <span class="nav-text">扁平化(flatten) 数组</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#map-reduce-filter等高阶函数"><span class="nav-number">1.</span> <span class="nav-text">map,reduce,filter等高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">1.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reduce"><span class="nav-number">1.2.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">1.3.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扁平化-flatten-数组"><span class="nav-number">1.4.</span> <span class="nav-text">扁平化(flatten) 数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#some"><span class="nav-number">1.5.</span> <span class="nav-text">some</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#findIndex"><span class="nav-number">1.6.</span> <span class="nav-text">findIndex</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -723,7 +707,7 @@ var result = flatten(array)
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共24.2k字</span>
+	  <span class="post-count">博客全站共23.7k字</span>
 	</div>
   
 </div>

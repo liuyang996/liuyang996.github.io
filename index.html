@@ -782,7 +782,6 @@
           <blockquote>
 <p>实现的功能是一个歌手详情页面，和通讯录页面逻辑布局基本一样。</p>
 </blockquote>
-<h4 id="效果截图："><a href="#效果截图：" class="headerlink" title="效果截图："></a>效果截图：</h4><p><img src="/liuyang996.github.io/2018/11/28/vue-tel/pic_music1.png" alt="name"></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/liuyang996.github.io/2018/11/28/vue-tel/#more" rel="contents">
@@ -1359,106 +1358,14 @@ npm install --save babel-runtime
 
       
         
-          
-            <p><img src="/liuyang996.github.io/2018/11/19/node-koa/node-stream/node1.jpg" alt="name"></p>
-<blockquote>
-<p>koa是Express的下一代基于Node.js的web框架，目前有1.x和2.0两个版本。这里使用的是2.0</p>
-</blockquote>
-<h3 id="安装koa2"><a href="#安装koa2" class="headerlink" title="安装koa2"></a>安装koa2</h3><pre><code>npm install koa@2.0.0  
-</code></pre><p>这里要有package.json文件 </p>
-<p>或者自己在目录下创建一个package.json。  </p>
-<pre><code>{
-    &quot;name&quot;: &quot;hello-koa2&quot;,
-    &quot;version&quot;: &quot;1.0.0&quot;,
-    &quot;description&quot;: &quot;Hello Koa 2 example with async&quot;,
-    &quot;main&quot;: &quot;app.js&quot;,
-    &quot;scripts&quot;: {
-        &quot;start&quot;: &quot;node app.js&quot;
-    },
-    &quot;keywords&quot;: [
-        &quot;koa&quot;,
-        &quot;async&quot;
-    ],
-    &quot;author&quot;: &quot;Michael Liao&quot;,
-    &quot;license&quot;: &quot;Apache-2.0&quot;,
-    &quot;repository&quot;: {
-        &quot;type&quot;: &quot;git&quot;,
-        &quot;url&quot;: &quot;https://github.com/michaelliao/learn-javascript.git&quot;
-    },
-    &quot;dependencies&quot;: {
-        &quot;koa&quot;: &quot;2.0.0&quot;
-    }
-}
-</code></pre><p>其中，dependencies描述了我们的工程依赖的包以及版本号。其他字段均用来描述项目信息，可任意填写。  </p>
-<p>然后执行  </p>
-<pre><code>npm install  
-</code></pre><h3 id="实现一个-hello-koa2"><a href="#实现一个-hello-koa2" class="headerlink" title="实现一个 hello,koa2"></a>实现一个 hello,koa2</h3><pre><code>//导入koa,和koa1.x不同，在koa2中，我们导入的是一个class,因此用大写的koa表示。 
-const Koa = require(&apos;koa&apos;);
-
-// 创建一个koa对象，表示webapp本身；
-const app = new Koa();
-
-//对于任何请求，app将调用该异步函数处理请求； 
-app.use(async (ctx,next) =&gt; {
-    await next(); 
-    ctx.response.type = &apos;text/html&apos;;
-    ctx.response.body = &apos;&lt;h1&gt;Hello,Koa2&lt;/h1&gt;&apos;;
-})
-
-app.listen(3000);
-console.log(&apos;app stared at port 3000&apos;)  
-</code></pre><h4 id="koa-middleware"><a href="#koa-middleware" class="headerlink" title="koa middleware"></a>koa middleware</h4><p>koa把很多async函数组成一个处理链，每个async函数都可以做一些自己的事情，然后用await next()来调用下一个async函数，把每个async函数称为middleware。  </p>
-<p>middleware的顺序很重要，也就是调用app.use()的顺序决定了middleware的顺序。  </p>
-<p>如果一个middleware没有调用await next()，后续的middleware将不再执行了。 </p>
-<h3 id="处理URL"><a href="#处理URL" class="headerlink" title="处理URL"></a>处理URL</h3><p>处理url,我们需要引入koa-router这个middleware,让它处理URL映射  </p>
-<p>在 <font color="red">package.json</font> 中添加依赖项： </p>
-<pre><code>&quot;koa-router&quot;: &quot;7.0.0&quot;
-</code></pre><p>然后用 <font color="red">npm install</font> 安装</p>
-<h4 id="get"><a href="#get" class="headerlink" title="get"></a>get</h4><pre><code>// 注意require(&apos;koa-router&apos;)返回的是函数:
-const router = require(&apos;koa-router&apos;)();
-
-const app = new Koa();        
-
-// add url-route:
-router.get(&apos;/hello/:name&apos;, async (ctx, next) =&gt; {
-    var name = ctx.params.name;
-    ctx.response.body = `&lt;h1&gt;Hello, ${name}!&lt;/h1&gt;`;
-});
-
-// add router middleware:
-app.use(router.routes()
-</code></pre><h4 id="post"><a href="#post" class="headerlink" title="post"></a>post</h4><p>使用Post请求处理url时，需要引入另一个middleware来解析原始request请求</p>
-<p>在 <font color="red">package.json</font> 中添加依赖项：  </p>
-<pre><code>&quot;koa-bodyparser&quot;: &quot;3.2.0&quot; 
-</code></pre><p>然后用 <font color="red">npm install</font> 安装  </p>
-<p>引入  </p>
-<pre><code>const bodyParser = require(&apos;koa-bodyparser&apos;);  
-</code></pre><p>在router被注册之前使用  </p>
-<pre><code>app.use(bodyParser());  
-</code></pre><p>一个简单的登录表单 ：  </p>
-<pre><code>router.get(&apos;/&apos;, async (ctx, next) =&gt; {
-ctx.response.body = `&lt;h1&gt;Index&lt;/h1&gt;
-    &lt;form action=&quot;/signin&quot; method=&quot;post&quot;&gt;
-        &lt;p&gt;Name: &lt;input name=&quot;name&quot; value=&quot;koa&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;Password: &lt;input name=&quot;password&quot; type=&quot;password&quot;&gt;&lt;/p&gt;
-        &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;&lt;/p&gt;
-    &lt;/form&gt;`;
-});
-
-router.post(&apos;/signin&apos;, async (ctx, next) =&gt; {
-    var
-        name = ctx.request.body.name || &apos;&apos;,
-        password = ctx.request.body.password || &apos;&apos;;
-    console.log(`signin with name: ${name}, password: ${password}`);
-    if (name === &apos;koa&apos; &amp;&amp; password === &apos;12345&apos;) {
-        ctx.response.body = `&lt;h1&gt;Welcome, ${name}!&lt;/h1&gt;`;
-    } else {
-        ctx.response.body = `&lt;h1&gt;Login failed!&lt;/h1&gt;
-        &lt;p&gt;&lt;a href=&quot;/&quot;&gt;Try again&lt;/a&gt;&lt;/p&gt;`;
-    }
-});
-</code></pre>
-          
+          <p><img src="/liuyang996.github.io/2018/11/19/node-koa/node-stream/node1.jpg" alt="name"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/liuyang996.github.io/2018/11/19/node-koa/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2290,7 +2197,7 @@ router.post(&apos;/signin&apos;, async (ctx, next) =&gt; {
               
                 <a href="/liuyang996.github.io/archives">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2301,7 +2208,7 @@ router.post(&apos;/signin&apos;, async (ctx, next) =&gt; {
               
               <div class="site-state-item site-state-categories">
                 <a href="/liuyang996.github.io/categories/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2312,7 +2219,7 @@ router.post(&apos;/signin&apos;, async (ctx, next) =&gt; {
               
               <div class="site-state-item site-state-tags">
                 <a href="/liuyang996.github.io/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2375,7 +2282,7 @@ router.post(&apos;/signin&apos;, async (ctx, next) =&gt; {
     </span>
 	<div class="theme-info">
 	  <div class="powered-by"></div>
-	  <span class="post-count">博客全站共24.2k字</span>
+	  <span class="post-count">博客全站共23.7k字</span>
 	</div>
   
 </div>
